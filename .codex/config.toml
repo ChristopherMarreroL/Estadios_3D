@@ -1,0 +1,6 @@
+[mcp_servers.blender]
+command = "C:\\Users\\chris\\.codex\\mcp\\blender_mcp\\mcp\\.venv\\Scripts\\blender-mcp.exe"
+cwd = "C:\\Users\\chris\\.codex\\mcp\\blender_mcp\\mcp"
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+default_tools_approval_mode = "prompt"
