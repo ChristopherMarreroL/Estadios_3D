@@ -1,0 +1,134 @@
+[
+  {
+    "name": "field_apron_home_backstop",
+    "vertices": 322,
+    "nonmanifold_edges": 322,
+    "finite": true
+  },
+  {
+    "name": "corporate_front_wall",
+    "vertices": 76,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "section_corporate",
+    "vertices": 76,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "section_palco_a",
+    "vertices": 2752,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "section_palco_aa",
+    "vertices": 4154,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "section_bleachers_left",
+    "vertices": 2881,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "section_bleachers_right",
+    "vertices": 2881,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "bullpen_licey",
+    "vertices": 8,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "bullpen_escogido",
+    "vertices": 8,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "bullpen_licey_grass_lane",
+    "vertices": 8,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "bullpen_licey_mound",
+    "vertices": 24,
+    "nonmanifold_edges": 24,
+    "finite": true
+  },
+  {
+    "name": "bullpen_escogido_grass_lane",
+    "vertices": 8,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "bullpen_escogido_mound",
+    "vertices": 24,
+    "nonmanifold_edges": 24,
+    "finite": true
+  },
+  {
+    "name": "aisle_01",
+    "vertices": 284,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_02",
+    "vertices": 284,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_03",
+    "vertices": 450,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_04",
+    "vertices": 450,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_05",
+    "vertices": 450,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_06",
+    "vertices": 450,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_07",
+    "vertices": 450,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_08",
+    "vertices": 284,
+    "nonmanifold_edges": 0,
+    "finite": true
+  },
+  {
+    "name": "aisle_09",
+    "vertices": 284,
+    "nonmanifold_edges": 0,
+    "finite": true
+  }
+]
