@@ -1,0 +1,1687 @@
+{
+  "roof_top_m": 1.37,
+  "floor_m": -1.17,
+  "seat_geometry_unchanged": true,
+  "a6_rays": [
+    {
+      "seat": 12214,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12214,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12215,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12215,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12216,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12216,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12217,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12217,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12218,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12218,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12219,
+      "row": "A",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12219,
+      "row": "A",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12220,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12220,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12221,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12221,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12222,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12222,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12223,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12223,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12224,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12224,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12225,
+      "row": "B",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12225,
+      "row": "B",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12226,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12226,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12227,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12227,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12228,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12228,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12229,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12229,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12230,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12230,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12231,
+      "row": "C",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12231,
+      "row": "C",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12232,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12232,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12233,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12233,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12234,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12234,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12235,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12235,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12236,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12236,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12237,
+      "row": "D",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12237,
+      "row": "D",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12238,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12238,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12239,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12239,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12240,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12240,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12241,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12241,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12242,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12242,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12243,
+      "row": "E",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12243,
+      "row": "E",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12244,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12244,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12245,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12245,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12246,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12246,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12247,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12247,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12248,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12248,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12249,
+      "row": "F",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12249,
+      "row": "F",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12250,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12250,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12251,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12251,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12252,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12252,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12253,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12253,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12254,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12254,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12255,
+      "row": "G",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12255,
+      "row": "G",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12256,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12256,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12257,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12257,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12258,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12258,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12259,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12259,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12260,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12260,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12261,
+      "row": "H",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12261,
+      "row": "H",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12262,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12262,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12263,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12263,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12264,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12264,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12265,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12265,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12266,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12266,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12267,
+      "row": "J",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12267,
+      "row": "J",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12268,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12268,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12269,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12269,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12270,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12270,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12271,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12271,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12272,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12272,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12273,
+      "row": "K",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12273,
+      "row": "K",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12274,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12274,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12275,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12275,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12276,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12276,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12277,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12277,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12278,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12278,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12279,
+      "row": "L",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12279,
+      "row": "L",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12280,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12280,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12281,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12281,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12282,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12282,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12283,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12283,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12284,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12284,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12285,
+      "row": "M",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12285,
+      "row": "M",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12286,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12286,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12287,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12287,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12288,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12288,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12289,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12289,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12290,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12290,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12291,
+      "row": "N",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12291,
+      "row": "N",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12292,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12292,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12293,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12293,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12294,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12294,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12295,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12295,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12296,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12296,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12297,
+      "row": "P",
+      "target": [
+        0,
+        -44,
+        0.15
+      ],
+      "roof_blocks": []
+    },
+    {
+      "seat": 12297,
+      "row": "P",
+      "target": [
+        0,
+        -24,
+        1
+      ],
+      "roof_blocks": []
+    }
+  ]
+}
