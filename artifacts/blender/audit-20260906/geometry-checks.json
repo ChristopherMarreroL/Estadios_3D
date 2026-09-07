@@ -1,0 +1,68 @@
+{
+  "surface_intersection_candidates": [
+    {
+      "a": "section_corporate",
+      "b": "section_palco_a",
+      "triangle_pairs": 271
+    },
+    {
+      "a": "section_corporate",
+      "b": "corporate_front_wall",
+      "triangle_pairs": 20
+    },
+    {
+      "a": "section_palco_a",
+      "b": "section_palco_aa",
+      "triangle_pairs": 665
+    },
+    {
+      "a": "section_palco_aa",
+      "b": "section_bleachers_left",
+      "triangle_pairs": 101
+    },
+    {
+      "a": "section_palco_aa",
+      "b": "section_bleachers_right",
+      "triangle_pairs": 104
+    },
+    {
+      "a": "section_bleachers_left",
+      "b": "section_bleachers_right",
+      "triangle_pairs": 16
+    }
+  ],
+  "note": "BVH surface intersections include touching boundaries, not a complete solid collision test",
+  "seat_prototypes": 32,
+  "seat_meshes": [
+    "seat_shared_mesh"
+  ],
+  "all_seats_hidden_render": true,
+  "bullpens": [
+    {
+      "name": "bullpen_licey",
+      "object_location": [
+        -66.0,
+        10.0,
+        0.550000011920929
+      ],
+      "local_mesh_center": [
+        -66.0,
+        10.0,
+        0.07000000029802322
+      ]
+    },
+    {
+      "name": "bullpen_escogido",
+      "object_location": [
+        66.0,
+        10.0,
+        0.550000011920929
+      ],
+      "local_mesh_center": [
+        66.0,
+        10.0,
+        0.07000000029802322
+      ]
+    }
+  ]
+}

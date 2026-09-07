@@ -1,5 +1,6 @@
 "use client";
 import { RotateCcw } from "lucide-react";
+import Link from "next/link";
 import { PrototypeBadge } from "./PrototypeBadge";
 import { useTicketStore } from "@/stores/ticketStore";
 export function Header() {
@@ -17,6 +18,12 @@ export function Header() {
           <PrototypeBadge />
         </span>
       </button>
+      <Link
+        href="/localidades"
+        className="pointer-events-auto rounded border border-white/20 bg-[#071323]/90 px-3 py-2 text-xs text-white"
+      >
+        Vista desde mi butaca
+      </Link>
       {step !== "hero" && step !== "confirmation" && (
         <button
           onClick={resetCamera}

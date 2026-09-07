@@ -1,0 +1,363 @@
+00:01.938  blend            | Read blend: "C:\Users\chris\Programacion\Estadios_3D\public\models\estadio-quisqueya-v1.blend"
+Info: Saved as "estadio-quisqueya-v1.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+09:50:34 | INFO: Starting glTF 2.0 export
+09:50:34 | INFO: Extracting primitive: catalog_seats_2275_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: catalog_seats_2276_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: catalog_seats_2278_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: catalog_seats_2287_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: catalog_seats_2288_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: catalog_seats_2289_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: corporate_divider_shared_mesh
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: corporate_front_wall_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: field_apron_home_backstop_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: phase2_backstop_grass_crescent_20260907-phase2
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase2_concourse_railing_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase2_service_annex_20260907-phase2
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase2_warning_track_20260907-phase2
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_01_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_02_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_03_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_04_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_05_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_sign_06_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_01
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_02
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_03
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_04
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_05
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_access_text_06
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_aisle_handrails_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_escogido_bench_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_escogido_rails_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_escogido_shell_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_licey_bench_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_licey_rails_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_dugout_licey_shell_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tier_front_guards_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_first_base_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_first_base_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_first_base_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_center_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_center_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_center_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_field_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_field_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_left_field_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_center_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_center_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_center_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_field_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_field_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_right_field_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_third_base_footings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_third_base_lamp_housings_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: phase3_tower_third_base_projectors_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.015
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.016
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.013
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.014
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.017
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.018
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.004
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.003
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.005
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.006
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.005
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.006
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: field_grass_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: Cube.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.002
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: infield_clay_20260907-phase2
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: infield_grass_20260907-phase2
+09:50:34 | INFO: Primitives created: 2
+09:50:34 | INFO: Extracting primitive: Cylinder
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.004
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.002
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.003
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_first_base_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_left_center_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_left_field_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_right_center_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_right_field_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: light_tower_third_base_mesh_20260907-phase3.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.011
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: scoreboard_distance_curve
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.109
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: scoreboard_match_curve
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.012
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.110
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.111
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.107
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cube.108
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: scoreboard_title_curve
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: section_bleachers_left_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: section_bleachers_right_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: section_corporate_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: section_palco_a_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: section_palco_aa_phase1_20260906.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_01_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_02_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_03_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_04_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_05_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_06_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_07_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_08_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: aisle_09_phase1_20260906
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: batters_eye_center_mesh_phase2
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: center_field_411_ft_curve
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: facade_column_system_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: grandstand_concourse_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: grandstand_outer_facade_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: main_grandstand_roof_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.007
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.008
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.009
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.010
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.011
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.012
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.013
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.014
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.015
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: Cylinder.016
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: press_box_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: press_box_canopy_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:34 | INFO: Extracting primitive: press_box_glass_20260907-phase2.001
+09:50:34 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: press_box_name_curve
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: roof_front_fascia_20260907-phase2.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: roof_panel_left_20260907-phase2.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: roof_panel_right_20260907-phase2.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: roof_rib_system_20260907-phase2.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: roof_support_system_20260907-phase2.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: Cube.099
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_01_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_02_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_03_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_04_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_05_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: vomitory_06_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_escogido_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_escogido_grass_lane_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_escogido_mound_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_licey_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_licey_grass_lane_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: bullpen_licey_mound_phase1_20260906
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: dugout_escogido_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+09:50:35 | INFO: Extracting primitive: dugout_licey_20260907-phase3.001
+09:50:35 | INFO: Primitives created: 1
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\__init__.py", line 1409, in execute
+    res = gltf2_blender_export.save(context, export_settings)
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 42, in save
+    __write_file(json, buffer, export_settings)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 571, in __write_file
+    gltf2_io_export.save_gltf(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        json,
+        ^^^^^
+        export_settings,
+        ^^^^^^^^^^^^^^^^
+        json_util.BlenderJSONEncoder,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        buffer)
+        ^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\io\exp\export.py", line 85, in save_gltf
+    file = open(export_settings['gltf_filepath'], "wb")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\chris\\Programacion\\Estadios_3D\\public\\models\\estadio-quisqueya.glb'
+00:03.844  bpy.rna          | ERROR Python script error in EXPORT_SCENE_OT_gltf.execute
+Traceback (most recent call last):
+  File "C:\Users\chris\Programacion\Estadios_3D\scripts\blender\refine_phase3.py", line 140, in <module>
+    exec(compile(open(os.path.join(ROOT,'scripts','blender','export_web_phase1.py'),encoding='utf-8').read(),'export_web_phase1.py','exec'))
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "export_web_phase1.py", line 15, in <module>
+RuntimeError: Error: Python: Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\__init__.py", line 1409, in execute
+    res = gltf2_blender_export.save(context, export_settings)
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 42, in save
+Error: Python: Traceback (most recent call last):
+    __write_file(json, buffer, export_settings)
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\__init__.py", line 1409, in execute
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    res = gltf2_blender_export.save(context, export_settings)
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 571, in __write_file
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 42, in save
+    gltf2_io_export.save_gltf(
+    __write_file(json, buffer, export_settings)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        json,
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\blender\exp\export.py", line 571, in __write_file
+        export_settings,
+        ^^^^^^^^^^^^^^^^
+        json_util.BlenderJSONEncoder,
+    gltf2_io_export.save_gltf(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        buffer)
+        json,
+        ^^^^^^^
+        ^^^^^
+        export_settings,
+        ^^^^^^^^^^^^^^^^
+        json_util.BlenderJSONEncoder,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        buffer)
+        ^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\io\exp\export.py", line 85, in save_gltf
+    file = open(export_settings['gltf_filepath'], "wb")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\chris\\Programacion\\Estadios_3D\\public\\models\\estadio-quisqueya.glb'
+Location: export_web_phase1.py:15
+
+
+Error: script failed, file: 'scripts/blender/refine_phase3.py', exiting.
+  File "C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\io\exp\export.py", line 85, in save_g... truncatedBlender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

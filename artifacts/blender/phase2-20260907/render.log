@@ -1,0 +1,8 @@
+00:06.016  blend            | Read blend: "C:\Users\chris\Programacion\Estadios_3D\public\models\estadio-quisqueya-v1.blend"
+00:25.625  render           | Saved: 'C:\Users\chris\Programacion\Estadios_3D\artifacts\blender\phase2-20260907\camera_centerfield_aerial.png'
+00:43.188  render           | Saved: 'C:\Users\chris\Programacion\Estadios_3D\artifacts\blender\phase2-20260907\camera_grandstand.png'
+00:56.329  render           | Saved: 'C:\Users\chris\Programacion\Estadios_3D\artifacts\blender\phase2-20260907\camera_drone_exterior.png'
+01:12.735  render           | Saved: 'C:\Users\chris\Programacion\Estadios_3D\artifacts\blender\phase2-20260907\camera_topdown_validation.png'
+Blender 5.2.0 LTS (hash fbe6228777e7 built 2026-07-14 01:35:40)
+
+Blender quit

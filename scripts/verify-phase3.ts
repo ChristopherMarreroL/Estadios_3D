@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+const bytes=readFileSync("public/models/estadio-quisqueya.glb");
+assert.equal(bytes.readUInt32LE(8),bytes.length);
+const gltf=JSON.parse(bytes.toString("utf8",20,20+bytes.readUInt32LE(12)));
+const names=new Set(gltf.nodes.map((n:{name?:string})=>n.name));
+for(const side of ["licey","escogido"])for(const part of ["shell","bench","rails"])assert(names.has(`phase3_dugout_${side}_${part}`));
+assert(names.has("phase3_aisle_handrails"));
+assert(names.has("phase3_tier_front_guards"));
+for(let i=1;i<=6;i++)assert(names.has(`vomitory_0${i}`));
+const lamps=gltf.nodes.filter((n:{extras?:{projector_count?:number}})=>n.extras?.projector_count);
+assert.equal(lamps.length,6);
+assert.equal(lamps.reduce((n:number,o:{extras:{projector_count:number}})=>n+o.extras.projector_count,0),144);
+const checks=JSON.parse(readFileSync("artifacts/blender/phase3-20260907/checks.json","utf8"));
+assert(checks.seat_meshes_unchanged);
+assert(checks.meshes.every((m:{non_manifold_edges:number})=>m.non_manifold_edges===0));
+console.log("Verified exported dugouts, six access portals, handrails, six lamp banks and closed meshes.");

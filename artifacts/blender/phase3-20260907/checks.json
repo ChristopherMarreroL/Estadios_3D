@@ -1,0 +1,287 @@
+{
+  "revision": "20260907-phase3",
+  "changed": [
+    "dugout_licey",
+    "phase3_dugout_licey_shell",
+    "phase3_dugout_licey_bench",
+    "phase3_dugout_licey_rails",
+    "dugout_escogido",
+    "phase3_dugout_escogido_shell",
+    "phase3_dugout_escogido_bench",
+    "phase3_dugout_escogido_rails",
+    "phase3_aisle_handrails",
+    "phase3_tier_front_guards",
+    "vomitory_01",
+    "phase3_access_sign_01",
+    "vomitory_02",
+    "phase3_access_sign_02",
+    "vomitory_03",
+    "phase3_access_sign_03",
+    "vomitory_04",
+    "phase3_access_sign_04",
+    "vomitory_05",
+    "phase3_access_sign_05",
+    "vomitory_06",
+    "phase3_access_sign_06",
+    "light_tower_left_field_mesh",
+    "phase3_tower_left_field_footings",
+    "phase3_tower_left_field_lamp_housings",
+    "phase3_tower_left_field_projectors",
+    "light_tower_left_center_mesh",
+    "phase3_tower_left_center_footings",
+    "phase3_tower_left_center_lamp_housings",
+    "phase3_tower_left_center_projectors",
+    "light_tower_right_center_mesh",
+    "phase3_tower_right_center_footings",
+    "phase3_tower_right_center_lamp_housings",
+    "phase3_tower_right_center_projectors",
+    "light_tower_right_field_mesh",
+    "phase3_tower_right_field_footings",
+    "phase3_tower_right_field_lamp_housings",
+    "phase3_tower_right_field_projectors",
+    "light_tower_third_base_mesh",
+    "phase3_tower_third_base_footings",
+    "phase3_tower_third_base_lamp_housings",
+    "phase3_tower_third_base_projectors",
+    "light_tower_first_base_mesh",
+    "phase3_tower_first_base_footings",
+    "phase3_tower_first_base_lamp_housings",
+    "phase3_tower_first_base_projectors"
+  ],
+  "seat_meshes_unchanged": true,
+  "access_portals": 6,
+  "towers": 6,
+  "projectors": 144,
+  "meshes": [
+    {
+      "name": "dugout_licey",
+      "vertices": 72,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_licey_shell",
+      "vertices": 152,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_licey_bench",
+      "vertices": 128,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_licey_rails",
+      "vertices": 224,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "dugout_escogido",
+      "vertices": 72,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_escogido_shell",
+      "vertices": 152,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_escogido_bench",
+      "vertices": 128,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_dugout_escogido_rails",
+      "vertices": 224,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_aisle_handrails",
+      "vertices": 13176,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tier_front_guards",
+      "vertices": 2832,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_01",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_01",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_02",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_02",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_03",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_03",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_04",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_04",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_05",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_05",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "vomitory_06",
+      "vertices": 28,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_access_sign_06",
+      "vertices": 12,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_left_field_mesh",
+      "vertices": 3348,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_field_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_field_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_field_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_left_center_mesh",
+      "vertices": 3564,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_center_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_center_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_left_center_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_right_center_mesh",
+      "vertices": 3564,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_center_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_center_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_center_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_right_field_mesh",
+      "vertices": 3348,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_field_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_field_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_right_field_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_third_base_mesh",
+      "vertices": 3108,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_third_base_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_third_base_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_third_base_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_first_base_mesh",
+      "vertices": 3108,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_first_base_footings",
+      "vertices": 32,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_first_base_lamp_housings",
+      "vertices": 256,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "phase3_tower_first_base_projectors",
+      "vertices": 576,
+      "non_manifold_edges": 0
+    }
+  ]
+}
