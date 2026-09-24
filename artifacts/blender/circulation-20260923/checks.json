@@ -1,0 +1,81 @@
+{
+  "revision": "20260923-circulation",
+  "seat_geometry_unchanged": true,
+  "seat_sha256": "09ab94419f249e4a73c1fba8890b9f201e7abc8d3689d7fe93d340674cd49651",
+  "nosing_count": 812,
+  "rail_runs": 46,
+  "aisle_guard_opening_m": 2.1,
+  "meshes": [
+    {
+      "name": "circulation_step_nosings",
+      "vertices": 9744
+    },
+    {
+      "name": "phase3_aisle_handrails",
+      "vertices": 13408
+    },
+    {
+      "name": "circulation_rail_footplates",
+      "vertices": 6336
+    },
+    {
+      "name": "phase3_tier_front_guards",
+      "vertices": 12832
+    }
+  ],
+  "views": [
+    {
+      "name": "aisle",
+      "seat_id": 834,
+      "sector_id": 11618,
+      "row": "G",
+      "label": "1",
+      "eye": [
+        -25.04515266418457,
+        -55.863067626953125,
+        3.8000001907348633
+      ],
+      "circulation_intersects_sample_ray": {
+        "home": false,
+        "mound": false,
+        "center": false
+      }
+    },
+    {
+      "name": "upper-front",
+      "seat_id": 5936,
+      "sector_id": 11489,
+      "row": "A",
+      "label": "12",
+      "eye": [
+        39.94268035888672,
+        -67.01063537597656,
+        8.055000305175781
+      ],
+      "circulation_intersects_sample_ray": {
+        "home": false,
+        "mound": false,
+        "center": false
+      }
+    },
+    {
+      "name": "upper-back",
+      "seat_id": 6024,
+      "sector_id": 11489,
+      "row": "H",
+      "label": "15",
+      "eye": [
+        49.813758850097656,
+        -76.93854522705078,
+        11.539999961853027
+      ],
+      "circulation_intersects_sample_ray": {
+        "home": false,
+        "mound": false,
+        "center": false
+      }
+    }
+  ],
+  "minimum_eye_clearance_m": 0.39840972423553467,
+  "glb_bytes": 24019888
+}

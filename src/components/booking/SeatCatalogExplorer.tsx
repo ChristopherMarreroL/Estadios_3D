@@ -36,7 +36,7 @@ export function SeatCatalogExplorer() {
   const [seatId, setSeatId] = useState<number | null>(null);
   const [step, setStep] = useState<"sector" | "seat" | "preview">("sector");
   const [overview, setOverview] = useState(true);
-  const reset = 0;
+  const [reset, setReset] = useState(0);
   const [sectorPage, setSectorPage] = useState(0);
   const [occupancy, setOccupancy] = useState(65);
   const [overrides, setOverrides] = useState<OccupancyOverrides>({});
@@ -185,7 +185,7 @@ export function SeatCatalogExplorer() {
         <section className="min-w-0" aria-label="Estadio interactivo">
           <div className="overflow-hidden rounded-xl border border-white/20 bg-[#101f32]">
             <div
-              className="flex items-center justify-between gap-3 p-4 text-sm"
+              className="flex flex-wrap items-center justify-between gap-3 p-4 text-sm"
               aria-live="polite"
             >
               <span>
@@ -194,12 +194,22 @@ export function SeatCatalogExplorer() {
                   : `${sector.name}${selected ? ` · Fila ${selected.row} · Butaca ${selected.label}` : " · Elige una butaca en el plano"}`}
               </span>
               {step === "preview" && (
-                <button
-                  className={controlClass}
-                  onClick={() => setOverview(!overview)}
-                >
-                  {overview ? "Volver a mi butaca" : "Ubicar mi butaca"}
-                </button>
+                <div className="flex flex-wrap gap-2">
+                  {!overview && (
+                    <button
+                      className={controlClass}
+                      onClick={() => setReset((value) => value + 1)}
+                    >
+                      Mirar al terreno
+                    </button>
+                  )}
+                  <button
+                    className={controlClass}
+                    onClick={() => setOverview(!overview)}
+                  >
+                    {overview ? "Volver a mi butaca" : "Ubicar mi butaca"}
+                  </button>
+                </div>
               )}
             </div>
             <div className="relative h-[52svh] min-h-[360px] lg:h-[62svh]">
