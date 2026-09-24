@@ -1,5 +1,5 @@
-import { SeatCatalogExplorer } from "@/components/booking/SeatCatalogExplorer";
+import { TicketMapExperience } from "@/components/booking/TicketMapExperience";
 
 export default function LocalidadesPage() {
-  return <SeatCatalogExplorer />;
+  return <TicketMapExperience />;
 }

@@ -119,7 +119,13 @@ export function simulateSector(
       // Preserve catalog order including descending numbers; direction remains provisional.
       const t =
         (index + 0.1 + (0.8 * (seatIndex + 0.5)) / row.seats.length) / total;
-      const s = alongUsableSpan(start, end, t, groupId !== 2275);
+      let s = alongUsableSpan(start, end, t, groupId !== 2275);
+      // A6 pilot: preserve the sector centre while widening its six-seat rows.
+      // 0.42 m pitch fits between A5/A7 without moving their existing seats.
+      if (groupId === 2287 && sector.id === 11608) {
+        const center = alongUsableSpan(start, end, (index + 0.5) / total, true);
+        s = center + (seatIndex - (row.seats.length - 1) / 2) * 0.42;
+      }
       const position = terracePoint(s, d, z);
       return {
         ...seat,

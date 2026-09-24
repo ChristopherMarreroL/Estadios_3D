@@ -1,5 +1,5 @@
-import { BookingExperience } from "@/components/booking/BookingExperience";
+import { TicketMapExperience } from "@/components/booking/TicketMapExperience";
 
 export default function Home() {
-  return <BookingExperience />;
+  return <TicketMapExperience />;
 }

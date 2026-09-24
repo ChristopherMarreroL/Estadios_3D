@@ -1,0 +1,59 @@
+{
+  "revision": "20260923-open-access",
+  "unrelated_geometry_unchanged": true,
+  "geometry_sha256": "2fb284a420a5d131f84f1d8b7638550f94f40775c7d5a9cc2ad835615343c6fc",
+  "total_seats": 11367,
+  "accesses": 6,
+  "targets_per_seat": 116,
+  "rays_tested": 1318572,
+  "blocked_before": 15393,
+  "blocked_after": 0,
+  "newly_blocked": 0,
+  "minimum_eye_clearance_m": 0.7642097473144531,
+  "scope": "access meshes and their signage only",
+  "views": [
+    {
+      "name": "c13-front",
+      "sector_id": 11489,
+      "seat_id": 5936,
+      "row": "A",
+      "label": "12",
+      "eye": [
+        39.94268035888672,
+        -67.01063537597656,
+        8.055000305175781
+      ],
+      "blocked_before": 0,
+      "blocked_after": 0
+    },
+    {
+      "name": "c13-back",
+      "sector_id": 11489,
+      "seat_id": 6024,
+      "row": "H",
+      "label": "15",
+      "eye": [
+        49.813758850097656,
+        -76.93854522705078,
+        11.539999961853027
+      ],
+      "blocked_before": 8,
+      "blocked_after": 0
+    },
+    {
+      "name": "opposite-back",
+      "sector_id": 11476,
+      "seat_id": 5454,
+      "row": "H",
+      "label": "1",
+      "eye": [
+        -49.79481887817383,
+        -76.95748901367188,
+        11.539999961853027
+      ],
+      "blocked_before": 8,
+      "blocked_after": 0
+    }
+  ],
+  "glb_bytes": 24106196
+}

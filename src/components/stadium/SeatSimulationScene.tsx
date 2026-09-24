@@ -77,8 +77,8 @@ function SeatCamera({
     const direction = new Vector3(...target).sub(camera.position).normalize();
     let yaw = Math.atan2(direction.x, direction.z),
       pitch = Math.asin(direction.y);
-    let dragging = false,
-      lastX = 0,
+    let activePointer: number | null = null;
+    let lastX = 0,
       lastY = 0;
     const aim = () => {
       camera.lookAt(
@@ -102,14 +102,15 @@ function SeatCamera({
     }
     const canvas = gl.domElement;
     const down = (e: PointerEvent) => {
-      if (flight.current) return;
-      dragging = true;
+      if (flight.current || !e.isPrimary || e.button !== 0) return;
+      activePointer = e.pointerId;
+      canvas.focus({ preventScroll: true });
       lastX = e.clientX;
       lastY = e.clientY;
       canvas.setPointerCapture(e.pointerId);
     };
     const move = (e: PointerEvent) => {
-      if (!dragging) return;
+      if (activePointer !== e.pointerId) return;
       yaw -= (e.clientX - lastX) * 0.004;
       pitch = Math.max(
         -1.1,
@@ -119,8 +120,11 @@ function SeatCamera({
       lastY = e.clientY;
       aim();
     };
-    const up = () => {
-      dragging = false;
+    const up = (e: PointerEvent) => {
+      if (activePointer !== e.pointerId) return;
+      activePointer = null;
+      if (canvas.hasPointerCapture(e.pointerId))
+        canvas.releasePointerCapture(e.pointerId);
     };
     const key = (e: KeyboardEvent) => {
       if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key))
@@ -142,12 +146,17 @@ function SeatCamera({
     canvas.addEventListener("pointermove", move);
     canvas.addEventListener("pointerup", up);
     canvas.addEventListener("pointercancel", up);
+    canvas.addEventListener("lostpointercapture", up);
     canvas.addEventListener("keydown", key);
     return () => {
+      flight.current = null;
+      if (activePointer !== null && canvas.hasPointerCapture(activePointer))
+        canvas.releasePointerCapture(activePointer);
       canvas.removeEventListener("pointerdown", down);
       canvas.removeEventListener("pointermove", move);
       canvas.removeEventListener("pointerup", up);
       canvas.removeEventListener("pointercancel", up);
+      canvas.removeEventListener("lostpointercapture", up);
       canvas.removeEventListener("keydown", key);
     };
   }, [
@@ -220,7 +229,7 @@ export function SeatSimulationScene({
     <Canvas
       dpr={[1, 1.5]}
       camera={{ position: [0, 12, -15], fov: 60, near: 0.008, far: 150 }}
-      gl={{ antialias: true }}
+      gl={{ antialias: true, logarithmicDepthBuffer: true }}
       onCreated={({ gl }) => {
         gl.domElement.tabIndex = 0;
         gl.domElement.setAttribute(

@@ -6,7 +6,9 @@ Quisqueya 3D presenta evento, estadio, secciones, filas, asientos y vista aproxi
 
 ## Arquitectura
 
-Los componentes consumen el contrato `TicketingProvider`. La demostración usa `MockTicketingProvider`; un adaptador futuro transformará el contrato oficial de UEPA Tickets a eventos, secciones, asientos, bloqueos y resultados de checkout sin acoplar la escena 3D.
+El recorrido principal de `/` y `/localidades` usa `TicketMapExperience` y `TicketSelectionScene`: vista aérea 3D, entrada a sectores, elección de butacas y vista sentado. Su inventario de demostración está aislado en `src/lib/ticket-inventory.ts` y conserva los identificadores del catálogo y las posiciones de `simulateSector`. No representa existencias ni precios reales.
+
+El contrato `TicketingProvider` y `MockTicketingProvider` permanecen en el proyecto como base de integración, pero todavía no alimentan el nuevo selector. Un adaptador futuro deberá sustituir el inventario de demostración por datos autorizados y conectar validación, bloqueo y checkout. La selección actual solo vive en memoria: no reserva, no cobra y no se transfiere al enlace de venta oficial.
 
 ## Datos mínimos
 

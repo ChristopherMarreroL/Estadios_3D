@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { Color, InstancedMesh, Matrix4, Object3D, Vector3 } from "three";
 import { modelTransform, STADIUM_MODEL_URL } from "@/lib/stadium-model";
@@ -20,9 +20,21 @@ export function SimulatedSpectators({
 }) {
   const { scene } = useGLTF(STADIUM_MODEL_URL);
   const transform = useMemo(() => modelTransform(scene), [scene]);
+  const { camera } = useThree();
+  const placements = useMemo(() => {
+    const target = transform.fromBlender([0, -24, 0]);
+    return seats.map((seat) => {
+      const position = new Vector3(...transform.fromBlender(seat.position));
+      return {
+        position,
+        yaw: Math.atan2(target[0] - position.x, target[2] - position.z),
+      };
+    });
+  }, [seats, transform]);
   const bodies = useRef<InstancedMesh>(null),
     heads = useRef<InstancedMesh>(null);
   const elapsed = useRef(0);
+  const pendingFrame = useRef(0);
   const lastSeats = useRef<SimulatedSeat[] | null>(null);
   const helpers = useMemo(
     () => ({
@@ -39,14 +51,27 @@ export function SimulatedSpectators({
   useFrame((_, delta) => {
     if (!bodies.current || !heads.current) return;
     if (!animate && lastSeats.current === seats) return;
+    const initialize = lastSeats.current !== seats;
+    if (animate) {
+      elapsed.current += Math.min(delta, 0.1);
+      pendingFrame.current += delta;
+      if (!initialize && pendingFrame.current < 1 / 30) return;
+      pendingFrame.current = 0;
+    }
     lastSeats.current = seats;
-    if (animate) elapsed.current += Math.min(delta, 0.05);
     const { dummy, root, matrix, a, b, direction, color } = helpers;
     seats.forEach((seat, index) => {
-      const p = transform.fromBlender(seat.position);
-      const target = transform.fromBlender([0, -24, 0]);
-      root.position.set(...p);
-      root.rotation.set(0, Math.atan2(target[0] - p[0], target[2] - p[2]), 0);
+      const { position, yaw } = placements[index];
+      // Keep every sold seat visible. Update gestures nearby, where they affect
+      // sightlines; distant spectators retain their pose to bound CPU work.
+      if (
+        !initialize &&
+        position.distanceToSquared(camera.position) >
+          (40 * transform.scale) ** 2
+      )
+        return;
+      root.position.copy(position);
+      root.rotation.set(0, yaw, 0);
       root.scale.setScalar(transform.scale);
       root.updateMatrix();
       const phase = (seat.id % 31) * 0.37;
@@ -70,7 +95,8 @@ export function SimulatedSpectators({
         dummy.updateMatrix();
         matrix.multiplyMatrices(root.matrix, dummy.matrix);
         bodies.current!.setMatrixAt(index * PARTS + part, matrix);
-        bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
+        if (initialize)
+          bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
       };
       const limb = (
         part: number,
@@ -89,7 +115,8 @@ export function SimulatedSpectators({
         dummy.updateMatrix();
         matrix.multiplyMatrices(root.matrix, dummy.matrix);
         bodies.current!.setMatrixAt(index * PARTS + part, matrix);
-        bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
+        if (initialize)
+          bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
       };
       box(0, sway, 0.77, 0, 0.34, 0.49, 0.22, shirt);
       box(1, 0, 0.48, 0.11, 0.34, 0.17, 0.36, "#273448");
@@ -122,7 +149,7 @@ export function SimulatedSpectators({
         matrix.multiplyMatrices(root.matrix, dummy.matrix);
         const handIndex = index * 3 + (side < 0 ? 1 : 2);
         heads.current!.setMatrixAt(handIndex, matrix);
-        heads.current!.setColorAt(handIndex, color.set(skin));
+        if (initialize) heads.current!.setColorAt(handIndex, color.set(skin));
       }
       dummy.position.set(sway, 1.13, 0.015);
       dummy.rotation.set(0, 0, 0);
@@ -130,13 +157,13 @@ export function SimulatedSpectators({
       dummy.updateMatrix();
       matrix.multiplyMatrices(root.matrix, dummy.matrix);
       heads.current!.setMatrixAt(index * 3, matrix);
-      heads.current!.setColorAt(index * 3, color.set(skin));
+      if (initialize) heads.current!.setColorAt(index * 3, color.set(skin));
     });
     bodies.current.instanceMatrix.needsUpdate = true;
     heads.current.instanceMatrix.needsUpdate = true;
-    if (bodies.current.instanceColor)
+    if (initialize && bodies.current.instanceColor)
       bodies.current.instanceColor.needsUpdate = true;
-    if (heads.current.instanceColor)
+    if (initialize && heads.current.instanceColor)
       heads.current.instanceColor.needsUpdate = true;
   });
   return (

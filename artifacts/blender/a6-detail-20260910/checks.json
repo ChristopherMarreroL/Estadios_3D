@@ -1,0 +1,12 @@
+{
+  "revision": "20260910-a6-detail",
+  "a6_count": 84,
+  "total_seats": 11367,
+  "width_m": 0.4,
+  "minimum_center_spacing_m": 0.4199957139500407,
+  "origins_match_shared_positions": true,
+  "a6_pitch_m": 0.42,
+  "shared_seat_meshes": 5,
+  "glb_before_bytes": 22885872,
+  "glb_after_bytes": 23167892
+}
