@@ -38,6 +38,42 @@ for (const group of catalog.groups)
     }
   }
 assert.equal(count, 11367);
+// Preferencias and Gradas share one pitch per stand (D11 used to sit at
+// 0.31 m) and keep a visible walkway between neighbouring sectors.
+for (const [id, minPitch] of [
+  [2276, 0.5],
+  [2278, 0.42],
+] as const) {
+  const sectors = [...catalog.groups.find((g) => g.id === id)!.sectors].sort(
+    (a, b) => a.name.localeCompare(b.name, "es", { numeric: true }),
+  );
+  const pitches: number[] = [];
+  const blocks = sectors.map((sector) => simulateSector(id, sector));
+  for (const seats of blocks)
+    for (let i = 1; i < seats.length; i++)
+      if (seats[i].row === seats[i - 1].row)
+        pitches.push(
+          Math.hypot(
+            seats[i].position[0] - seats[i - 1].position[0],
+            seats[i].position[1] - seats[i - 1].position[1],
+          ),
+        );
+  assert(Math.min(...pitches) > minPitch, `Seats too tight in group ${id}`);
+  for (let k = 1; k < blocks.length; k++) {
+    let nearest = Infinity;
+    for (const a of blocks[k - 1])
+      for (const b of blocks[k])
+        if (Math.abs(a.position[2] - b.position[2]) < 0.3)
+          nearest = Math.min(
+            nearest,
+            Math.hypot(
+              a.position[0] - b.position[0],
+              a.position[1] - b.position[1],
+            ),
+          );
+    assert(nearest > 1.1, `No walkway between ${sectors[k].name} and its neighbour`);
+  }
+}
 const group = catalog.groups.find((g) => g.id === 2287)!;
 const a24 = simulateSector(
   group.id,

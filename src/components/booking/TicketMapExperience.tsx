@@ -58,7 +58,7 @@ function SeatPreview({
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [reset, setReset] = useState(0),
-    [crowd, setCrowd] = useState(false);
+    [crowd, setCrowd] = useState(true);
   const reduced = useReducedMotion();
   const spectators = useMemo(() => purchasedSpectators(seat.key), [seat.key]);
   useEffect(() => {
@@ -123,8 +123,8 @@ function SeatPreview({
           </button>
         </div>
         <p>
-          Arrastra para mirar alrededor. Vista aproximada; público en los
-          asientos comprados del inventario de demostración, incluidos otros
+          Arrastra para mirar alrededor. Vista aproximada; el público ocupa
+          los asientos comprados del inventario de demostración, en todos los
           sectores.
         </p>
       </footer>
@@ -223,19 +223,20 @@ export function TicketMapExperience() {
             )}
           </div>
           <div className="ticket-stadium-canvas">
-            <SceneErrorBoundary>
-              <SelectionScene
-                sector={sector}
-                selected={selected}
-                onSector={chooseSector}
-                onSeat={chooseSeat}
-                onHover={setHover}
-                reset={reset}
-                roof={roof}
-                reducedMotion={Boolean(reduced)}
-                paused={Boolean(preview)}
-              />
-            </SceneErrorBoundary>
+            {!preview && (
+              <SceneErrorBoundary>
+                <SelectionScene
+                  sector={sector}
+                  selected={selected}
+                  onSector={chooseSector}
+                  onSeat={chooseSeat}
+                  onHover={setHover}
+                  reset={reset}
+                  roof={roof}
+                  reducedMotion={Boolean(reduced)}
+                />
+              </SceneErrorBoundary>
+            )}
             <div className="ticket-scene-tools">
               <button
                 onClick={() => setReset((n) => n + 1)}

@@ -1,0 +1,99 @@
+{
+  "revision": "20260924-light-towers-near",
+  "seat_meshes_unchanged": true,
+  "removed": [
+    "light_tower_first_base_mesh",
+    "light_tower_third_base_mesh",
+    "phase3_tower_first_base_footings",
+    "phase3_tower_first_base_lamp_housings",
+    "phase3_tower_first_base_projectors",
+    "phase3_tower_third_base_footings",
+    "phase3_tower_third_base_lamp_housings",
+    "phase3_tower_third_base_projectors"
+  ],
+  "relocated": {
+    "third_base": {
+      "from": [
+        -102.0,
+        -58.0,
+        38.0
+      ],
+      "to": [
+        -92.0,
+        -48.0,
+        38.0
+      ]
+    },
+    "first_base": {
+      "from": [
+        102.0,
+        -58.0,
+        38.0
+      ],
+      "to": [
+        92.0,
+        -48.0,
+        38.0
+      ]
+    }
+  },
+  "aim": [
+    0.0,
+    -24.0,
+    1.0
+  ],
+  "a11_k_distance": {
+    "before": {
+      "third_base": 65.9,
+      "first_base": 139.32
+    },
+    "after": {
+      "third_base": 55.07,
+      "first_base": 128.93
+    }
+  },
+  "clearance": [
+    {
+      "tower": "third_base",
+      "xy": [
+        -92.0,
+        -48.0
+      ],
+      "height": 38.0,
+      "nearest_seat": 9981,
+      "nearest_position": [
+        -82.51,
+        -41.7,
+        10.6
+      ],
+      "clearance_m": 11.39
+    },
+    {
+      "tower": "first_base",
+      "xy": [
+        92.0,
+        -48.0
+      ],
+      "height": 38.0,
+      "nearest_seat": 10267,
+      "nearest_position": [
+        82.36,
+        -41.93,
+        10.6
+      ],
+      "clearance_m": 11.39
+    }
+  ],
+  "meshes": [
+    {
+      "name": "light_tower_third_base_mesh",
+      "vertices": 3348,
+      "non_manifold_edges": 0
+    },
+    {
+      "name": "light_tower_first_base_mesh",
+      "vertices": 3348,
+      "non_manifold_edges": 0
+    }
+  ]
+}
