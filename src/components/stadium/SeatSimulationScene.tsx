@@ -227,9 +227,15 @@ export function SeatSimulationScene({
 }) {
   return (
     <Canvas
-      dpr={[1, 1.5]}
+      dpr={[1, 1.25]}
+      frameloop="always"
+      performance={{ min: 0.6, debounce: 200 }}
       camera={{ position: [0, 12, -15], fov: 60, near: 0.008, far: 150 }}
-      gl={{ antialias: true, logarithmicDepthBuffer: true }}
+      gl={{
+        antialias: spectators.length < 2500,
+        logarithmicDepthBuffer: true,
+        powerPreference: "high-performance",
+      }}
       onCreated={({ gl }) => {
         gl.domElement.tabIndex = 0;
         gl.domElement.setAttribute(
