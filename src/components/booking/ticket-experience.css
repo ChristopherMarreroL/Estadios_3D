@@ -11,7 +11,8 @@
   padding: 0 36px;
 }
 .ticket-experience button,
-.ticket-preview button {
+.ticket-preview button,
+.ticket-confirm button {
   cursor: pointer;
   font: inherit;
 }
@@ -19,7 +20,8 @@
   cursor: not-allowed;
 }
 .ticket-experience :focus-visible,
-.ticket-preview :focus-visible {
+.ticket-preview :focus-visible,
+.ticket-confirm :focus-visible {
   outline: 3px solid #185dac;
   outline-offset: 3px;
 }
@@ -503,6 +505,91 @@
   align-items: center;
   justify-content: center;
   padding: 6px;
+}
+.ticket-icon.ticket-remove {
+  color: #c63e49;
+  background: #fdecee;
+  border-radius: 6px;
+}
+.ticket-icon.ticket-remove:hover {
+  color: #9d2430;
+  background: #f8d0d4;
+}
+.ticket-confirm {
+  width: min(420px, 92vw);
+  margin: auto;
+  padding: 28px 26px 22px;
+  border: 0;
+  border-radius: 14px;
+  color: #132e46;
+  background: #f6f8fb;
+  box-shadow: 0 25px 80px #0006;
+}
+.ticket-confirm::backdrop {
+  background: #071323b8;
+  backdrop-filter: blur(5px);
+}
+.ticket-confirm-mark {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e7f0fb;
+  color: #185dac;
+  margin-bottom: 14px;
+}
+.ticket-confirm-mark.is-remove {
+  background: #fdecee;
+  color: #c63e49;
+}
+.ticket-confirm h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.4px;
+}
+.ticket-confirm p {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: #586e7f;
+}
+.ticket-confirm p strong {
+  color: #132e46;
+  font-size: 16px;
+  font-weight: 650;
+}
+.ticket-confirm p span {
+  font-variant-numeric: tabular-nums;
+  color: #132e46;
+}
+.ticket-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 22px;
+}
+.ticket-confirm-actions button {
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #c5d2dc;
+  background: white;
+  color: #132e46;
+}
+.ticket-confirm-yes {
+  background: #185dac !important;
+  border-color: #185dac !important;
+  color: white !important;
+}
+.ticket-confirm-danger {
+  background: #c63e49 !important;
+  border-color: #c63e49 !important;
+  color: white !important;
 }
 .ticket-preview-button {
   display: flex;
