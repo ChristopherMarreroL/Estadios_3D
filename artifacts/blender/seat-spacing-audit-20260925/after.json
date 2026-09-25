@@ -1,0 +1,4690 @@
+{
+  "targetPitch": 0.52,
+  "count": 11367,
+  "unmapped": [
+    {
+      "id": 2279,
+      "name": "VIP ESCOGIDO",
+      "sectors": 11
+    },
+    {
+      "id": 2281,
+      "name": "VIP LICEY",
+      "sectors": 9
+    },
+    {
+      "id": 2282,
+      "name": "BALCON ESCOGIDO",
+      "sectors": 5
+    },
+    {
+      "id": 2283,
+      "name": "BALCON LICEY",
+      "sectors": 5
+    },
+    {
+      "id": 2284,
+      "name": "PARQUEO",
+      "sectors": 1
+    },
+    {
+      "id": 2285,
+      "name": "PARQUEO SPECIAL GUEST",
+      "sectors": 1
+    },
+    {
+      "id": 2286,
+      "name": "FAN CLUB PRESIDENTE",
+      "sectors": 1
+    },
+    {
+      "id": 2812,
+      "name": "BULLPEN LICEY",
+      "sectors": 3
+    },
+    {
+      "id": 2917,
+      "name": "GRAN STAND DE PIE",
+      "sectors": 1
+    }
+  ],
+  "summary": [
+    {
+      "group": "PALCO CORPORATIVO",
+      "id": 2275,
+      "count": 116,
+      "minPitch": 0.5465623307143088,
+      "tightPairs": 0
+    },
+    {
+      "group": "PREFERENCIAS",
+      "id": 2276,
+      "count": 1594,
+      "minPitch": 0.5327519253741636,
+      "tightPairs": 0
+    },
+    {
+      "group": "GRADAS",
+      "id": 2278,
+      "count": 3015,
+      "minPitch": 0.530387618524058,
+      "tightPairs": 0
+    },
+    {
+      "group": "PALCO A",
+      "id": 2287,
+      "count": 2711,
+      "minPitch": 0.545447394364957,
+      "tightPairs": 0
+    },
+    {
+      "group": "PALCO AA",
+      "id": 2288,
+      "count": 2571,
+      "minPitch": 0.6170625345457798,
+      "tightPairs": 0
+    },
+    {
+      "group": "PALCO AAA",
+      "id": 2289,
+      "count": 1360,
+      "minPitch": 0.5576721904706538,
+      "tightPairs": 0
+    }
+  ],
+  "sectors": [
+    {
+      "group": 2275,
+      "sector": "PC 1",
+      "id": 11431,
+      "count": 8,
+      "minPitch": 0.5465623307143249,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143249
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143322
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5465623307143331
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 2",
+      "id": 11434,
+      "count": 10,
+      "minPitch": 0.546562330714323,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.546562330714323
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.546562330714325
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5465623307143266
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 3",
+      "id": 11436,
+      "count": 10,
+      "minPitch": 0.5465623307143257,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143257
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5465623307143274
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5465623307143294
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 4",
+      "id": 11438,
+      "count": 10,
+      "minPitch": 0.5465623307143259,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143259
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5465623307143272
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143274
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 5",
+      "id": 11440,
+      "count": 6,
+      "minPitch": 0.5465623307143231,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143231
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143279
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671385999
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 6",
+      "id": 11442,
+      "count": 6,
+      "minPitch": 0.5465623307143224,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143224
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143262
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5706592671386018
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 7",
+      "id": 11444,
+      "count": 6,
+      "minPitch": 0.5465623307143209,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143209
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143437
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671386004
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 8",
+      "id": 11446,
+      "count": 6,
+      "minPitch": 0.546562330714327,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.546562330714327
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143358
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671386062
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 9",
+      "id": 11448,
+      "count": 6,
+      "minPitch": 0.5465623307143321,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143321
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143324
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5706592671386117
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 10",
+      "id": 11450,
+      "count": 6,
+      "minPitch": 0.5465623307143261,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143261
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143272
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5706592671386059
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 11",
+      "id": 11452,
+      "count": 6,
+      "minPitch": 0.5465623307143088,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143088
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143451
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.570659267138589
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 12",
+      "id": 11453,
+      "count": 6,
+      "minPitch": 0.546562330714334,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.546562330714334
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143447
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671386126
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 13",
+      "id": 11455,
+      "count": 6,
+      "minPitch": 0.5465623307143201,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143201
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143407
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.570659267138598
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 14",
+      "id": 11457,
+      "count": 6,
+      "minPitch": 0.5465623307143268,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143268
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143309
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671386002
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 15",
+      "id": 11459,
+      "count": 6,
+      "minPitch": 0.5465623307143255,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143255
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143348
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5706592671386054
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 16",
+      "id": 11461,
+      "count": 6,
+      "minPitch": 0.5465623307143196,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143196
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143234
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5706592671385965
+        }
+      ]
+    },
+    {
+      "group": 2275,
+      "sector": "PC 17",
+      "id": 11463,
+      "count": 6,
+      "minPitch": 0.5465623307143245,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5465623307143245
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5465623307143296
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "3",
+          "metres": 0.570659267138602
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C1",
+      "id": 11466,
+      "count": 120,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "12",
+          "to": "11",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "B",
+          "from": "12",
+          "to": "11",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "C",
+          "from": "12",
+          "to": "11",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C2",
+      "id": 11468,
+      "count": 86,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "8",
+          "to": "7",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C3",
+      "id": 11470,
+      "count": 143,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "14",
+          "to": "13",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "C",
+          "from": "12",
+          "to": "11",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "D",
+          "from": "17",
+          "to": "16",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C4",
+      "id": 11472,
+      "count": 10,
+      "minPitch": 0.6008505467800678,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6008505467800678
+        },
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6008505467800678
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6008505467800678
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C5",
+      "id": 11474,
+      "count": 88,
+      "minPitch": 0.5327519253741771,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5327519253741771
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "6",
+          "metres": 0.5327519253741773
+        },
+        {
+          "row": "A",
+          "from": "8",
+          "to": "9",
+          "metres": 0.5327519253741786
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C6",
+      "id": 11476,
+      "count": 119,
+      "minPitch": 0.5327519253741747,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "11",
+          "to": "10",
+          "metres": 0.5327519253741747
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5327519253741801
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5327519253741807
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C7",
+      "id": 11478,
+      "count": 111,
+      "minPitch": 0.5327519253741769,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5327519253741769
+        },
+        {
+          "row": "A",
+          "from": "10",
+          "to": "9",
+          "metres": 0.5327519253741789
+        },
+        {
+          "row": "A",
+          "from": "14",
+          "to": "13",
+          "metres": 0.5327519253741828
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C8",
+      "id": 11480,
+      "count": 12,
+      "minPitch": 0.5647971539681126,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5647971539681126
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5647971539681315
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5647971539681335
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C9",
+      "id": 11482,
+      "count": 109,
+      "minPitch": 0.5327519253741705,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5327519253741705
+        },
+        {
+          "row": "A",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5327519253741804
+        },
+        {
+          "row": "A",
+          "from": "9",
+          "to": "10",
+          "metres": 0.5327519253741811
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C10",
+      "id": 11483,
+      "count": 109,
+      "minPitch": 0.5327519253741689,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "10",
+          "to": "11",
+          "metres": 0.5327519253741689
+        },
+        {
+          "row": "A",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5327519253741783
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5327519253741799
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C11",
+      "id": 11485,
+      "count": 11,
+      "minPitch": 0.5647971539681038,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5647971539681038
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5647971539681242
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5647971539681421
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C12",
+      "id": 11488,
+      "count": 125,
+      "minPitch": 0.5327519253741655,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "12",
+          "to": "11",
+          "metres": 0.5327519253741655
+        },
+        {
+          "row": "A",
+          "from": "8",
+          "to": "7",
+          "metres": 0.5327519253741696
+        },
+        {
+          "row": "A",
+          "from": "15",
+          "to": "14",
+          "metres": 0.5327519253741734
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C13",
+      "id": 11489,
+      "count": 103,
+      "minPitch": 0.5327519253741636,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "7",
+          "to": "6",
+          "metres": 0.5327519253741636
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5327519253741733
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5327519253741778
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C14",
+      "id": 11491,
+      "count": 90,
+      "minPitch": 0.5327519253741717,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5327519253741717
+        },
+        {
+          "row": "A",
+          "from": "7",
+          "to": "6",
+          "metres": 0.5327519253741732
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5327519253741773
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C15",
+      "id": 11493,
+      "count": 11,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "2",
+          "to": "3",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "H",
+          "from": "4",
+          "to": "5",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "5",
+          "metres": 0.6008505467800678
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C16",
+      "id": 11495,
+      "count": 141,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "16",
+          "to": "15",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "15",
+          "to": "14",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "13",
+          "to": "12",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C17",
+      "id": 11498,
+      "count": 86,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "14",
+          "to": "13",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "9",
+          "to": "8",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2276,
+      "sector": "PREFERENCIA - C18",
+      "id": 11500,
+      "count": 120,
+      "minPitch": 0.6008505467800629,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "12",
+          "to": "11",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "8",
+          "to": "7",
+          "metres": 0.6008505467800629
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6008505467800629
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D1",
+      "id": 11502,
+      "count": 54,
+      "minPitch": 0.5446992427992995,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "J",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5446992427992995
+        },
+        {
+          "row": "J",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5446992427992995
+        },
+        {
+          "row": "K",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5446992427992995
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D2",
+      "id": 11504,
+      "count": 170,
+      "minPitch": 0.541638713649745,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "2",
+          "to": "1",
+          "metres": 0.541638713649745
+        },
+        {
+          "row": "N",
+          "from": "2",
+          "to": "1",
+          "metres": 0.541638713649745
+        },
+        {
+          "row": "P",
+          "from": "2",
+          "to": "1",
+          "metres": 0.541638713649745
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D3",
+      "id": 11506,
+      "count": 70,
+      "minPitch": 0.5446992427992667,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "N",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5446992427992667
+        },
+        {
+          "row": "E",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5446992427992727
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5446992427992727
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D4",
+      "id": 11508,
+      "count": 70,
+      "minPitch": 0.5446992427992906,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5446992427992906
+        },
+        {
+          "row": "M",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5446992427992906
+        },
+        {
+          "row": "N",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5446992427992906
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D5",
+      "id": 11510,
+      "count": 161,
+      "minPitch": 0.5446992427992727,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5446992427992727
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5446992427992786
+        },
+        {
+          "row": "C",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5446992427992786
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D6",
+      "id": 11512,
+      "count": 165,
+      "minPitch": 0.5446992427992846,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992846
+        },
+        {
+          "row": "E",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992846
+        },
+        {
+          "row": "F",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992846
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D7",
+      "id": 11514,
+      "count": 54,
+      "minPitch": 0.5446992427993103,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "J",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5446992427993103
+        },
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5446992427993179
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5446992427993179
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D8",
+      "id": 11516,
+      "count": 182,
+      "minPitch": 0.5446992427992727,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992727
+        },
+        {
+          "row": "A",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992846
+        },
+        {
+          "row": "C",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992846
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D9",
+      "id": 11518,
+      "count": 168,
+      "minPitch": 0.5446992427992727,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "9",
+          "to": "8",
+          "metres": 0.5446992427992727
+        },
+        {
+          "row": "F",
+          "from": "9",
+          "to": "8",
+          "metres": 0.5446992427992727
+        },
+        {
+          "row": "P",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5446992427992727
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D10",
+      "id": 11520,
+      "count": 168,
+      "minPitch": 0.5446992427992906,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992906
+        },
+        {
+          "row": "N",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992906
+        },
+        {
+          "row": "P",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5446992427992906
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D11",
+      "id": 11522,
+      "count": 182,
+      "minPitch": 0.5446992427992429,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992429
+        },
+        {
+          "row": "P",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992429
+        },
+        {
+          "row": "A",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5446992427992547
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D12",
+      "id": 11524,
+      "count": 54,
+      "minPitch": 0.5446992427992667,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5446992427992667
+        },
+        {
+          "row": "P",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5446992427992667
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5446992427992667
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D13",
+      "id": 11526,
+      "count": 54,
+      "minPitch": 0.533209268039315,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.533209268039315
+        },
+        {
+          "row": "H",
+          "from": "5",
+          "to": "4",
+          "metres": 0.533209268039315
+        },
+        {
+          "row": "J",
+          "from": "5",
+          "to": "4",
+          "metres": 0.533209268039315
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D14",
+      "id": 11528,
+      "count": 182,
+      "minPitch": 0.5332092680393108,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5332092680393108
+        },
+        {
+          "row": "J",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5332092680393108
+        },
+        {
+          "row": "K",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5332092680393108
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D15",
+      "id": 11530,
+      "count": 168,
+      "minPitch": 0.5332092680393211,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5332092680393211
+        },
+        {
+          "row": "C",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5332092680393211
+        },
+        {
+          "row": "D",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5332092680393211
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D16",
+      "id": 11532,
+      "count": 168,
+      "minPitch": 0.5332092680392972,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5332092680392972
+        },
+        {
+          "row": "K",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5332092680392972
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5332092680393014
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D17",
+      "id": 11534,
+      "count": 182,
+      "minPitch": 0.5332092680392913,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "9",
+          "to": "10",
+          "metres": 0.5332092680392913
+        },
+        {
+          "row": "F",
+          "from": "9",
+          "to": "10",
+          "metres": 0.5332092680392913
+        },
+        {
+          "row": "A",
+          "from": "9",
+          "to": "10",
+          "metres": 0.5332092680392954
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D18",
+      "id": 11536,
+      "count": 54,
+      "minPitch": 0.5332092680393014,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "P",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5332092680393014
+        },
+        {
+          "row": "F",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5332092680393014
+        },
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.533209268039303
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D19",
+      "id": 11538,
+      "count": 168,
+      "minPitch": 0.5332092680392715,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "N",
+          "from": "11",
+          "to": "12",
+          "metres": 0.5332092680392715
+        },
+        {
+          "row": "A",
+          "from": "10",
+          "to": "11",
+          "metres": 0.5332092680392757
+        },
+        {
+          "row": "C",
+          "from": "10",
+          "to": "11",
+          "metres": 0.5332092680392775
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D20",
+      "id": 11540,
+      "count": 160,
+      "minPitch": 0.5332092680392775,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "P",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5332092680392775
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5332092680392895
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5332092680392895
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D21",
+      "id": 11542,
+      "count": 140,
+      "minPitch": 0.5332092680393211,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5332092680393211
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5332092680393211
+        },
+        {
+          "row": "H",
+          "from": "4",
+          "to": "5",
+          "metres": 0.5332092680393211
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D22",
+      "id": 11544,
+      "count": 187,
+      "minPitch": 0.530387618524058,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "3",
+          "to": "4",
+          "metres": 0.530387618524058
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5303876185240637
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5303876185240692
+        }
+      ]
+    },
+    {
+      "group": 2278,
+      "sector": "GRADAS - D23",
+      "id": 11546,
+      "count": 54,
+      "minPitch": 0.5332092680393034,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "J",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5332092680393034
+        },
+        {
+          "row": "K",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5332092680393034
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5332092680393135
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A1",
+      "id": 11603,
+      "count": 36,
+      "minPitch": 0.548477987235518,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.548477987235518
+        },
+        {
+          "row": "F",
+          "from": "2",
+          "to": "3",
+          "metres": 0.548477987235518
+        },
+        {
+          "row": "H",
+          "from": "2",
+          "to": "3",
+          "metres": 0.548477987235518
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A2",
+      "id": 11604,
+      "count": 78,
+      "minPitch": 0.548477987235518,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.548477987235518
+        },
+        {
+          "row": "C",
+          "from": "6",
+          "to": "5",
+          "metres": 0.548477987235518
+        },
+        {
+          "row": "C",
+          "from": "3",
+          "to": "2",
+          "metres": 0.548477987235518
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A3",
+      "id": 11605,
+      "count": 78,
+      "minPitch": 0.548477987235512,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.548477987235512
+        },
+        {
+          "row": "B",
+          "from": "5",
+          "to": "4",
+          "metres": 0.548477987235512
+        },
+        {
+          "row": "C",
+          "from": "5",
+          "to": "4",
+          "metres": 0.548477987235512
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A4",
+      "id": 11606,
+      "count": 84,
+      "minPitch": 0.5484779872355043,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5484779872355043
+        },
+        {
+          "row": "E",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5484779872355082
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.548477987235512
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A5",
+      "id": 11607,
+      "count": 84,
+      "minPitch": 0.548477987235512,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235512
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235512
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235512
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A6",
+      "id": 11608,
+      "count": 84,
+      "minPitch": 0.545447394364957,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "4",
+          "to": "3",
+          "metres": 0.545447394364957
+        },
+        {
+          "row": "H",
+          "from": "4",
+          "to": "3",
+          "metres": 0.545447394364957
+        },
+        {
+          "row": "F",
+          "from": "4",
+          "to": "3",
+          "metres": 0.545447394364958
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A7",
+      "id": 11609,
+      "count": 84,
+      "minPitch": 0.5484779872355141,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "7",
+          "to": "6",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "M",
+          "from": "7",
+          "to": "6",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "A",
+          "from": "7",
+          "to": "6",
+          "metres": 0.5484779872355166
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A8",
+      "id": 11610,
+      "count": 84,
+      "minPitch": 0.548477987235504,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "4",
+          "to": "3",
+          "metres": 0.548477987235504
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.548477987235509
+        },
+        {
+          "row": "C",
+          "from": "4",
+          "to": "3",
+          "metres": 0.548477987235509
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A9",
+      "id": 11611,
+      "count": 63,
+      "minPitch": 0.5484779872355141,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "F",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355141
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A10",
+      "id": 11612,
+      "count": 27,
+      "minPitch": 0.5484779872355241,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A11",
+      "id": 11613,
+      "count": 27,
+      "minPitch": 0.5484779872355241,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "L",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355291
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A12",
+      "id": 11614,
+      "count": 27,
+      "minPitch": 0.5484779872355241,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355241
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A13",
+      "id": 11615,
+      "count": 27,
+      "minPitch": 0.548477987235519,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235519
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235519
+        },
+        {
+          "row": "H",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235519
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A14",
+      "id": 11616,
+      "count": 36,
+      "minPitch": 0.5484779872355141,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235519
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.548477987235519
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A15",
+      "id": 11617,
+      "count": 50,
+      "minPitch": 0.5484779872355291,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872355291
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872355291
+        },
+        {
+          "row": "G",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872355291
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A16",
+      "id": 11618,
+      "count": 46,
+      "minPitch": 0.5484779872355241,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "C",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A17",
+      "id": 11619,
+      "count": 50,
+      "minPitch": 0.5484779872355291,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5484779872355291
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5484779872355315
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5484779872355315
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A18",
+      "id": 11620,
+      "count": 45,
+      "minPitch": 0.5484779872355241,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        },
+        {
+          "row": "C",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872355241
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A19",
+      "id": 11621,
+      "count": 51,
+      "minPitch": 0.545477346096042,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.545477346096042
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5454773460960579
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "4",
+          "metres": 0.573399404031493
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A20",
+      "id": 11622,
+      "count": 44,
+      "minPitch": 0.5454773460960446,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5454773460960446
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460960551
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5733994040314934
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A21",
+      "id": 11623,
+      "count": 50,
+      "minPitch": 0.5454773460960415,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960415
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5454773460960592
+        },
+        {
+          "row": "B",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5733994040314936
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A22",
+      "id": 11624,
+      "count": 45,
+      "minPitch": 0.5454773460959865,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460959865
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5454773460960405
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5733994040314315
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A23",
+      "id": 11625,
+      "count": 53,
+      "minPitch": 0.5454773460960476,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5454773460960476
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960707
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.545477346096086
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A24",
+      "id": 11626,
+      "count": 45,
+      "minPitch": 0.5454773460960723,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460960723
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5454773460960842
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5733994040315219
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A25",
+      "id": 11627,
+      "count": 52,
+      "minPitch": 0.5454773460960726,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5454773460960726
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960729
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5454773460960783
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A26",
+      "id": 11628,
+      "count": 46,
+      "minPitch": 0.5454773460960785,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460960785
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5454773460960795
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5733994040315271
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A27",
+      "id": 11629,
+      "count": 56,
+      "minPitch": 0.545477346096072,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.545477346096072
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960929
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5454773460961015
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A28",
+      "id": 11630,
+      "count": 52,
+      "minPitch": 0.5454773460960435,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5454773460960435
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460960464
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5454773460960505
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A29",
+      "id": 11631,
+      "count": 57,
+      "minPitch": 0.5454773460960176,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5454773460960176
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5454773460960192
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960419
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A30",
+      "id": 11632,
+      "count": 47,
+      "minPitch": 0.54547734609602,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.54547734609602
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5454773460960325
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5733994040314638
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A31",
+      "id": 11633,
+      "count": 56,
+      "minPitch": 0.5454773460960203,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "3",
+          "metres": 0.5454773460960203
+        },
+        {
+          "row": "A",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5454773460960458
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5454773460960476
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A32",
+      "id": 11634,
+      "count": 56,
+      "minPitch": 0.5484779872355291,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355291
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355291
+        },
+        {
+          "row": "H",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872355291
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A33",
+      "id": 11635,
+      "count": 47,
+      "minPitch": 0.5484779872354788,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "J",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872354788
+        },
+        {
+          "row": "K",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872354788
+        },
+        {
+          "row": "L",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5484779872354788
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A34",
+      "id": 11636,
+      "count": 49,
+      "minPitch": 0.5484779872354764,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354764
+        },
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354764
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354764
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A35",
+      "id": 11637,
+      "count": 38,
+      "minPitch": 0.5484779872354538,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354538
+        },
+        {
+          "row": "H",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354538
+        },
+        {
+          "row": "K",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354538
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A36",
+      "id": 11638,
+      "count": 27,
+      "minPitch": 0.5484779872354739,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354739
+        },
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354739
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354788
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A37",
+      "id": 11639,
+      "count": 27,
+      "minPitch": 0.5484779872354688,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354688
+        },
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354688
+        },
+        {
+          "row": "H",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354688
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A38",
+      "id": 11640,
+      "count": 27,
+      "minPitch": 0.5484779872354739,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354739
+        },
+        {
+          "row": "J",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354739
+        },
+        {
+          "row": "L",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5484779872354739
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A39",
+      "id": 11641,
+      "count": 27,
+      "minPitch": 0.5484779872354839,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354839
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354989
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354989
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A40",
+      "id": 11642,
+      "count": 63,
+      "minPitch": 0.5484779872354638,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872354638
+        },
+        {
+          "row": "E",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872354638
+        },
+        {
+          "row": "F",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872354638
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A41",
+      "id": 11643,
+      "count": 91,
+      "minPitch": 0.5484779872355141,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "H",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872355141
+        },
+        {
+          "row": "J",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5484779872355141
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A42",
+      "id": 11644,
+      "count": 91,
+      "minPitch": 0.548477987235504,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "6",
+          "to": "5",
+          "metres": 0.548477987235504
+        },
+        {
+          "row": "N",
+          "from": "6",
+          "to": "5",
+          "metres": 0.548477987235504
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.548477987235509
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A43",
+      "id": 11645,
+      "count": 84,
+      "minPitch": 0.5484779872354839,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5484779872354839
+        },
+        {
+          "row": "B",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5484779872354839
+        },
+        {
+          "row": "C",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5484779872354839
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A44",
+      "id": 11646,
+      "count": 84,
+      "minPitch": 0.5484779872354767,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354767
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354788
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354788
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A45",
+      "id": 11647,
+      "count": 84,
+      "minPitch": 0.5484779872354985,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354985
+        },
+        {
+          "row": "C",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354985
+        },
+        {
+          "row": "E",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354985
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A46",
+      "id": 11648,
+      "count": 84,
+      "minPitch": 0.5484779872354746,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354746
+        },
+        {
+          "row": "C",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354767
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354767
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A47",
+      "id": 11649,
+      "count": 84,
+      "minPitch": 0.5484779872354532,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "M",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354532
+        },
+        {
+          "row": "P",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354532
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5484779872354569
+        }
+      ]
+    },
+    {
+      "group": 2287,
+      "sector": "PALCO - A48",
+      "id": 11650,
+      "count": 84,
+      "minPitch": 0.5484779872354609,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354609
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354609
+        },
+        {
+          "row": "J",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5484779872354609
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA11",
+      "id": 11651,
+      "count": 30,
+      "minPitch": 0.6204977027400865,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "J",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "L",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400942
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA12",
+      "id": 11652,
+      "count": 66,
+      "minPitch": 0.6204977027400865,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "B",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "D",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400865
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA13",
+      "id": 11653,
+      "count": 77,
+      "minPitch": 0.6204977027400924,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "H",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400924
+        },
+        {
+          "row": "J",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400924
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400984
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA14",
+      "id": 11654,
+      "count": 77,
+      "minPitch": 0.6204977027401002,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027401002
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027401023
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.620497702740104
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA15",
+      "id": 11655,
+      "count": 66,
+      "minPitch": 0.6170625345457798,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6170625345457798
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6170625345457842
+        },
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6170625345457842
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA16",
+      "id": 11656,
+      "count": 65,
+      "minPitch": 0.6204977027400848,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "C",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400947
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA17",
+      "id": 11657,
+      "count": 71,
+      "minPitch": 0.6204977027400848,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400946
+        },
+        {
+          "row": "F",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400946
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA18",
+      "id": 11658,
+      "count": 30,
+      "minPitch": 0.6204977027400947,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "M",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "J",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400997
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA19",
+      "id": 11659,
+      "count": 58,
+      "minPitch": 0.6204977027400747,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400747
+        },
+        {
+          "row": "E",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400796
+        },
+        {
+          "row": "F",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400796
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA20",
+      "id": 11660,
+      "count": 57,
+      "minPitch": 0.6204977027400848,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "D",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "B",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400898
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA21",
+      "id": 11661,
+      "count": 76,
+      "minPitch": 0.6204977027400947,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "D",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "H",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400947
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA22",
+      "id": 11662,
+      "count": 76,
+      "minPitch": 0.6204977027401049,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027401049
+        },
+        {
+          "row": "H",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027401049
+        },
+        {
+          "row": "J",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027401049
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA23",
+      "id": 11663,
+      "count": 81,
+      "minPitch": 0.6204977027400747,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400747
+        },
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400747
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400796
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA24",
+      "id": 11664,
+      "count": 90,
+      "minPitch": 0.6195120642553663,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6195120642553663
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642553676
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642553679
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA25",
+      "id": 11665,
+      "count": 30,
+      "minPitch": 0.6312715684949006,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6312715684949006
+        },
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6312715684949033
+        },
+        {
+          "row": "G",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6312715684949186
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA26",
+      "id": 11666,
+      "count": 83,
+      "minPitch": 0.6195120642553744,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6195120642553744
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6195120642553936
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.619512064255405
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA27",
+      "id": 11667,
+      "count": 83,
+      "minPitch": 0.6195120642554474,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642554474
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6195120642554475
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642554524
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA28",
+      "id": 11668,
+      "count": 83,
+      "minPitch": 0.6195120642553885,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6195120642553885
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642553993
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642554218
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA29",
+      "id": 11669,
+      "count": 83,
+      "minPitch": 0.6195120642554102,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642554102
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6195120642554202
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6195120642554205
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA30",
+      "id": 11670,
+      "count": 84,
+      "minPitch": 0.619512064255392,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.619512064255392
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642554015
+        },
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.619512064255412
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA31",
+      "id": 11671,
+      "count": 84,
+      "minPitch": 0.6195120642553928,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6195120642553928
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6195120642554138
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642554207
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA32",
+      "id": 11672,
+      "count": 84,
+      "minPitch": 0.6195120642553372,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6195120642553372
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642553555
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6195120642553656
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA33",
+      "id": 11673,
+      "count": 84,
+      "minPitch": 0.6195120642553082,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6195120642553082
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6195120642553251
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642553288
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA34",
+      "id": 11674,
+      "count": 30,
+      "minPitch": 0.6312715684948518,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6312715684948518
+        },
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.631271568494859
+        },
+        {
+          "row": "G",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6312715684948753
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA35",
+      "id": 11675,
+      "count": 90,
+      "minPitch": 0.6195120642553278,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6195120642553278
+        },
+        {
+          "row": "A",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6195120642553369
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6195120642553438
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA36",
+      "id": 11676,
+      "count": 81,
+      "minPitch": 0.6204977027400647,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400647
+        },
+        {
+          "row": "B",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400647
+        },
+        {
+          "row": "C",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400647
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA37",
+      "id": 11677,
+      "count": 76,
+      "minPitch": 0.6204977027400947,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "H",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400947
+        },
+        {
+          "row": "J",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400947
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA38",
+      "id": 11678,
+      "count": 76,
+      "minPitch": 0.6204977027400546,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "H",
+          "from": "7",
+          "to": "6",
+          "metres": 0.6204977027400546
+        },
+        {
+          "row": "J",
+          "from": "7",
+          "to": "6",
+          "metres": 0.6204977027400546
+        },
+        {
+          "row": "K",
+          "from": "7",
+          "to": "6",
+          "metres": 0.6204977027400546
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA39",
+      "id": 11679,
+      "count": 59,
+      "minPitch": 0.6204977027400345,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400345
+        },
+        {
+          "row": "B",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "C",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA40",
+      "id": 11680,
+      "count": 59,
+      "minPitch": 0.6204977027400546,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400546
+        },
+        {
+          "row": "E",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400596
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400596
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA41",
+      "id": 11681,
+      "count": 30,
+      "minPitch": 0.6204977027400848,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "H",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        },
+        {
+          "row": "J",
+          "from": "3",
+          "to": "2",
+          "metres": 0.6204977027400848
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA42",
+      "id": 11682,
+      "count": 71,
+      "minPitch": 0.6204977027400345,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400345
+        },
+        {
+          "row": "D",
+          "from": "4",
+          "to": "3",
+          "metres": 0.6204977027400345
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400345
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA43",
+      "id": 11683,
+      "count": 65,
+      "minPitch": 0.6204977027400697,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400697
+        },
+        {
+          "row": "C",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400747
+        },
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400747
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA44",
+      "id": 11684,
+      "count": 66,
+      "minPitch": 0.617062534545814,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "5",
+          "to": "4",
+          "metres": 0.617062534545814
+        },
+        {
+          "row": "F",
+          "from": "5",
+          "to": "4",
+          "metres": 0.617062534545814
+        },
+        {
+          "row": "J",
+          "from": "5",
+          "to": "4",
+          "metres": 0.617062534545814
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA45",
+      "id": 11685,
+      "count": 77,
+      "minPitch": 0.6204977027400865,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "F",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400865
+        },
+        {
+          "row": "D",
+          "from": "5",
+          "to": "4",
+          "metres": 0.6204977027400924
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA46",
+      "id": 11686,
+      "count": 77,
+      "minPitch": 0.6204977027400804,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400804
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400804
+        },
+        {
+          "row": "E",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400804
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA47",
+      "id": 11687,
+      "count": 66,
+      "minPitch": 0.6204977027400412,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "H",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400412
+        },
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400429
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400429
+        }
+      ]
+    },
+    {
+      "group": 2288,
+      "sector": "PALCO - AA48",
+      "id": 11688,
+      "count": 30,
+      "minPitch": 0.620497702739996,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "L",
+          "from": "6",
+          "to": "5",
+          "metres": 0.620497702739996
+        },
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.6204977027400097
+        },
+        {
+          "row": "H",
+          "from": "2",
+          "to": "1",
+          "metres": 0.6204977027400097
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA1",
+      "id": 11700,
+      "count": 88,
+      "minPitch": 0.5576721904706538,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5576721904706538
+        },
+        {
+          "row": "E",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5576721904706538
+        },
+        {
+          "row": "F",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5576721904706538
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA2",
+      "id": 11701,
+      "count": 88,
+      "minPitch": 0.5593529215805502,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "D",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "F",
+          "from": "3",
+          "to": "4",
+          "metres": 0.5593529215805502
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA3",
+      "id": 11702,
+      "count": 30,
+      "minPitch": 0.5593529215805502,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "J",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "H",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA4",
+      "id": 11703,
+      "count": 78,
+      "minPitch": 0.5593529215805502,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "E",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805519
+        },
+        {
+          "row": "F",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805519
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA5",
+      "id": 11704,
+      "count": 66,
+      "minPitch": 0.5593529215805579,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "K",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "F",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805639
+        },
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805639
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA6",
+      "id": 11705,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "F",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA7",
+      "id": 11706,
+      "count": 66,
+      "minPitch": 0.5593529215805579,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "C",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805623
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805639
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA8",
+      "id": 11707,
+      "count": 66,
+      "minPitch": 0.5593529215805579,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "C",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "D",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805579
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA9",
+      "id": 11708,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "K",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "K",
+          "from": "3",
+          "to": "2",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA10",
+      "id": 11689,
+      "count": 66,
+      "minPitch": 0.5593529215805383,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805383
+        },
+        {
+          "row": "C",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805383
+        },
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805443
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA49",
+      "id": 11699,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "B",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805579
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA50",
+      "id": 11690,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "D",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "E",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA51",
+      "id": 11691,
+      "count": 66,
+      "minPitch": 0.5593529215805579,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "C",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "D",
+          "from": "5",
+          "to": "4",
+          "metres": 0.5593529215805579
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA52",
+      "id": 11692,
+      "count": 66,
+      "minPitch": 0.5593529215805579,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "B",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "L",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805579
+        },
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805639
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA53",
+      "id": 11693,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "B",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "D",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA54",
+      "id": 11694,
+      "count": 66,
+      "minPitch": 0.5593529215805562,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "A",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "B",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        },
+        {
+          "row": "E",
+          "from": "6",
+          "to": "5",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA55",
+      "id": 11695,
+      "count": 78,
+      "minPitch": 0.5593529215805502,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "D",
+          "from": "1",
+          "to": "7",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "K",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805519
+        },
+        {
+          "row": "E",
+          "from": "1",
+          "to": "7",
+          "metres": 0.5593529215805562
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA56",
+      "id": 11696,
+      "count": 30,
+      "minPitch": 0.5593529215805502,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "G",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "H",
+          "from": "4",
+          "to": "3",
+          "metres": 0.5593529215805502
+        },
+        {
+          "row": "J",
+          "from": "2",
+          "to": "1",
+          "metres": 0.5593529215805502
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA57",
+      "id": 11697,
+      "count": 88,
+      "minPitch": 0.5593529215805443,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "E",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5593529215805443
+        },
+        {
+          "row": "H",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5593529215805443
+        },
+        {
+          "row": "J",
+          "from": "1",
+          "to": "2",
+          "metres": 0.5593529215805443
+        }
+      ]
+    },
+    {
+      "group": 2289,
+      "sector": "PALCO - AAA58",
+      "id": 11698,
+      "count": 88,
+      "minPitch": 0.5576721904706796,
+      "tightPairs": 0,
+      "worst": [
+        {
+          "row": "F",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5576721904706796
+        },
+        {
+          "row": "G",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5576721904706796
+        },
+        {
+          "row": "K",
+          "from": "7",
+          "to": "8",
+          "metres": 0.5576721904706796
+        }
+      ]
+    }
+  ],
+  "nearPairs": []
+}
