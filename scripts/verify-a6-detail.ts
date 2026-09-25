@@ -35,11 +35,9 @@ for (const row of new Set(a6.map((s) => s.row))) {
   const seats = a6.filter((s) => s.row === row);
   for (let i = 1; i < seats.length; i++)
     assert(
-      Math.abs(
-        Math.hypot(
-          ...seats[i].position.map((v, k) => v - seats[i - 1].position[k]),
-        ) - 0.42,
-      ) < 1e-8,
+      Math.hypot(
+        ...seats[i].position.map((v, k) => v - seats[i - 1].position[k]),
+      ) >= 0.52,
     );
 }
 const neighbours = group.sectors
@@ -53,8 +51,8 @@ for (const s of a6)
         min,
         Math.hypot(...s.position.map((v, i) => v - n.position[i])),
       );
-assert(min > 0.43, "A6 encroaches on A5/A7 chair widths");
+assert(min > 0.52, "A6 encroaches on A5/A7 chair widths");
 assert(gltf.nodes.some((n: { name: string }) => n.name === "A6_safety_net"));
 console.log(
-  `Verified 84 A6 IDs, shared camera origins, 42 cm pitch, and neighbour centre clearance ${min.toFixed(3)} m.`,
+  `Verified 84 A6 IDs, shared camera origins, at least 52 cm pitch, and neighbour centre clearance ${min.toFixed(3)} m.`,
 );

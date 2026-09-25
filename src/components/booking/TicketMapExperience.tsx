@@ -49,6 +49,72 @@ const PreviewScene = dynamic(
   },
 );
 
+function TicketPrompt({
+  kind,
+  seat,
+  onConfirm,
+  onClose,
+}: {
+  kind: "add" | "remove";
+  seat: TicketSeat;
+  onConfirm: () => void;
+  onClose: () => void;
+}) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const remove = kind === "remove";
+  useEffect(() => {
+    const d = dialog.current!;
+    const focused = document.activeElement as HTMLElement | null;
+    d.showModal();
+    return () => {
+      d.close();
+      focused?.focus();
+    };
+  }, []);
+  return (
+    <dialog
+      ref={dialog}
+      className="ticket-confirm"
+      aria-labelledby="ticket-confirm-title"
+      onCancel={(e) => {
+        e.preventDefault();
+        onClose();
+      }}
+    >
+      <div
+        className={
+          remove ? "ticket-confirm-mark is-remove" : "ticket-confirm-mark"
+        }
+      >
+        {remove ? <Trash2 size={22} /> : <Ticket size={22} />}
+      </div>
+      <h2 id="ticket-confirm-title">
+        {remove ? "¿Quitar esta entrada?" : "¿Añadir al carrito?"}
+      </h2>
+      <p>
+        {seat.category} · {seat.sector}
+        <strong>
+          Fila {seat.row} · Butaca {seat.label}
+        </strong>
+        <span>{formatCurrency(seat.price)}</span>
+      </p>
+      <div className="ticket-confirm-actions">
+        <button type="button" autoFocus={remove} onClick={onClose}>
+          {remove ? "Conservarla" : "Seguir mirando"}
+        </button>
+        <button
+          type="button"
+          autoFocus={!remove}
+          className={remove ? "ticket-confirm-danger" : "ticket-confirm-yes"}
+          onClick={onConfirm}
+        >
+          {remove ? "Quitar entrada" : "Añadir al carrito"}
+        </button>
+      </div>
+    </dialog>
+  );
+}
+
 function SeatPreview({
   seat,
   onClose,
@@ -141,6 +207,10 @@ export function TicketMapExperience() {
     [roof, setRoof] = useState(false),
     [message, setMessage] = useState("");
   const [search, setSearch] = useState("");
+  const [prompt, setPrompt] = useState<{
+    kind: "add" | "remove";
+    seat: TicketSeat;
+  } | null>(null);
   const reduced = useReducedMotion();
   const tickets = selected.map((k) => ticketSeats.get(k)!);
   const total = tickets.reduce((sum, s) => sum + s.price, 0);
@@ -155,12 +225,25 @@ export function TicketMapExperience() {
       setMessage("Esta butaca está agotada en la demostración.");
       return;
     }
-    if (!selected.includes(s.key) && selected.length >= MAX_TICKETS) {
+    if (selected.includes(s.key)) {
+      setPrompt({ kind: "remove", seat: s });
+      setMessage("");
+      return;
+    }
+    if (selected.length >= MAX_TICKETS) {
       setMessage(`Puedes elegir hasta ${MAX_TICKETS} entradas.`);
       return;
     }
-    setSelected((current) => toggleTicket(current, s.key));
+    setPrompt({ kind: "add", seat: s });
     setMessage("");
+  }
+  function confirmPrompt() {
+    if (!prompt) return;
+    const key = prompt.seat.key;
+    if (prompt.kind === "add")
+      setSelected((current) => toggleTicket(current, key));
+    else setSelected((current) => current.filter((k) => k !== key));
+    setPrompt(null);
   }
   const filtered = ticketSectors.filter((s) =>
     `${s.label} ${s.category.name}`
@@ -251,7 +334,7 @@ export function TicketMapExperience() {
             <div className="ticket-scene-caption">
               {hover ||
                 (sector
-                  ? "Pulsa una butaca de color para añadirla. Arrastra para ver las de al lado."
+                  ? "Pulsa una butaca de color. Te preguntaremos antes de añadirla al carrito."
                   : "Pulsa un sector · Arrastra para girar · Acerca con dos dedos o la rueda")}
             </div>
           </div>
@@ -379,13 +462,9 @@ export function TicketMapExperience() {
                   <div>
                     <span>{s.category}</span>
                     <button
-                      className="ticket-icon"
+                      className="ticket-icon ticket-remove"
                       aria-label={`Quitar ${s.sector} fila ${s.row} butaca ${s.label}`}
-                      onClick={() =>
-                        setSelected((current) =>
-                          current.filter((k) => k !== s.key),
-                        )
-                      }
+                      onClick={() => setPrompt({ kind: "remove", seat: s })}
                     >
                       <Trash2 size={15} />
                     </button>
@@ -443,6 +522,14 @@ export function TicketMapExperience() {
       </footer>
       {preview && (
         <SeatPreview seat={preview} onClose={() => setPreview(null)} />
+      )}
+      {prompt && (
+        <TicketPrompt
+          kind={prompt.kind}
+          seat={prompt.seat}
+          onConfirm={confirmPrompt}
+          onClose={() => setPrompt(null)}
+        />
       )}
     </main>
   );

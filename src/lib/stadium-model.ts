@@ -1,7 +1,7 @@
 import { Box3, Vector3, type Object3D } from "three";
 
 export const STADIUM_MODEL_URL =
-  "/models/estadio-quisqueya.glb?v=20260924-seat-walkways";
+  "/models/estadio-quisqueya.glb?v=20260925-seat-spacing";
 export function modelTransform(scene: Object3D) {
   const bounds = new Box3().setFromObject(scene);
   const size = bounds.getSize(new Vector3());
