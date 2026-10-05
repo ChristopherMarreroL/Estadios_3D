@@ -1,0 +1,146 @@
+{
+  "reference": "https://licey.uepatickets.com/beisbol/en/comprarEvento?idEvento=2248",
+  "referenceCatalog": "archived September 2026 public UEPA catalogue; live map visually checked October 5",
+  "sectors": 48,
+  "seats": 2711,
+  "catalogMismatches": [],
+  "centers": [
+    {
+      "sector": "PALCO - A1",
+      "x": -63.707954187171794,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A48",
+      "x": 63.29709327627266,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    }
+  ],
+  "heightRanges": [
+    {
+      "row": "A",
+      "min": 1.1,
+      "max": 1.1
+    },
+    {
+      "row": "B",
+      "min": 1.4100000000000001,
+      "max": 1.4100000000000001
+    },
+    {
+      "row": "C",
+      "min": 1.565,
+      "max": 1.7200000000000002
+    },
+    {
+      "row": "D",
+      "min": 1.2550000000000001,
+      "max": 1.875
+    },
+    {
+      "row": "E",
+      "min": 1.565,
+      "max": 2.185
+    },
+    {
+      "row": "F",
+      "min": 1.875,
+      "max": 2.495
+    },
+    {
+      "row": "G",
+      "min": 2.185,
+      "max": 2.6500000000000004
+    },
+    {
+      "row": "H",
+      "min": 2.6500000000000004,
+      "max": 2.96
+    },
+    {
+      "row": "J",
+      "min": 2.96,
+      "max": 3.27
+    },
+    {
+      "row": "K",
+      "min": 3.115,
+      "max": 3.4250000000000003
+    },
+    {
+      "row": "L",
+      "min": 3.4250000000000003,
+      "max": 3.735
+    },
+    {
+      "row": "M",
+      "min": 3.5800000000000005,
+      "max": 4.045
+    },
+    {
+      "row": "N",
+      "min": 3.735,
+      "max": 4.045
+    },
+    {
+      "row": "P",
+      "min": 4.045,
+      "max": 4.045
+    }
+  ],
+  "minimumDistance": 0.545447394364957,
+  "pairsBelow52cm": 0,
+  "minInRowSpacing": 0.545447394364957,
+  "maxInRowSpacing": 4.703747157505978,
+  "rowBreaksOver2m": {
+    "count": 69,
+    "sectors": [
+      "PALCO - A6",
+      "PALCO - A11",
+      "PALCO - A18",
+      "PALCO - A25",
+      "PALCO - A32",
+      "PALCO - A39",
+      "PALCO - A44"
+    ],
+    "examples": [
+      {
+        "sector": "PALCO - A6",
+        "row": "A",
+        "from": "6",
+        "to": "5",
+        "metres": 2.9012223246338262
+      },
+      {
+        "sector": "PALCO - A6",
+        "row": "B",
+        "from": "6",
+        "to": "5",
+        "metres": 2.9012223246338236
+      },
+      {
+        "sector": "PALCO - A6",
+        "row": "C",
+        "from": "6",
+        "to": "5",
+        "metres": 2.901222324633822
+      }
+    ]
+  },
+  "sectorsStartingAtD": [
+    "PALCO - A9",
+    "PALCO - A10",
+    "PALCO - A11",
+    "PALCO - A12",
+    "PALCO - A13",
+    "PALCO - A14",
+    "PALCO - A35",
+    "PALCO - A36",
+    "PALCO - A37",
+    "PALCO - A38",
+    "PALCO - A39",
+    "PALCO - A40"
+  ]
+}

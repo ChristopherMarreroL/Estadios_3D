@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import catalog from "../src/data/seat-catalog.json";
 import {
   ticketSectors,
   ticketSeats,
@@ -7,11 +8,40 @@ import {
   MAX_TICKETS,
   purchasedSpectators,
   ticketKey,
+  TICKET_CATEGORIES,
 } from "../src/lib/ticket-inventory";
 
-assert.equal(ticketSeats.size, 11367);
+assert.equal(ticketSeats.size, catalog.totalSeats);
 const all = ticketSectors.flatMap((s) => s.seats);
 assert.equal(new Set(all.map((s) => s.key)).size, all.length);
+// Compare exact catalogue identities rather than accepting an equal-sized subset.
+for (const group of catalog.groups)
+  for (const source of group.sectors) {
+    const sector = ticketSectors.find((s) => s.id === source.id);
+    if (!source.seatCount) {
+      assert(!sector, `Empty sector offered: ${source.name}`);
+      continue;
+    }
+    assert(sector, `Catalogue sector missing: ${source.name}`);
+    assert.equal(sector.category.id, group.id);
+    const expected = source.rows.flatMap((row) =>
+      row.seats.map((seat) => `${row.label}:${seat.label}:${seat.id}`),
+    );
+    assert.deepEqual(
+      sector.seats.map((s) => `${s.row}:${s.label}:${s.id}`).sort(),
+      expected.sort(),
+      `Inventory identities changed: ${source.name}`,
+    );
+  }
+for (const category of TICKET_CATEGORIES) {
+  const choice = ticketSectors
+    .filter((s) => s.category.id === category.id)
+    .flatMap((s) => s.seats)
+    .find((s) => s.available);
+  assert(choice, `No selectable demo seat in ${category.name}`);
+  assert.deepEqual(toggleTicket([], choice.key), [choice.key]);
+  assert.deepEqual(toggleTicket([choice.key], choice.key), []);
+}
 for (const sector of ticketSectors) {
   assert.equal(availableCount(sector, []), sector.available);
   for (const seat of sector.seats) {

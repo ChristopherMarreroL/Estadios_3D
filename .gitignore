@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Blender recovery copies and transient exports. Keep final models/reports.
+/public/models/*-pre-*.blend
+/public/models/*-pre-*.glb
+/artifacts/blender/**/*.log
+/artifacts/blender/**/tmp/
+/artifacts/blender/**/candidate.glb

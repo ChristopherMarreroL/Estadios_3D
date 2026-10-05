@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    "public/models/estadio-quisqueya-v1.blend": "c14e4d33285446af11bec967bd214e98daf3c00bd7281fb7d4284bf24bd6a96f",
+    "artifacts/blender/phase2-20260907/seat-placements.json": "ed707624bd7726ddcd95d514a54bc9c2c09c36f311de5ee05a58ada0f59d5bc4"
+  },
+  "count": 11975,
+  "collisions": []
+}

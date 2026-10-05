@@ -14,6 +14,11 @@ export const TICKET_CATEGORIES = [
   { id: 2275, name: "Corporativo", color: "#7baf72", price: 3500 },
   { id: 2276, name: "Preferencias", color: "#8f8bdd", price: 900 },
   { id: 2278, name: "Gradas", color: "#56b4cf", price: 500 },
+  { id: 2279, name: "VIP Escogido", color: "#df716e", price: 2500 },
+  { id: 2281, name: "VIP Licey", color: "#6188dc", price: 2500 },
+  { id: 2282, name: "Balcón Escogido", color: "#e29686", price: 1800 },
+  { id: 2283, name: "Balcón Licey", color: "#839cde", price: 1800 },
+  { id: 2812, name: "Bullpen Licey", color: "#568dd8", price: 2000 },
 ];
 function hash(text: string) {
   let value = 2166136261;
@@ -26,43 +31,46 @@ export type TicketSeatStatus = "available" | "sold" | "held" | "unavailable";
 export const ticketSectors = catalog.groups
   .filter((g) => SIMULATION_GROUP_IDS.includes(g.id))
   .flatMap((group) =>
-    group.sectors.map((sector) => {
-      const category = TICKET_CATEGORIES.find((c) => c.id === group.id)!;
-      const label = sector.name.replace(
-        /PALCO\s*-?\s*|PREFERENCIA\s*-\s*|GRADAS\s*-\s*/g,
-        "",
-      );
-      // A5 and A6 demonstrate abundant vs scarce stock, not real availability.
-      const threshold =
-        sector.id === 11607
-          ? 85
-          : sector.id === 11608
-            ? 20
-            : [0, 18, 42, 72, 92][hash(String(sector.id)) % 5];
-      const seats = simulateSector(group.id, sector).map((simulation) => ({
-        key: ticketKey(sector.id, simulation.id),
-        sectorId: sector.id,
-        sector: label,
-        id: simulation.id,
-        row: simulation.row,
-        label: simulation.label,
-        simulation,
-        category: category.name,
-        price: category.price,
-        available: hash(ticketKey(sector.id, simulation.id)) % 100 < threshold,
-        status: (hash(ticketKey(sector.id, simulation.id)) % 100 < threshold
-          ? "available"
-          : "sold") as TicketSeatStatus,
-      }));
-      return {
-        id: sector.id,
-        label,
-        name: sector.name,
-        category,
-        seats,
-        available: seats.filter((s) => s.available).length,
-      };
-    }),
+    group.sectors
+      .filter((sector) => sector.seatCount > 0)
+      .map((sector) => {
+        const category = TICKET_CATEGORIES.find((c) => c.id === group.id)!;
+        const label = sector.name.replace(
+          /PALCO\s*-?\s*|PREFERENCIA\s*-\s*|GRADAS\s*-\s*/g,
+          "",
+        );
+        // A5 and A6 demonstrate abundant vs scarce stock, not real availability.
+        const threshold =
+          sector.id === 11607
+            ? 85
+            : sector.id === 11608
+              ? 20
+              : [0, 18, 42, 72, 92][hash(String(sector.id)) % 5];
+        const seats = simulateSector(group.id, sector).map((simulation) => ({
+          key: ticketKey(sector.id, simulation.id),
+          sectorId: sector.id,
+          sector: label,
+          id: simulation.id,
+          row: simulation.row,
+          label: simulation.label,
+          simulation,
+          category: category.name,
+          price: category.price,
+          available:
+            hash(ticketKey(sector.id, simulation.id)) % 100 < threshold,
+          status: (hash(ticketKey(sector.id, simulation.id)) % 100 < threshold
+            ? "available"
+            : "sold") as TicketSeatStatus,
+        }));
+        return {
+          id: sector.id,
+          label,
+          name: sector.name,
+          category,
+          seats,
+          available: seats.filter((s) => s.available).length,
+        };
+      }),
   );
 export type TicketSector = (typeof ticketSectors)[number];
 export type TicketSeat = TicketSector["seats"][number];

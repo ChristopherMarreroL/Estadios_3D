@@ -98,7 +98,7 @@ console.log(
   collisions.slice(0, 8),
 );
 if (process.argv.includes("--verify")) {
-  assert.equal(seats.length, 11367);
+  assert.equal(seats.length, catalog.totalSeats);
   assert.equal(collisions.length, 0, "Seats below the 52 cm minimum remain");
   assert.equal(
     new Set(seats.map((s) => `${s.sectorId}:${s.id}`)).size,

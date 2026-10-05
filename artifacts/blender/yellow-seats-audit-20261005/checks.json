@@ -1,0 +1,932 @@
+{
+  "reference": "https://licey.uepatickets.com/beisbol/en/comprarEvento?idEvento=2248",
+  "referenceCatalog": "archived September 2026 public UEPA catalogue; live map visually checked October 5",
+  "sectors": 48,
+  "seats": 2711,
+  "catalogMismatches": [],
+  "centers": [
+    {
+      "sector": "PALCO - A1",
+      "x": -63.707954187171794,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A2",
+      "x": -62.22563220430573,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A3",
+      "x": -60.27805648121852,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A4",
+      "x": -58.34679860692795,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A5",
+      "x": -56.39922288384072,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A6",
+      "x": -53.32061132214129,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A7",
+      "x": -50.407413190223124,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A8",
+      "x": -47.48045362712665,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A9",
+      "x": -44.58099266107632,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A10",
+      "x": -42.42969810619142,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A11",
+      "x": -39.96983816169869,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A12",
+      "x": -38.05209341611566,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A13",
+      "x": -36.6764638694423,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A14",
+      "x": -35.10691807071607,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A15",
+      "x": -33.63681490754169,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A16",
+      "x": -31.44420072161699,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A17",
+      "x": -29.255029838278933,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A18",
+      "x": -26.59980385066839,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A19",
+      "x": -22.902747189584957,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A20",
+      "x": -20.155266474469688,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A21",
+      "x": -17.341149182887612,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A22",
+      "x": -13.91024033037049,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A23",
+      "x": -10.278209029586954,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A24",
+      "x": -6.6280872099959085,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A25",
+      "x": -2.5404381522354447,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A26",
+      "x": 4.290831480036897,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A27",
+      "x": 8.352628655280835,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A28",
+      "x": 12.272557840545776,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A29",
+      "x": 16.13929359940358,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A30",
+      "x": 19.71084457912011,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A31",
+      "x": 22.916428552375347,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A32",
+      "x": 27.215627148830016,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A33",
+      "x": 29.698498105722194,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A34",
+      "x": 32.070736663968596,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A35",
+      "x": 33.94344178025051,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A36",
+      "x": 35.51296635712509,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A37",
+      "x": 36.88859590379829,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A38",
+      "x": 38.26422545047152,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A39",
+      "x": 40.72408539496414,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A40",
+      "x": 43.41749514875859,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A41",
+      "x": 46.3359936050717,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A42",
+      "x": 49.262953168168266,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A43",
+      "x": 52.01231432800858,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A44",
+      "x": 55.294114421274635,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A45",
+      "x": 57.454366107011026,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A46",
+      "x": 59.40194183009821,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A47",
+      "x": 61.34951755318546,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    },
+    {
+      "sector": "PALCO - A48",
+      "x": 63.29709327627266,
+      "startsAt": "A",
+      "firstHeight": 1.1
+    }
+  ],
+  "heightRanges": [
+    {
+      "row": "A",
+      "min": 1.1,
+      "max": 1.1
+    },
+    {
+      "row": "B",
+      "min": 1.4100000000000001,
+      "max": 1.4100000000000001
+    },
+    {
+      "row": "C",
+      "min": 1.565,
+      "max": 1.7200000000000002
+    },
+    {
+      "row": "D",
+      "min": 1.2550000000000001,
+      "max": 1.875
+    },
+    {
+      "row": "E",
+      "min": 1.565,
+      "max": 2.185
+    },
+    {
+      "row": "F",
+      "min": 1.875,
+      "max": 2.495
+    },
+    {
+      "row": "G",
+      "min": 2.185,
+      "max": 2.6500000000000004
+    },
+    {
+      "row": "H",
+      "min": 2.6500000000000004,
+      "max": 2.96
+    },
+    {
+      "row": "J",
+      "min": 2.96,
+      "max": 3.27
+    },
+    {
+      "row": "K",
+      "min": 3.115,
+      "max": 3.4250000000000003
+    },
+    {
+      "row": "L",
+      "min": 3.4250000000000003,
+      "max": 3.735
+    },
+    {
+      "row": "M",
+      "min": 3.5800000000000005,
+      "max": 4.045
+    },
+    {
+      "row": "N",
+      "min": 3.735,
+      "max": 4.045
+    },
+    {
+      "row": "P",
+      "min": 4.045,
+      "max": 4.045
+    }
+  ],
+  "minimumDistance": 0.545447394364957,
+  "pairsBelow52cm": 0,
+  "minInRowSpacing": 0.545447394364957,
+  "maxInRowSpacing": 4.703747157505978,
+  "rowBreaksOver2m": [
+    {
+      "sector": "PALCO - A6",
+      "row": "A",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338262
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "B",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "C",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633822
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "D",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633822
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "E",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "F",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "G",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "H",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "J",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "K",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338236
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "L",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633822
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "M",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338262
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "N",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633822
+    },
+    {
+      "sector": "PALCO - A6",
+      "row": "P",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338262
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "D",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "E",
+      "from": "3",
+      "to": "2",
+      "metres": 2.8484779872355293
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "F",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "G",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "H",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "J",
+      "from": "3",
+      "to": "2",
+      "metres": 2.8484779872355293
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "K",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "L",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235535
+    },
+    {
+      "sector": "PALCO - A11",
+      "row": "M",
+      "from": "3",
+      "to": "2",
+      "metres": 2.8484779872355293
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "A",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235532
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "B",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235532
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "C",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235532
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "D",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235532
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "E",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "F",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "G",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "H",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "J",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "K",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "L",
+      "from": "2",
+      "to": "1",
+      "metres": 2.848477987235525
+    },
+    {
+      "sector": "PALCO - A18",
+      "row": "M",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235532
+    },
+    {
+      "sector": "PALCO - A25",
+      "row": "J",
+      "from": "4",
+      "to": "5",
+      "metres": 4.2987504772779115
+    },
+    {
+      "sector": "PALCO - A25",
+      "row": "K",
+      "from": "4",
+      "to": "5",
+      "metres": 4.379749813323525
+    },
+    {
+      "sector": "PALCO - A25",
+      "row": "L",
+      "from": "4",
+      "to": "5",
+      "metres": 4.541748485414751
+    },
+    {
+      "sector": "PALCO - A25",
+      "row": "M",
+      "from": "4",
+      "to": "5",
+      "metres": 4.703747157505978
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "F",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "G",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "H",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "J",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "K",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "L",
+      "from": "5",
+      "to": "4",
+      "metres": 2.8484779872355497
+    },
+    {
+      "sector": "PALCO - A32",
+      "row": "M",
+      "from": "6",
+      "to": "5",
+      "metres": 2.848477987235565
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "D",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "E",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "F",
+      "from": "3",
+      "to": "2",
+      "metres": 2.8484779872354844
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "G",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "H",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "J",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "K",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "L",
+      "from": "3",
+      "to": "2",
+      "metres": 2.8484779872354746
+    },
+    {
+      "sector": "PALCO - A39",
+      "row": "M",
+      "from": "3",
+      "to": "2",
+      "metres": 2.848477987235479
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "A",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338915
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "B",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "C",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "D",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "E",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "F",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338915
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "G",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "H",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338875
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "J",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338817
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "K",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633895
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "L",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338817
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "M",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338937
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "N",
+      "from": "6",
+      "to": "5",
+      "metres": 2.901222324633895
+    },
+    {
+      "sector": "PALCO - A44",
+      "row": "P",
+      "from": "6",
+      "to": "5",
+      "metres": 2.9012223246338937
+    }
+  ],
+  "sectorsStartingAtD": [
+    {
+      "sector": "PALCO - A9",
+      "x": -44.58099266107632,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A10",
+      "x": -42.42969810619142,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A11",
+      "x": -39.96983816169869,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A12",
+      "x": -38.05209341611566,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A13",
+      "x": -36.6764638694423,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A14",
+      "x": -35.10691807071607,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A35",
+      "x": 33.94344178025051,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A36",
+      "x": 35.51296635712509,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A37",
+      "x": 36.88859590379829,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A38",
+      "x": 38.26422545047152,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A39",
+      "x": 40.72408539496414,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    },
+    {
+      "sector": "PALCO - A40",
+      "x": 43.41749514875859,
+      "startsAt": "D",
+      "firstHeight": 1.2550000000000001
+    }
+  ]
+}

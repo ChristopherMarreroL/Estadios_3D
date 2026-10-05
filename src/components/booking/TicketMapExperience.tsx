@@ -26,6 +26,7 @@ import {
 } from "@/lib/ticket-inventory";
 import { formatCurrency } from "@/lib/formatCurrency";
 import catalog from "@/data/seat-catalog.json";
+import { seatRowLabel } from "@/lib/seat-simulation";
 import "./ticket-experience.css";
 
 const SelectionScene = dynamic(
@@ -94,7 +95,7 @@ function TicketPrompt({
       <p>
         {seat.category} · {seat.sector}
         <strong>
-          Fila {seat.row} · Butaca {seat.label}
+          {seatRowLabel(seat.row)} · Butaca {seat.label}
         </strong>
         <span>{formatCurrency(seat.price)}</span>
       </p>
@@ -153,7 +154,7 @@ function SeatPreview({
         <div>
           <p className="ticket-kicker">Desde tu butaca</p>
           <h2 id="preview-title">
-            {seat.sector} · Fila {seat.row} · Butaca {seat.label}
+            {seat.sector} · {seatRowLabel(seat.row)} · Butaca {seat.label}
           </h2>
         </div>
         <button
@@ -189,8 +190,8 @@ function SeatPreview({
           </button>
         </div>
         <p>
-          Arrastra para mirar alrededor. Vista aproximada; el público ocupa
-          los asientos comprados del inventario de demostración, en todos los
+          Arrastra para mirar alrededor. Vista aproximada; el público ocupa los
+          asientos comprados del inventario de demostración, en todos los
           sectores.
         </p>
       </footer>
@@ -373,13 +374,15 @@ export function TicketMapExperience() {
             {sector ? (
               <>
                 <p>
-                  Las filas avanzan desde el terreno hacia atrás. También puedes
-                  elegir aquí.
+                  Las filas avanzan desde el terreno hacia atrás.
+                  {sector.seats.some((s) => s.simulation.kind === "table")
+                    ? " Las mesas se muestran por separado."
+                    : " También puedes elegir aquí."}
                 </p>
                 <div className="ticket-row-list">
                   {[...new Set(sector.seats.map((s) => s.row))].map((row) => (
                     <div className="ticket-row" key={row}>
-                      <b>Fila {row}</b>
+                      <b>{seatRowLabel(row)}</b>
                       <div>
                         {sector.seats
                           .filter((s) => s.row === row)
@@ -388,7 +391,7 @@ export function TicketMapExperience() {
                               key={s.key}
                               disabled={!s.available}
                               aria-pressed={selected.includes(s.key)}
-                              aria-label={`${sector.label}, fila ${row}, butaca ${s.label}, ${s.available ? "disponible" : "agotada"}`}
+                              aria-label={`${sector.label}, ${seatRowLabel(row).toLocaleLowerCase("es")}, butaca ${s.label}, ${s.available ? "disponible" : "agotada"}`}
                               onClick={() => chooseSeat(s)}
                               style={
                                 {
@@ -429,8 +432,9 @@ export function TicketMapExperience() {
             )}
           </details>
           <p className="ticket-map-footnote">
-            Se muestran las localidades numeradas con posición 3D asignada. VIP,
-            balcones y zonas sin numeración todavía no están incluidos.
+            Se muestran todas las localidades numeradas del catálogo, incluidos
+            VIP, balcones y los puestos de mesa de Bullpen Licey. Las posiciones
+            3D son aproximadas; las zonas de pie y parqueos no tienen butacas.
           </p>
         </section>
         <aside className="ticket-basket" aria-label="Resumen de entradas">
@@ -463,7 +467,7 @@ export function TicketMapExperience() {
                     <span>{s.category}</span>
                     <button
                       className="ticket-icon ticket-remove"
-                      aria-label={`Quitar ${s.sector} fila ${s.row} butaca ${s.label}`}
+                      aria-label={`Quitar ${s.sector} ${seatRowLabel(s.row).toLocaleLowerCase("es")} butaca ${s.label}`}
                       onClick={() => setPrompt({ kind: "remove", seat: s })}
                     >
                       <Trash2 size={15} />
@@ -472,7 +476,7 @@ export function TicketMapExperience() {
                   <h3>
                     {s.sector}{" "}
                     <span>
-                      Fila {s.row} · Butaca {s.label}
+                      {seatRowLabel(s.row)} · Butaca {s.label}
                     </span>
                   </h3>
                   <div>
@@ -480,7 +484,7 @@ export function TicketMapExperience() {
                     <button
                       className="ticket-preview-button"
                       onClick={() => setPreview(s)}
-                      aria-label={`Ver desde ${s.sector} fila ${s.row} butaca ${s.label}`}
+                      aria-label={`Ver desde ${s.sector} ${seatRowLabel(s.row).toLocaleLowerCase("es")} butaca ${s.label}`}
                     >
                       <Eye size={15} /> Ver mi vista
                     </button>

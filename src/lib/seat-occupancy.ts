@@ -23,6 +23,14 @@ export function seatNeighbors(
   if (!selected) return [];
   const row = seats.filter((s) => s.row === selected.row);
   const index = row.findIndex((s) => s.id === selected.id);
+  if (selected.kind === "table")
+    return [
+      {
+        label: "Lateral anterior",
+        seat: row[(index + row.length - 1) % row.length],
+      },
+      { label: "Lateral siguiente", seat: row[(index + 1) % row.length] },
+    ];
   const rows = [...new Set(seats.map((s) => s.row))];
   const frontRow = rows[rows.indexOf(selected.row) - 1];
   const front = seats
