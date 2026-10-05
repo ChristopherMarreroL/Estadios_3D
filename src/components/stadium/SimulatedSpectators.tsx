@@ -4,7 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { Color, InstancedMesh, Matrix4, Object3D, Vector3 } from "three";
 import { modelTransform, STADIUM_MODEL_URL } from "@/lib/stadium-model";
-import type { SimulatedSeat } from "@/lib/seat-simulation";
+import { seatFacingAngle, type SimulatedSeat } from "@/lib/seat-simulation";
 
 const shirts = ["#195cb7", "#c63e49", "#e4d9c4", "#258276", "#e1a33b"];
 const skins = ["#8b5035", "#ba805b", "#d6a77d", "#603c2b"];
@@ -33,13 +33,12 @@ export function SimulatedSpectators({
   const transform = useMemo(() => modelTransform(scene), [scene]);
   const { camera } = useThree();
   const placements = useMemo(() => {
-    const target = transform.fromBlender([0, -24, 0]);
     return seats.map((seat) => {
       const position = new Vector3(...transform.fromBlender(seat.position));
       const key = seat.id * 131 + seat.sectorId;
       return {
         position,
-        yaw: Math.atan2(target[0] - position.x, target[2] - position.z),
+        yaw: Math.PI + seatFacingAngle(seat),
         phase: unit(key, 1) * Math.PI * 2,
         speed: 1.2 + unit(key, 2) * 0.9,
         // Roughly half cheer with arms overhead; the rest only shift and clap.
@@ -123,7 +122,8 @@ export function SimulatedSpectators({
       dummy.updateMatrix();
       matrix.multiplyMatrices(root.matrix, dummy.matrix);
       bodies.current!.setMatrixAt(index * PARTS + part, matrix);
-      if (paint) bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
+      if (paint)
+        bodies.current!.setColorAt(index * PARTS + part, color.set(tint));
     };
     box(0, sway, 0.77, 0, 0.34, 0.49, 0.22, shirt);
     box(1, 0, 0.48, 0.11, 0.34, 0.17, 0.36, "#273448");
@@ -213,10 +213,8 @@ export function SimulatedSpectators({
       ranked.sort((i, j) => {
         const a = placements[i].position,
           b = placements[j].position;
-        const da =
-          (a.x - cam.x) ** 2 + (a.y - cam.y) ** 2 + (a.z - cam.z) ** 2;
-        const db =
-          (b.x - cam.x) ** 2 + (b.y - cam.y) ** 2 + (b.z - cam.z) ** 2;
+        const da = (a.x - cam.x) ** 2 + (a.y - cam.y) ** 2 + (a.z - cam.z) ** 2;
+        const db = (b.x - cam.x) ** 2 + (b.y - cam.y) ** 2 + (b.z - cam.z) ** 2;
         return da - db;
       });
       const next = ranked.slice(0, Math.min(NEAR_COUNT, ranked.length));

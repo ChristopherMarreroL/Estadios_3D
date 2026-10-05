@@ -4,7 +4,12 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import catalog from "@/data/seat-catalog.json";
-import { simulateSector, SIMULATION_GROUP_IDS } from "@/lib/seat-simulation";
+import {
+  simulateSector,
+  SIMULATION_GROUP_IDS,
+  orderedRows,
+  seatRowLabel,
+} from "@/lib/seat-simulation";
 import { SceneErrorBoundary } from "@/components/stadium/SceneErrorBoundary";
 import {
   isDemoOccupied,
@@ -19,9 +24,12 @@ const Scene = dynamic(
     ),
   { ssr: false, loading: () => <p className="p-8">Cargando el estadio…</p> },
 );
-const groups = SIMULATION_GROUP_IDS.map((id) =>
-  catalog.groups.find((g) => g.id === id)!,
-);
+const groups = SIMULATION_GROUP_IDS.map((id) => ({
+  ...catalog.groups.find((g) => g.id === id)!,
+  sectors: catalog.groups
+    .find((g) => g.id === id)!
+    .sectors.filter((s) => s.seatCount > 0),
+}));
 const sectorData = new Map(
   groups.flatMap((g) =>
     g.sectors.map((s) => [s.id, simulateSector(g.id, s)] as const),
@@ -53,6 +61,7 @@ export function SeatCatalogExplorer() {
   );
   const sector =
     group.sectors.find((s) => s.id === sectorId) ?? group.sectors[0];
+  const sectorRows = orderedRows(sector);
   const simulated = sectorData.get(sector.id)!;
   const selected = simulated.find((s) => s.id === seatId) ?? null;
   const seat = selected;
@@ -60,15 +69,15 @@ export function SeatCatalogExplorer() {
     (s) => s.id !== seat?.id && isDemoOccupied(s, occupancy, overrides),
   );
   const neighbors = seatNeighbors(simulated, seat);
-  const rowIndex = sector.rows.findIndex((r) => r.label === selected?.row);
-  const row = sector.rows[rowIndex];
+  const rowIndex = sectorRows.findIndex((r) => r.label === selected?.row);
+  const row = sectorRows[rowIndex];
   const seatIndex = row?.seats.findIndex((s) => s.id === selected?.id) ?? -1;
   const choose = (id: number) => {
     setSeatId(id);
     setOverview(false);
   };
   const changeRow = (index: number) => {
-    const next = sector.rows[index];
+    const next = sectorRows[index];
     if (next)
       choose(
         next.seats[Math.min(Math.max(seatIndex, 0), next.seats.length - 1)].id,
@@ -191,7 +200,7 @@ export function SeatCatalogExplorer() {
               <span>
                 {step === "sector"
                   ? "Pulsa un sector sobre la grada"
-                  : `${sector.name}${selected ? ` · Fila ${selected.row} · Butaca ${selected.label}` : " · Elige una butaca en el plano"}`}
+                  : `${sector.name}${selected ? ` · ${seatRowLabel(selected.row)} · Butaca ${selected.label}` : " · Elige una butaca en el plano"}`}
               </span>
               {step === "preview" && (
                 <div className="flex flex-wrap gap-2">
@@ -422,7 +431,7 @@ export function SeatCatalogExplorer() {
               aria-label={`Plano de butacas de ${sector.name}`}
             >
               <div className="min-w-max">
-                {[...sector.rows].reverse().map((r) => (
+                {[...sectorRows].reverse().map((r) => (
                   <div
                     key={r.label}
                     className="my-2 flex items-center justify-center gap-2"
@@ -431,7 +440,7 @@ export function SeatCatalogExplorer() {
                     {r.seats.map((s) => (
                       <button
                         key={s.id}
-                        aria-label={`${sector.name}, fila ${r.label}, butaca ${s.label}`}
+                        aria-label={`${sector.name}, ${seatRowLabel(r.label)}, butaca ${s.label}`}
                         aria-pressed={selected?.id === s.id}
                         onClick={() => setSeatId(s.id)}
                         className={`h-10 min-w-10 rounded-t-xl rounded-b-md border-2 text-xs font-semibold transition-colors ${selected?.id === s.id ? "border-[#071323] bg-[#f6cc7c]" : "border-[#267054]/40 bg-[#267054]/10 hover:bg-[#267054]/25"}`}
@@ -453,7 +462,7 @@ export function SeatCatalogExplorer() {
             >
               <p className="font-semibold">
                 {selected
-                  ? `Fila ${selected.row} · Butaca ${selected.label}`
+                  ? `${seatRowLabel(selected.row)} · Butaca ${selected.label}`
                   : "Elige una butaca en el plano"}
               </p>
               <p className="mt-1 text-xs text-[#526174]">

@@ -1,0 +1,17 @@
+{
+  "revision": "20261005-pending-seats",
+  "added": 608,
+  "modelSeats": 11975,
+  "unsupported": [],
+  "obstacle_intersections": [],
+  "low_headroom": [],
+  "preservedMeshes": 509,
+  "adjustedExistingMeshes": [
+    "phase2_concourse_railing",
+    "press_box",
+    "press_box_canopy",
+    "press_box_glass",
+    "press_box_name"
+  ],
+  "preservedSeats": 11367
+}

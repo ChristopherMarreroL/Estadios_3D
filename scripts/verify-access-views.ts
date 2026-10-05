@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import catalog from "../src/data/seat-catalog.json";
 
 const bytes = readFileSync("public/models/estadio-quisqueya.glb");
 assert.equal(bytes.toString("utf8", 0, 4), "glTF");
@@ -35,14 +37,26 @@ assert(nodes.has("phase3_aisle_handrails"));
 assert(nodes.has("phase3_tier_front_guards"));
 assert(nodes.has("circulation_step_nosings"));
 const report = JSON.parse(
-  readFileSync("artifacts/blender/access-views-20260923/checks.json", "utf8"),
+  readFileSync(
+    "artifacts/blender/pending-seats-20261005/current-geometry-checks.json",
+    "utf8",
+  ),
 );
-assert(report.unrelated_geometry_unchanged);
-assert.equal(report.total_seats, 11367);
-assert.equal(report.rays_tested, 11367 * report.targets_per_seat);
-assert(report.blocked_after < report.blocked_before);
-assert.equal(report.newly_blocked, 0);
-assert(report.minimum_eye_clearance_m > 0.15);
+for (const [path, expected] of Object.entries(report.sha256)) {
+  assert.equal(
+    createHash("sha256").update(readFileSync(path)).digest("hex"),
+    expected,
+    `Stale access report for ${path}`,
+  );
+}
+const visibility = report.accessVisibility;
+assert.equal(visibility.totalSeats, catalog.totalSeats);
+assert.equal(
+  visibility.raysTested,
+  catalog.totalSeats * visibility.targetsPerSeat,
+);
+assert.equal(visibility.blocked.length, 0);
+assert(visibility.minimumEyeClearance > 0.15);
 console.log(
-  `Verified six open approaches, rear floor signs, preserved circulation and ${report.rays_tested} access visibility rays.`,
+  `Verified six open approaches, rear floor signs, preserved circulation and ${visibility.raysTested} current access visibility rays. Scope: access meshes and signage only.`,
 );

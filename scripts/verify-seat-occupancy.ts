@@ -24,6 +24,31 @@ assert(!isDemoOccupied(front, 100, { [occupancyKey(front)]: false }));
 assert(isDemoOccupied(front, 0, { [occupancyKey(front)]: true }));
 for (const s of seats)
   assert(!isDemoOccupied(s, 35, {}) || isDemoOccupied(s, 65, {}));
+let checked = 0;
+for (const group of catalog.groups)
+  for (const source of group.sectors) {
+    const block = simulateSector(group.id, source);
+    for (const seat of block) {
+      checked++;
+      assert(!isDemoOccupied(seat, -10, {}));
+      assert(isDemoOccupied(seat, 110, {}));
+      assert(!isDemoOccupied(seat, 100, { [occupancyKey(seat)]: false }));
+      const nearby = seatNeighbors(block, seat);
+      const keys = nearby.map((n) => occupancyKey(n.seat));
+      assert.equal(new Set(keys).size, keys.length, "Repeated neighbor");
+      assert(!keys.includes(occupancyKey(seat)), "Seat is its own neighbor");
+      for (const neighbor of nearby) {
+        assert.equal(neighbor.seat.sectorId, seat.sectorId);
+        if (neighbor.label === "Delante") {
+          assert.notEqual(neighbor.seat.row, seat.row);
+          assert(neighbor.seat.position[2] <= seat.position[2]);
+          assert(neighbor.seat.kind !== "table");
+        } else assert.equal(neighbor.seat.row, seat.row);
+      }
+      if (seat.kind === "table") assert.equal(nearby.length, 2);
+    }
+  }
+assert.equal(checked, catalog.totalSeats);
 console.log(
-  "Verified empty/full occupancy, stable density, explicit neighbor overrides and front-row boundaries.",
+  `Verified occupancy bounds, overrides and valid neighbors for all ${checked} seats, including sparse rows and tables.`,
 );

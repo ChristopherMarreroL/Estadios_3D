@@ -18,6 +18,7 @@ import {
   DoubleSide,
 } from "three";
 import type { OrbitControls as Controls } from "three-stdlib";
+import { seatFacingAngle, seatRowLabel } from "@/lib/seat-simulation";
 import { modelTransform, STADIUM_MODEL_URL } from "@/lib/stadium-model";
 import {
   availableCount,
@@ -151,7 +152,7 @@ function Content({
     const color = new Color();
     allSeats.forEach(({ seat, color: category }, i) => {
       const pos = seat.simulation.position;
-      const yaw = Math.atan2(-pos[0], -24 - pos[1]);
+      const yaw = -seatFacingAngle(seat.simulation);
       dummy.position.set(
         ...transform.fromBlender([pos[0], pos[1], pos[2] + 0.46]),
       );
@@ -285,7 +286,7 @@ function Content({
     e.stopPropagation();
     const s = allSeats[e.instanceId].seat;
     onHover(
-      `${s.sector} · Fila ${s.row} · Butaca ${s.label} · ${s.available ? "Disponible" : "Agotada"}`,
+      `${s.sector} · ${seatRowLabel(s.row)} · Butaca ${s.label} · ${s.available ? "Disponible" : "Agotada"}`,
     );
   }
   const nearby = sector
