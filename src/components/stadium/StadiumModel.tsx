@@ -25,5 +25,3 @@ export function StadiumModel() {
 
   return <primitive object={model} />;
 }
-
-useGLTF.preload(MODEL_URL);

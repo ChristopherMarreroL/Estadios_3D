@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import {
   ArrowLeft,
@@ -13,6 +13,7 @@ import {
   X,
 } from "lucide-react";
 import { SceneErrorBoundary } from "@/components/stadium/SceneErrorBoundary";
+import { MapLoading } from "@/components/stadium/MapLoading";
 import {
   availableCount,
   purchasedSpectators,
@@ -23,6 +24,7 @@ import {
   toggleTicket,
   type TicketSeat,
   type TicketSector,
+  type TicketZone,
 } from "@/lib/ticket-inventory";
 import { formatCurrency } from "@/lib/formatCurrency";
 import catalog from "@/data/seat-catalog.json";
@@ -36,7 +38,7 @@ const SelectionScene = dynamic(
     ),
   {
     ssr: false,
-    loading: () => <div className="scene-loading">Cargando el estadio 3D…</div>,
+    loading: () => <MapLoading />,
   },
 );
 const PreviewScene = dynamic(
@@ -200,6 +202,7 @@ function SeatPreview({
 }
 
 export function TicketMapExperience() {
+  const [zone, setZone] = useState<TicketZone | null>(null);
   const [sector, setSector] = useState<TicketSector | null>(null),
     [selected, setSelected] = useState<string[]>([]);
   const [preview, setPreview] = useState<TicketSeat | null>(null),
@@ -215,29 +218,56 @@ export function TicketMapExperience() {
   const reduced = useReducedMotion();
   const tickets = selected.map((k) => ticketSeats.get(k)!);
   const total = tickets.reduce((sum, s) => sum + s.price, 0);
-  function chooseSector(s: TicketSector) {
+  const chooseZone = useCallback((next: TicketZone) => {
+    setZone(next);
+    setSector(null);
+    setReset((n) => n + 1);
+    setSearch("");
+    setMessage("");
+    setHover("");
+  }, []);
+  const chooseSector = useCallback((s: TicketSector) => {
+    setZone((current) => (current?.sectorIds.includes(s.id) ? current : null));
     setSector(s);
     setReset((n) => n + 1);
     setMessage("");
     setHover("");
-  }
-  function chooseSeat(s: TicketSeat) {
-    if (!s.available) {
-      setMessage("Esta butaca está agotada en la demostración.");
-      return;
-    }
-    if (selected.includes(s.key)) {
-      setPrompt({ kind: "remove", seat: s });
-      setMessage("");
-      return;
-    }
-    if (selected.length >= MAX_TICKETS) {
-      setMessage(`Puedes elegir hasta ${MAX_TICKETS} entradas.`);
-      return;
-    }
-    setPrompt({ kind: "add", seat: s });
+  }, []);
+  const showStadium = useCallback(() => {
+    setZone(null);
+    setSector(null);
+    setReset((n) => n + 1);
+    setSearch("");
     setMessage("");
-  }
+    setHover("");
+  }, []);
+  const showZone = useCallback(() => {
+    setSector(null);
+    setReset((n) => n + 1);
+    setSearch("");
+    setMessage("");
+    setHover("");
+  }, []);
+  const chooseSeat = useCallback(
+    (s: TicketSeat) => {
+      if (!s.available) {
+        setMessage("Esta butaca está agotada en la demostración.");
+        return;
+      }
+      if (selected.includes(s.key)) {
+        setPrompt({ kind: "remove", seat: s });
+        setMessage("");
+        return;
+      }
+      if (selected.length >= MAX_TICKETS) {
+        setMessage(`Puedes elegir hasta ${MAX_TICKETS} entradas.`);
+        return;
+      }
+      setPrompt({ kind: "add", seat: s });
+      setMessage("");
+    },
+    [selected],
+  );
   function confirmPrompt() {
     if (!prompt) return;
     const key = prompt.seat.key;
@@ -246,7 +276,18 @@ export function TicketMapExperience() {
     else setSelected((current) => current.filter((k) => k !== key));
     setPrompt(null);
   }
-  const filtered = ticketSectors.filter((s) =>
+  const zoneSectors = useMemo(
+    () => ticketSectors.filter((s) => zone?.sectorIds.includes(s.id)),
+    [zone],
+  );
+  const zoneTitle = zone
+    ? `${zone.category.name}${zone.side ? ` · Lado ${zone.side}` : ""}`
+    : "";
+  const zoneAvailable = useMemo(
+    () => zoneSectors.reduce((sum, s) => sum + availableCount(s, selected), 0),
+    [zoneSectors, selected],
+  );
+  const filtered = (zone && !sector ? zoneSectors : ticketSectors).filter((s) =>
     `${s.label} ${s.category.name}`
       .toLowerCase()
       .includes(search.toLowerCase().trim()),
@@ -280,47 +321,55 @@ export function TicketMapExperience() {
         >
           <div className="ticket-map-bar">
             <div>
-              <span className="ticket-step">{sector ? "02" : "01"}</span>
+              <span className="ticket-step">
+                {sector ? "03" : zone ? "02" : "01"}
+              </span>
               <div>
                 <h2>
                   {sector
                     ? `${sector.category.name} · ${sector.label}`
-                    : "Explora el estadio en 3D"}
+                    : zone
+                      ? zoneTitle
+                      : "Explora el estadio en 3D"}
                 </h2>
                 <p>
                   {sector
                     ? `${availableCount(sector, selected)} disponibles de ${sector.seats.length} · ${formatCurrency(sector.category.price)} por entrada (demo)`
-                    : "El color te muestra dónde quedan entradas"}
+                    : zone
+                      ? `${zoneSectors.length} sectores · ${zoneAvailable} disponibles (demo)`
+                      : "El color te muestra dónde quedan entradas"}
                 </p>
               </div>
             </div>
-            {sector && (
-              <button
-                onClick={() => {
-                  setSector(null);
-                  setReset((n) => n + 1);
-                  setHover("");
-                }}
-              >
-                <ArrowLeft size={15} /> Todo el estadio
-              </button>
+            {(sector || zone) && (
+              <div role="group" aria-label="Navegación del mapa">
+                {sector && zone && (
+                  <button onClick={showZone} title={zoneTitle}>
+                    <ArrowLeft size={15} /> Volver a la zona
+                  </button>
+                )}
+                <button onClick={showStadium}>
+                  <ArrowLeft size={15} /> Todo el estadio
+                </button>
+              </div>
             )}
           </div>
           <div className="ticket-stadium-canvas">
-            {!preview && (
-              <SceneErrorBoundary>
-                <SelectionScene
-                  sector={sector}
-                  selected={selected}
-                  onSector={chooseSector}
-                  onSeat={chooseSeat}
-                  onHover={setHover}
-                  reset={reset}
-                  roof={roof}
-                  reducedMotion={Boolean(reduced)}
-                />
-              </SceneErrorBoundary>
-            )}
+            <SceneErrorBoundary>
+              <SelectionScene
+                zone={zone}
+                sector={sector}
+                selected={selected}
+                onZone={chooseZone}
+                onSector={chooseSector}
+                onSeat={chooseSeat}
+                onHover={setHover}
+                reset={reset}
+                roof={roof}
+                reducedMotion={Boolean(reduced)}
+                paused={Boolean(preview)}
+              />
+            </SceneErrorBoundary>
             <div className="ticket-scene-tools">
               <button
                 onClick={() => setReset((n) => n + 1)}
@@ -336,7 +385,9 @@ export function TicketMapExperience() {
               {hover ||
                 (sector
                   ? "Pulsa una butaca de color. Te preguntaremos antes de añadirla al carrito."
-                  : "Pulsa un sector · Arrastra para girar · Acerca con dos dedos o la rueda")}
+                  : zone
+                    ? "Elige un sector de esta zona para ver sus butacas."
+                    : "Pulsa una zona · Arrastra para girar · Acerca con dos dedos o la rueda")}
             </div>
           </div>
           <div className="ticket-legend">
@@ -369,7 +420,9 @@ export function TicketMapExperience() {
             <summary>
               {sector
                 ? `Filas y butacas de ${sector.label}`
-                : "Buscar un sector o elegir sin usar el 3D"}
+                : zone
+                  ? `Sectores de ${zoneTitle}`
+                  : "Buscar un sector o elegir sin usar el 3D"}
             </summary>
             {sector ? (
               <>
@@ -409,7 +462,11 @@ export function TicketMapExperience() {
               </>
             ) : (
               <>
-                <label htmlFor="sector-search">Sector o localidad</label>
+                <label htmlFor="sector-search">
+                  {zone
+                    ? "Buscar un sector de esta zona"
+                    : "Sector o localidad"}
+                </label>
                 <input
                   id="sector-search"
                   value={search}
@@ -432,9 +489,9 @@ export function TicketMapExperience() {
             )}
           </details>
           <p className="ticket-map-footnote">
-            Se muestran todas las localidades numeradas del catálogo, incluidos
-            VIP, balcones y los puestos de mesa de Bullpen Licey. Las posiciones
-            3D son aproximadas; las zonas de pie y parqueos no tienen butacas.
+            Se muestran las localidades numeradas del catálogo, incluidos VIP y
+            balcones. Las posiciones 3D son aproximadas; las zonas de pie y
+            parqueos no tienen butacas.
           </p>
         </section>
         <aside className="ticket-basket" aria-label="Resumen de entradas">

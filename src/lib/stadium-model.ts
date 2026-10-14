@@ -1,9 +1,24 @@
 import { Box3, Vector3, type Object3D } from "three";
+import assets from "@/data/stadium-assets.json";
 
-export const STADIUM_MODEL_URL =
-  "/models/estadio-quisqueya.glb?v=20261005-pending-seats";
+export const STADIUM_MODEL_URL = assets.detail.url;
+export const STADIUM_MAP_URL = assets.map.url;
+const transforms = new WeakMap<Object3D, ReturnType<typeof createTransform>>();
 export function modelTransform(scene: Object3D) {
-  const bounds = new Box3().setFromObject(scene);
+  let transform = transforms.get(scene);
+  if (!transform) {
+    transform = createTransform(scene);
+    transforms.set(scene, transform);
+  }
+  return transform;
+}
+function createTransform(scene: Object3D) {
+  // Both web assets retain the source bounds so cameras/seats never shift when
+  // hidden geometry is removed or meshes are quantized during optimization.
+  const saved = scene.userData.stadiumBounds;
+  const bounds = saved
+    ? new Box3(new Vector3(...saved.min), new Vector3(...saved.max))
+    : new Box3().setFromObject(scene);
   const size = bounds.getSize(new Vector3());
   const center = bounds.getCenter(new Vector3());
   const scale = 28 / Math.max(size.x, size.y, size.z);

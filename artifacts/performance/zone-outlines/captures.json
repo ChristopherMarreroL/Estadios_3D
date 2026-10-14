@@ -1,0 +1,77 @@
+[
+  {
+    "key": "2275:0",
+    "title": "Explorar Corporativo",
+    "path": "artifacts/performance/zone-outlines/2275_0.png"
+  },
+  {
+    "key": "2276:0",
+    "title": "Explorar Preferencias",
+    "path": "artifacts/performance/zone-outlines/2276_0.png"
+  },
+  {
+    "key": "2278:1",
+    "title": "Explorar Gradas, lado derecho",
+    "path": "artifacts/performance/zone-outlines/2278_1.png"
+  },
+  {
+    "key": "2278:-1",
+    "title": "Explorar Gradas, lado izquierdo",
+    "path": "artifacts/performance/zone-outlines/2278_-1.png"
+  },
+  {
+    "key": "2279:0",
+    "title": "Explorar VIP Escogido",
+    "path": "artifacts/performance/zone-outlines/2279_0.png"
+  },
+  {
+    "key": "2281:0",
+    "title": "Explorar VIP Licey",
+    "path": "artifacts/performance/zone-outlines/2281_0.png"
+  },
+  {
+    "key": "2282:0",
+    "title": "Explorar Balcón Escogido",
+    "path": "artifacts/performance/zone-outlines/2282_0.png"
+  },
+  {
+    "key": "2283:0",
+    "title": "Explorar Balcón Licey",
+    "path": "artifacts/performance/zone-outlines/2283_0.png"
+  },
+  {
+    "key": "2287:1",
+    "title": "Explorar Palco A, lado derecho",
+    "path": "artifacts/performance/zone-outlines/2287_1.png"
+  },
+  {
+    "key": "2287:-1",
+    "title": "Explorar Palco A, lado izquierdo",
+    "path": "artifacts/performance/zone-outlines/2287_-1.png"
+  },
+  {
+    "key": "2288:1",
+    "title": "Explorar Palco AA, lado derecho",
+    "path": "artifacts/performance/zone-outlines/2288_1.png"
+  },
+  {
+    "key": "2288:-1",
+    "title": "Explorar Palco AA, lado izquierdo",
+    "path": "artifacts/performance/zone-outlines/2288_-1.png"
+  },
+  {
+    "key": "2289:1",
+    "title": "Explorar Palco AAA, lado derecho",
+    "path": "artifacts/performance/zone-outlines/2289_1.png"
+  },
+  {
+    "key": "2289:-1",
+    "title": "Explorar Palco AAA, lado izquierdo",
+    "path": "artifacts/performance/zone-outlines/2289_-1.png"
+  },
+  {
+    "key": "2812:0",
+    "title": "Explorar Bullpen Licey",
+    "path": "artifacts/performance/zone-outlines/2812_0.png"
+  }
+]

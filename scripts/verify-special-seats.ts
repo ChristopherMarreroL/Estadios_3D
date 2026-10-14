@@ -2,14 +2,12 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import catalog from "../src/data/seat-catalog.json";
-import layout from "../src/data/special-seat-layout.json";
 import { simulateSector, SPECIAL_GROUP_IDS } from "../src/lib/seat-simulation";
 import {
   ticketSectors,
   ticketSeats,
   TICKET_CATEGORIES,
 } from "../src/lib/ticket-inventory";
-import { seatNeighbors } from "../src/lib/seat-occupancy";
 let count = 0;
 for (const id of SPECIAL_GROUP_IDS) {
   const group = catalog.groups.find((g) => g.id === id)!;
@@ -44,45 +42,12 @@ for (const id of SPECIAL_GROUP_IDS) {
     }
   }
 }
-assert.equal(count, 608);
-assert.equal(ticketSeats.size, catalog.totalSeats);
-assert.equal(
-  layout.groups.flatMap((g) => g.seats).filter((s) => s.kind === "table")
-    .length,
-  16,
-);
-assert.equal(layout.bullpen.tables.length, 4);
-const bp = catalog.groups
-  .find((g) => g.id === 2812)!
-  .sectors.find((s) => s.id === 13416)!;
-const seats = simulateSector(2812, bp);
-for (const table of layout.bullpen.tables) {
-  const chairs = seats.filter((s) => s.row === table.row);
-  assert.equal(chairs.length, 4);
-  for (const seat of chairs) {
-    assert(
-      Math.abs(
-        Math.hypot(
-          seat.position[0] - table.position[0],
-          seat.position[1] - table.position[1],
-        ) - 0.9,
-      ) < 1e-8,
-    );
-    const toward = [-Math.sin(seat.facing!), Math.cos(seat.facing!)];
-    assert(
-      toward[0] * (table.position[0] - seat.position[0]) +
-        toward[1] * (table.position[1] - seat.position[1]) >
-        0.89,
-      "Chair must face table",
-    );
-    const neighbors = seatNeighbors(seats, seat);
-    assert.equal(neighbors.length, 2);
-    assert(
-      neighbors.every((n) => n.seat.row === seat.row),
-      "Table neighbors must stay at same table",
-    );
-  }
-}
+const unbuilt = catalog.groups.find((g) => g.id === 2812)!;
+const unbuiltSeats = unbuilt.sectors.reduce((n, s) => n + s.seatCount, 0);
+assert.equal(count, 608 - unbuiltSeats);
+assert.equal(ticketSeats.size, catalog.totalSeats - unbuiltSeats);
+assert(!TICKET_CATEGORIES.some((c) => c.id === 2812));
+assert(!ticketSectors.some((s) => unbuilt.sectors.some((u) => u.id === s.id)));
 const checks = JSON.parse(
   readFileSync(
     "artifacts/blender/pending-seats-20261005/model-checks.json",

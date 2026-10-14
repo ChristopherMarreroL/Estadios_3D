@@ -18,7 +18,6 @@ export const TICKET_CATEGORIES = [
   { id: 2281, name: "VIP Licey", color: "#6188dc", price: 2500 },
   { id: 2282, name: "Balcón Escogido", color: "#e29686", price: 1800 },
   { id: 2283, name: "Balcón Licey", color: "#839cde", price: 1800 },
-  { id: 2812, name: "Bullpen Licey", color: "#568dd8", price: 2000 },
 ];
 function hash(text: string) {
   let value = 2166136261;
@@ -73,6 +72,12 @@ export const ticketSectors = catalog.groups
       }),
   );
 export type TicketSector = (typeof ticketSectors)[number];
+export type TicketZone = {
+  key: string;
+  category: (typeof TICKET_CATEGORIES)[number];
+  sectorIds: number[];
+  side: "izquierdo" | "derecho" | null;
+};
 export type TicketSeat = TicketSector["seats"][number];
 export const ticketSeats = new Map(
   ticketSectors.flatMap((s) =>

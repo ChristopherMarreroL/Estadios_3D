@@ -1,0 +1,52 @@
+{
+  "url": "http://localhost:3001",
+  "label": "after",
+  "environment": "Headless Edge, 1440x1000; local production; 10 Mbps / 40 ms latency",
+  "samples": [
+    {
+      "cache": "cold",
+      "readyMs": 1735.2999999970198,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 937.2999999970198,
+          "transferBytes": 476906,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        201
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 116,
+        "medianMs": 16.400000005960464,
+        "p95Ms": 19,
+        "maxDrawCalls": 421
+      }
+    },
+    {
+      "cache": "warm",
+      "readyMs": 804.7000000029802,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 61.29999999701977,
+          "transferBytes": 0,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        78
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 118,
+        "medianMs": 16.600000008940697,
+        "p95Ms": 19.600000008940697,
+        "maxDrawCalls": 421
+      }
+    }
+  ],
+  "errors": []
+}
