@@ -24,6 +24,7 @@ import {
   Mesh,
   MeshBasicMaterial,
   Object3D,
+  PerspectiveCamera,
   Vector3,
   DoubleSide,
   type Intersection,
@@ -566,12 +567,51 @@ function Content({
       direction.normalize();
       const radius = Math.max(bounds.getSize(new Vector3()).length() / 2, 0.3);
       const aspect = Math.min(1, size.width / size.height);
-      const distance =
+      let distance =
         (radius / Math.sin(Math.atan(Math.tan(Math.PI / 8) * aspect))) * 0.58;
-      end = target
-        .clone()
-        .addScaledVector(direction, distance * 0.35)
-        .add(new Vector3(0, distance * 0.94, 0));
+      // A slow frame must not skip the whole approach, or a drag that arrives
+      // a moment later can no longer cancel it.
+      const probe = camera.clone() as PerspectiveCamera;
+      const point = new Vector3();
+      const eyeAt = (span: number) =>
+        target
+          .clone()
+          .addScaledVector(direction, span * 0.35)
+          .add(new Vector3(0, span * 0.94, 0));
+      const membersInside = (span: number) => {
+        probe.position.copy(eyeAt(span));
+        probe.lookAt(target);
+        probe.updateProjectionMatrix();
+        probe.updateMatrixWorld();
+        for (const region of regions) {
+          if (!focusedIds.has(region.sector.id)) continue;
+          point.copy(region.center).project(probe);
+          const x = ((point.x + 1) * size.width) / 2;
+          const y = ((1 - point.y) * size.height) / 2;
+          if (
+            point.z < -1 ||
+            point.z > 1 ||
+            x < 10 ||
+            x > size.width - 10 ||
+            y < 10 ||
+            y > size.height - 56
+          )
+            return false;
+        }
+        return true;
+      };
+      if (!membersInside(distance)) {
+        let far = distance;
+        for (let i = 0; i < 8 && !membersInside(far); i++) far *= 1.4;
+        let near = distance;
+        for (let i = 0; i < 10; i++) {
+          const mid = (near + far) / 2;
+          if (membersInside(mid)) far = mid;
+          else near = mid;
+        }
+        distance = far;
+      }
+      end = eyeAt(distance);
     }
     if (reducedMotion) {
       camera.position.copy(end);
@@ -612,7 +652,8 @@ function Content({
   useFrame((_, delta) => {
     const f = flight.current;
     if (f && controls.current) {
-      f.time = Math.min(1, f.time + delta / 1.1);
+      const step = Math.min(delta, 1 / 30);
+      f.time = Math.min(1, f.time + step / 1.1);
       const t = f.time * f.time * (3 - 2 * f.time);
       camera.position.lerpVectors(f.from, f.to, t);
       controls.current.target.lerpVectors(f.fromTarget, f.target, t);
@@ -628,6 +669,9 @@ function Content({
         }
       } else invalidate();
     }
+    // Projecting every label while the pointer is down blocks the drag on a
+    // slow machine. Positions catch up on the frame after release.
+    if (dragging.current) return;
     camera.updateMatrixWorld();
     regions.forEach((r, i) => {
       const p = projectedCenters[i].copy(r.center).project(camera);
@@ -1038,8 +1082,7 @@ function Content({
       <OrbitControls
         ref={controls}
         makeDefault
-        enableDamping
-        dampingFactor={0.12}
+        enableDamping={false}
         minDistance={0.3}
         maxDistance={45}
         maxPolarAngle={Math.PI / 2.05}
@@ -1055,6 +1098,7 @@ function Content({
         onEnd={() => {
           cursor("grab");
           dragging.current = false;
+          invalidate();
         }}
       />
     </>
