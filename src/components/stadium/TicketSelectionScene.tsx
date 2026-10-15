@@ -23,6 +23,7 @@ import {
   InstancedMesh,
   Mesh,
   MeshBasicMaterial,
+  Matrix4,
   Object3D,
   PerspectiveCamera,
   Vector3,
@@ -339,32 +340,34 @@ function Content({
       members.push(index);
       groups.set(key, members);
     });
-    return [...groups].map(([key, members]) => {
-      const center = members
-        .reduce((sum, index) => sum.add(regions[index].center), new Vector3())
-        .divideScalar(members.length);
-      const index = members.reduce((best, candidate) =>
-        regions[candidate].center.distanceToSquared(center) <
-        regions[best].center.distanceToSquared(center)
-          ? candidate
-          : best,
-      );
-      const category = regions[index].sector.category;
-      const side: TicketZone["side"] = [2287, 2288, 2289, 2278].includes(
-        category.id,
-      )
-        ? regions[index].center.x < 0
-          ? "izquierdo"
-          : "derecho"
-        : null;
-      return {
-        key,
-        index,
-        category,
-        sectorIds: members.map((i) => regions[i].sector.id),
-        side,
-      };
-    });
+    return [...groups]
+      .map(([key, members]) => {
+        const center = members
+          .reduce((sum, index) => sum.add(regions[index].center), new Vector3())
+          .divideScalar(members.length);
+        const index = members.reduce((best, candidate) =>
+          regions[candidate].center.distanceToSquared(center) <
+          regions[best].center.distanceToSquared(center)
+            ? candidate
+            : best,
+        );
+        const category = regions[index].sector.category;
+        const side: TicketZone["side"] = [2287, 2288, 2289, 2278].includes(
+          category.id,
+        )
+          ? regions[index].center.x < 0
+            ? "izquierdo"
+            : "derecho"
+          : null;
+        return {
+          key,
+          index,
+          category,
+          sectorIds: members.map((i) => regions[i].sector.id),
+          side,
+        };
+      })
+      .sort((a, b) => a.sectorIds.length - b.sectorIds.length);
   }, [regions]);
   const zoneOutlines = useMemo(() => {
     return zones.map((item) => {
@@ -415,6 +418,30 @@ function Content({
     () => regions.map(() => new Vector3()),
     [regions],
   );
+  const labelCamera = useMemo(() => new Matrix4(), []);
+  const labelProjection = useMemo(() => new Matrix4(), []);
+  const zoneLabelSizes = useRef(
+    new Map<string, { width: number; height: number }>(),
+  );
+  const labelsDirty = useRef(true);
+  useLayoutEffect(() => {
+    zoneLabelSizes.current.clear();
+  }, [size.width]);
+  useLayoutEffect(() => {
+    labelsDirty.current = true;
+    invalidate();
+  }, [sector, zone, selected, size.width, size.height, invalidate]);
+  const zoneOffsets = useMemo(() => {
+    const step = size.width < 600 ? 24 : 28;
+    return [0, -28, 28, -56, 56]
+      .flatMap((x) =>
+        [0, -step, step, -2 * step, 2 * step, -3 * step, 3 * step].map((y) => ({
+          x,
+          y,
+        })),
+      )
+      .sort((a, b) => a.x * a.x + a.y * a.y - b.x * b.x - b.y * b.y);
+  }, [size.width]);
   const allSeats = useMemo(
     () =>
       ticketSectors.flatMap((s) =>
@@ -688,10 +715,18 @@ function Content({
         }
       } else invalidate();
     }
-    // Projecting every label while the pointer is down blocks the drag on a
-    // slow machine. Positions catch up on the frame after release.
-    if (dragging.current) return;
     camera.updateMatrixWorld();
+    // Pointer hover can request frames without moving the camera. Reproject
+    // only when needed, including every rendered frame of a drag.
+    if (
+      !labelsDirty.current &&
+      labelCamera.equals(camera.matrixWorld) &&
+      labelProjection.equals(camera.projectionMatrix)
+    )
+      return;
+    labelsDirty.current = false;
+    labelCamera.copy(camera.matrixWorld);
+    labelProjection.copy(camera.projectionMatrix);
     regions.forEach((r, i) => {
       const p = projectedCenters[i].copy(r.center).project(camera);
       p.x = ((p.x + 1) * size.width) / 2;
@@ -708,50 +743,46 @@ function Content({
       width: number;
       height: number;
     }[] = [];
-    const compact = size.width < 600;
-    const step = compact ? 24 : 28;
     for (const zone of zones) {
       const element = zoneLabels.current.get(zone.key);
       if (!element) continue;
       const p = projectedCenters[zone.index];
       let placement: (typeof placedZones)[number] | undefined;
       if (overview && p.z >= -1 && p.z <= 1) {
-        const width = zone.category.name.length * (compact ? 5.85 : 6.5) + 15;
-        const height = compact ? 20 : 24;
+        // Measure once per viewport change. Guessed text widths pushed the
+        // balcony guides into other tiers even when their actual cards fit.
+        let dimensions = zoneLabelSizes.current.get(zone.key);
+        if (!dimensions) {
+          dimensions = {
+            width: element.offsetWidth,
+            height: element.offsetHeight,
+          };
+          zoneLabelSizes.current.set(zone.key, dimensions);
+        }
+        const { width, height } = dimensions;
         // Only the few overview guides need spacing. Sector names remain
         // fixed to their geometry and never participate in this layout.
-        for (const dx of [0, -28, 28, -56, 56]) {
-          for (const dy of [
-            0,
-            -step,
-            step,
-            -2 * step,
-            2 * step,
-            -3 * step,
-            3 * step,
-          ]) {
-            const candidate = { x: p.x + dx, y: p.y + dy, width, height };
-            if (
-              candidate.x - width / 2 < 6 ||
-              candidate.x + width / 2 > size.width - 6 ||
-              candidate.y - height / 2 < 60 ||
-              candidate.y + height / 2 > size.height - 48
+        for (const { x: dx, y: dy } of zoneOffsets) {
+          const candidate = { x: p.x + dx, y: p.y + dy, width, height };
+          if (
+            candidate.x - width / 2 < 6 ||
+            candidate.x + width / 2 > size.width - 6 ||
+            candidate.y - height / 2 < 60 ||
+            candidate.y + height / 2 > size.height - 48
+          )
+            continue;
+          if (
+            placedZones.some(
+              (other) =>
+                Math.abs(candidate.x - other.x) <
+                  (width + other.width) / 2 + 3 &&
+                Math.abs(candidate.y - other.y) <
+                  (height + other.height) / 2 + 3,
             )
-              continue;
-            if (
-              placedZones.some(
-                (other) =>
-                  Math.abs(candidate.x - other.x) <
-                    (width + other.width) / 2 + 3 &&
-                  Math.abs(candidate.y - other.y) <
-                    (height + other.height) / 2 + 3,
-              )
-            )
-              continue;
-            placement = candidate;
-            break;
-          }
-          if (placement) break;
+          )
+            continue;
+          placement = candidate;
+          break;
         }
       }
       element.style.visibility = placement ? "visible" : "hidden";
@@ -777,6 +808,11 @@ function Content({
         x > size.width ||
         y < 0 ||
         y > size.height - 44;
+      element.style.translate = `calc(${x}px - 50%) calc(${y}px - 50%)`;
+      if (hidden) {
+        element.style.visibility = "hidden";
+        continue;
+      }
       const direction = projectedLabel
         .copy(r.center)
         .addScaledVector(r.labelDirection, 0.2)
@@ -813,9 +849,12 @@ function Content({
       const name = element.firstElementChild;
       if (name && name.textContent !== displayLabel)
         name.textContent = displayLabel;
-      // Use the longer axis of narrow sections, so lower-bowl names can be
-      // larger without moving their anchors away from the seats.
-      const radial = height > width * 1.25;
+      // Terrace sections share an orientation across their rows. Choosing
+      // the axis from each projected bounding box flips neighboring names
+      // by 90 degrees at shallow camera angles and makes them overlap.
+      const radial = [2287, 2288, 2289, 2276].includes(r.sector.category.id)
+        ? true
+        : height > width * 1.25;
       const fontSize = Math.max(
         8,
         Math.min(
@@ -832,7 +871,6 @@ function Content({
         Math.min(width, height) >= 9;
       element.style.visibility =
         hidden || (!fits && !zoneMember) ? "hidden" : "visible";
-      element.style.translate = `calc(${x}px - 50%) calc(${y}px - 50%)`;
       const horizontalGroup =
         zoneMember && !sector && [2275, 2278].includes(r.sector.category.id);
       element.style.rotate = `${sector?.id === r.sector.id || horizontalGroup ? 0 : angle.toFixed(1)}deg`;
@@ -1031,6 +1069,7 @@ function Content({
               ref={(element) => {
                 if (element) {
                   labels.current.set(r.sector.id, element);
+                  labelsDirty.current = true;
                   invalidate();
                 } else labels.current.delete(r.sector.id);
               }}

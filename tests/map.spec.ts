@@ -42,6 +42,128 @@ async function openSectorFromCatalog(page: Page, name: string) {
   await waitForMapCamera(page);
 }
 
+test("labels follow the stadium while dragging and balconies start over their own seats", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  await page.goto("/");
+  await waitForMapCamera(page);
+  const balcony = page.locator('[data-zone-key="2282:0"]');
+  const balconySector = page.locator(
+    '.sector-tag[aria-label^="BALCON ESCOGIDO - 4,"]',
+  );
+  const center = (element: Element) => {
+    const rect = element.getBoundingClientRect();
+    return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+  };
+  const initial = await balcony.evaluate(center);
+  const seats = await balconySector.evaluate(center);
+  expect(Math.hypot(initial.x - seats.x, initial.y - seats.y)).toBeLessThan(3);
+  const licey = await page.locator('[data-zone-key="2283:0"]').evaluate(center);
+  const liceySeats = await page
+    .locator('.sector-tag[aria-label^="BALCON LICEY - 4,"]')
+    .evaluate(center);
+  expect(
+    Math.hypot(licey.x - liceySeats.x, licey.y - liceySeats.y),
+  ).toBeLessThan(3);
+  await page
+    .locator(".ticket-stadium-canvas")
+    .screenshot({ path: "artifacts/performance/labels-anchored-overview.png" });
+  const canvas = page.locator(".ticket-stadium-canvas canvas");
+  async function dragWithLabel(selector: string, button: "left" | "right") {
+    const label = page.locator(selector);
+    await expect(label).toBeVisible();
+    const before = await label.evaluate(center);
+    const bounds = (await canvas.boundingBox())!;
+    await page.mouse.move(
+      bounds.x + bounds.width * 0.55,
+      bounds.y + bounds.height * 0.35,
+    );
+    await page.mouse.down({ button });
+    try {
+      await page.mouse.move(
+        bounds.x + bounds.width * 0.6,
+        bounds.y + bounds.height * 0.38,
+        { steps: 3 },
+      );
+      await expect
+        .poll(async () => {
+          const during = await label.evaluate(center);
+          return Math.hypot(during.x - before.x, during.y - before.y);
+        })
+        .toBeGreaterThan(8);
+      const during = await label.evaluate(center);
+      await page.mouse.up({ button });
+      await waitForMapCamera(page);
+      const after = await label.evaluate(center);
+      expect(Math.hypot(after.x - during.x, after.y - during.y)).toBeLessThan(
+        2,
+      );
+    } finally {
+      await page.mouse.up({ button });
+    }
+  }
+  await dragWithLabel('[data-zone-key="2282:0"]', "right");
+  await page
+    .getByRole("button", {
+      name: "Explorar Palco AA, lado derecho",
+      exact: true,
+    })
+    .click();
+  await waitForMapCamera(page);
+  await dragWithLabel('.sector-tag[aria-label^="AA20,"]', "left");
+  await page
+    .getByRole("button", { name: "Todo el estadio", exact: true })
+    .click();
+  await openSectorFromCatalog(page, "A35");
+  await dragWithLabel('.sector-tag[aria-label^="A34,"]', "right");
+});
+
+test("AAA names keep a consistent orientation through different camera angles", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  await page.goto("/");
+  await waitForMapCamera(page);
+  await page
+    .getByRole("button", {
+      name: "Explorar Palco AAA, lado izquierdo",
+      exact: true,
+    })
+    .click();
+  await waitForMapCamera(page);
+  const canvas = page.locator(".ticket-stadium-canvas canvas");
+  const box = (await canvas.boundingBox())!;
+  for (const delta of [0, 0.1, -0.18]) {
+    if (delta) {
+      await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.35);
+      await page.mouse.down();
+      await page.mouse.move(
+        box.x + box.width * (0.5 + delta),
+        box.y + box.height * 0.4,
+        { steps: 3 },
+      );
+      await page.mouse.up();
+      await waitForMapCamera(page);
+    }
+    const angles = await page
+      .locator(".sector-tag-zone:visible")
+      .evaluateAll((elements) =>
+        elements.map((element) =>
+          parseFloat((element as HTMLElement).style.rotate),
+        ),
+      );
+    expect(angles.length).toBeGreaterThan(4);
+    for (const angle of angles) {
+      const difference = Math.abs(angle - angles[0]) % 180;
+      expect(Math.min(difference, 180 - difference)).toBeLessThan(15);
+    }
+  }
+  await page
+    .locator(".ticket-stadium-canvas")
+    .screenshot({ path: "artifacts/performance/aaa-label-orientation.png" });
+});
+
 test("slow rendering does not stretch camera flights over 33 frames", async ({
   page,
 }) => {
