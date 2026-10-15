@@ -28,6 +28,7 @@ import {
   PerspectiveCamera,
   Vector3,
   DoubleSide,
+  TOUCH,
   type Intersection,
   type Raycaster,
 } from "three";
@@ -60,6 +61,8 @@ type Props = {
   roof: boolean;
   reducedMotion: boolean;
   paused?: boolean;
+  panMode?: boolean;
+  zoomRequest?: { id: number; direction: "in" | "out" } | null;
 };
 type Point = { x: number; y: number; z: number };
 function cameraRequestId({
@@ -160,6 +163,8 @@ function Content({
   reset,
   roof,
   reducedMotion,
+  panMode = false,
+  zoomRequest,
 }: Props) {
   const { scene } = useGLTF(STADIUM_MAP_URL);
   const transform = useMemo(() => modelTransform(scene), [scene]);
@@ -223,6 +228,24 @@ function Content({
   const pickers = useRef(
     new Map<InstancedMesh, { mesh: InstancedMesh; indices: number[] }[]>(),
   );
+  const lastZoom = useRef(zoomRequest?.id);
+  useEffect(() => {
+    if (
+      !zoomRequest ||
+      lastZoom.current === zoomRequest.id ||
+      !controls.current
+    )
+      return;
+    lastZoom.current = zoomRequest.id;
+    flight.current = null;
+    flightToken.current += 1;
+    pendingSeat.current = null;
+    if (zoomRequest.direction === "in") controls.current.dollyIn(0.8);
+    else controls.current.dollyOut(0.8);
+    gl.domElement.setAttribute("data-camera-state", "settled");
+    gl.domElement.setAttribute("data-camera-settled", requestId);
+    invalidate();
+  }, [zoomRequest, gl, invalidate, requestId]);
   const model = useMemo(() => {
     const clone = scene.clone(true);
     clone.scale.setScalar(transform.scale);
@@ -1141,6 +1164,10 @@ function Content({
         ref={controls}
         makeDefault
         enableDamping={false}
+        touches={{
+          ONE: panMode ? TOUCH.PAN : TOUCH.ROTATE,
+          TWO: TOUCH.DOLLY_PAN,
+        }}
         minDistance={0.3}
         maxDistance={45}
         maxPolarAngle={Math.PI / 2.05}

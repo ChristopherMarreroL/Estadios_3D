@@ -7,6 +7,9 @@ import {
   ArrowLeft,
   Eye,
   MapPin,
+  Minus,
+  Move,
+  Plus,
   RotateCcw,
   Ticket,
   Trash2,
@@ -20,7 +23,6 @@ import {
   MAX_TICKETS,
   ticketSeats,
   ticketSectors,
-  TICKET_CATEGORIES,
   toggleTicket,
   type TicketSeat,
   type TicketSector,
@@ -211,6 +213,11 @@ export function TicketMapExperience() {
     [roof, setRoof] = useState(false),
     [message, setMessage] = useState("");
   const [search, setSearch] = useState("");
+  const [panMode, setPanMode] = useState(false);
+  const [zoomRequest, setZoomRequest] = useState<{
+    id: number;
+    direction: "in" | "out";
+  } | null>(null);
   const [prompt, setPrompt] = useState<{
     kind: "add" | "remove";
     seat: TicketSeat;
@@ -368,6 +375,8 @@ export function TicketMapExperience() {
                 roof={roof}
                 reducedMotion={Boolean(reduced)}
                 paused={Boolean(preview)}
+                panMode={panMode}
+                zoomRequest={zoomRequest}
               />
             </SceneErrorBoundary>
             <div className="ticket-scene-tools">
@@ -380,42 +389,54 @@ export function TicketMapExperience() {
               <button aria-pressed={roof} onClick={() => setRoof(!roof)}>
                 {roof ? "Ocultar cubierta" : "Ver cubierta"}
               </button>
+              <button
+                className="ticket-touch-mode"
+                aria-label="Mover el mapa con un dedo"
+                aria-pressed={panMode}
+                onClick={() => setPanMode((value) => !value)}
+              >
+                <Move size={17} /> Mover
+              </button>
+            </div>
+            <div
+              className="ticket-zoom-tools"
+              role="group"
+              aria-label="Zoom del mapa"
+            >
+              <button
+                aria-label="Acercar mapa"
+                onClick={() =>
+                  setZoomRequest((previous) => ({
+                    id: (previous?.id ?? 0) + 1,
+                    direction: "in",
+                  }))
+                }
+              >
+                <Plus size={20} />
+              </button>
+              <button
+                aria-label="Alejar mapa"
+                onClick={() =>
+                  setZoomRequest((previous) => ({
+                    id: (previous?.id ?? 0) + 1,
+                    direction: "out",
+                  }))
+                }
+              >
+                <Minus size={20} />
+              </button>
             </div>
             <div className="ticket-scene-caption">
-              {hover ||
-                (sector
-                  ? "Pulsa una butaca de color. Te preguntaremos antes de añadirla al carrito."
-                  : zone
-                    ? "Elige un sector de esta zona para ver sus butacas."
-                    : "Pulsa una zona · Arrastra para girar · Acerca con dos dedos o la rueda")}
+              {panMode
+                ? "Arrastra con un dedo para mover"
+                : hover ||
+                  (sector
+                    ? "Elige una butaca"
+                    : zone
+                      ? "Elige un sector"
+                      : "Elige una zona · Arrastra para girar")}
             </div>
           </div>
-          <div className="ticket-legend">
-            <span>
-              <i style={{ background: "#b6c0c6" }} /> Agotado
-            </span>
-            <span>
-              <i style={{ background: "#dce5dc" }} /> Pocas disponibles
-            </span>
-            <span>
-              <i style={{ background: "#7baf72" }} /> Más disponibles
-            </span>
-            <span>
-              <i style={{ background: "#122a46" }} /> Tu selección
-            </span>
-          </div>
-          <div className="ticket-categories">
-            {TICKET_CATEGORIES.map((c) => (
-              <span key={c.id}>
-                <i style={{ background: c.color }} />
-                {c.name}
-              </span>
-            ))}
-          </div>
-          <p className="ticket-map-footnote">
-            Disponibilidad y precios de demostración. La cubierta se oculta al
-            inicio para facilitar la selección. Ubicación 3D aproximada.
-          </p>
           <details className="ticket-accessible">
             <summary>
               {sector
@@ -488,11 +509,6 @@ export function TicketMapExperience() {
               </>
             )}
           </details>
-          <p className="ticket-map-footnote">
-            Se muestran las localidades numeradas del catálogo, incluidos VIP y
-            balcones. Las posiciones 3D son aproximadas; las zonas de pie y
-            parqueos no tienen butacas.
-          </p>
         </section>
         <aside className="ticket-basket" aria-label="Resumen de entradas">
           <div className="basket-heading">
