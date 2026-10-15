@@ -3,10 +3,34 @@ import catalog from "../src/data/seat-catalog.json";
 declare global {
   interface Window {
     mapFrames: number;
+    slowFlightFrames: number;
+    cameraFlightOutlines: (string | null)[];
   }
 }
 
+async function waitForMapCamera(page: Page) {
+  await expect(page.locator(".ticket-stadium-canvas canvas")).toBeVisible();
+  await expect
+    .poll(
+      () =>
+        page.locator(".ticket-stadium-canvas").evaluate((root) => {
+          const requested = root
+            .querySelector("[data-camera-request]")
+            ?.getAttribute("data-camera-request");
+          const canvas = root.querySelector("canvas");
+          return Boolean(
+            requested &&
+            canvas?.getAttribute("data-camera-state") === "settled" &&
+            canvas.getAttribute("data-camera-settled") === requested,
+          );
+        }),
+      { timeout: 20_000 },
+    )
+    .toBe(true);
+}
+
 async function openSectorFromCatalog(page: Page, name: string) {
+  await waitForMapCamera(page);
   const catalog = page.locator(".ticket-accessible");
   if ((await catalog.getAttribute("open")) === null)
     await catalog.locator("summary").click();
@@ -15,11 +39,49 @@ async function openSectorFromCatalog(page: Page, name: string) {
     .filter({ has: page.locator("b", { hasText: new RegExp(`^${name}$`) }) })
     .click();
   await expect(page.locator(".ticket-map-bar h2")).toContainText(` · ${name}`);
+  await waitForMapCamera(page);
 }
+
+test("slow rendering does not stretch camera flights over 33 frames", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await waitForMapCamera(page);
+  await page.evaluate(() => {
+    // Simulate a slow renderer without changing the camera's intended duration.
+    window.slowFlightFrames = 0;
+    window.requestAnimationFrame = (callback) =>
+      window.setTimeout(() => {
+        if (
+          document
+            .querySelector("canvas")
+            ?.getAttribute("data-camera-state") === "moving"
+        )
+          window.slowFlightFrames++;
+        callback(performance.now());
+      }, 200);
+    window.cancelAnimationFrame = (id) => window.clearTimeout(id);
+  });
+  await page
+    .getByRole("button", { name: "Explorar Corporativo", exact: true })
+    .click();
+  await waitForMapCamera(page);
+  // At <=5 FPS the old delta cap required at least 33 frames. Real elapsed
+  // time finishes within a handful, even if one software-rendered frame is slow.
+  const frames = await page.evaluate(() => window.slowFlightFrames);
+  expect(frames).toBeGreaterThan(0);
+  expect(frames).toBeLessThan(15);
+  await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
+    "data-zone-outline",
+    "2275:0",
+  );
+});
 
 test("light map loads alone, stays idle, and retains its canvas across seat preview", async ({
   page,
 }) => {
+  // This integration test loads both GLBs and captures their rendered output.
+  test.setTimeout(120_000);
   const errors: string[] = [];
   // Vercel injects this endpoint only on hosted deployments.
   await page.route("**/_vercel/speed-insights/script.js", (route) =>
@@ -80,6 +142,7 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
     path: "artifacts/performance/map-loading-gray.png",
   });
   releaseMap();
+  await waitForMapCamera(page);
   await expect(
     page.locator("[data-map-category]:visible").first(),
   ).toBeVisible();
@@ -88,7 +151,6 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
   expect(models[0]).toContain("estadio-map-");
   const response = await page.request.get(models[0]);
   expect(response.headers()["cache-control"]).toContain("immutable");
-  await page.waitForTimeout(3000);
   const frames = await page.evaluate(() => window.mapFrames);
   await page.waitForTimeout(1000);
   expect((await page.evaluate(() => window.mapFrames)) - frames).toBeLessThan(
@@ -108,7 +170,7 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
     { steps: 10 },
   );
   await page.mouse.up();
-  await page.waitForTimeout(2500);
+  await waitForMapCamera(page);
   const afterDrag = await page.evaluate(() => window.mapFrames);
   await page.waitForTimeout(1000);
   expect(
@@ -121,6 +183,7 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
     .locator(".ticket-sector-list button")
     .filter({ has: page.locator("b", { hasText: /^A6$/ }) })
     .click();
+  await waitForMapCamera(page);
   await page.locator(".ticket-row-list button:not([disabled])").first().click();
   await page
     .locator("dialog[open]")
@@ -158,11 +221,11 @@ test.describe("map clarity", () => {
     page,
   }) => {
     await page.goto("/");
+    await waitForMapCamera(page);
     const canvas = page.locator(".ticket-stadium-canvas canvas");
     await expect(
       page.locator("[data-map-category]:visible").first(),
     ).toBeVisible();
-    await page.waitForTimeout(1700);
     await canvas.scrollIntoViewIfNeeded();
     const initial = await canvas.evaluate((element: HTMLCanvasElement) => ({
       width: element.width,
@@ -217,9 +280,9 @@ test("overview shows readable categories while every sector remains interactive"
 }) => {
   test.setTimeout(90_000);
   await page.goto("/");
+  await waitForMapCamera(page);
   const categories = page.locator("[data-map-category]:visible");
   await expect(categories.first()).toBeVisible();
-  await page.waitForTimeout(1700);
   expect(await categories.count()).toBeGreaterThan(8);
   expect(await categories.count()).toBeLessThanOrEqual(18);
   await expect(page.locator(".sector-tag:visible")).toHaveCount(0);
@@ -279,22 +342,22 @@ test("overview shows readable categories while every sector remains interactive"
   const target = anchors.find((anchor) => anchor.name === "A35")!;
   await page.mouse.click(target.x, target.y);
   await expect(page.locator(".ticket-map-bar h2")).toHaveText("Palco A · A35");
-  await page.waitForTimeout(1700);
+  await waitForMapCamera(page);
   await expect(page.locator("[data-map-category]:visible")).toHaveCount(0);
   await expect(page.locator('.sector-tag[aria-label^="A35,"]')).toHaveCount(1);
   await expect(page.locator('.sector-tag[aria-label^="A35,"]')).toBeHidden();
-  const visibleSectors = page.locator(".sector-tag:visible");
-  expect(await visibleSectors.count()).toBeGreaterThan(0);
-  for (const label of await visibleSectors.all()) {
-    const effectiveFontSize = await label.evaluate((element) => {
-      const style = getComputedStyle(element);
-      return parseFloat(style.fontSize) * (parseFloat(style.scale) || 1);
-    });
-    expect(effectiveFontSize).toBeGreaterThanOrEqual(7.9);
-  }
+  const fontSizes = await page
+    .locator(".sector-tag:visible")
+    .evaluateAll((elements) =>
+      elements.map((element) => {
+        const style = getComputedStyle(element);
+        return parseFloat(style.fontSize) * (parseFloat(style.scale) || 1);
+      }),
+    );
+  expect(fontSizes.length).toBeGreaterThan(0);
+  for (const size of fontSizes) expect(size).toBeGreaterThanOrEqual(7.9);
   await page.getByRole("button", { name: "Todo el estadio" }).click();
   await openSectorFromCatalog(page, "AAA3");
-  await page.waitForTimeout(1700);
   const source = catalog.groups
     .find((group) => group.id === 2289)!
     .sectors.find((sector) => sector.name === "PALCO - AAA3")!;
@@ -313,8 +376,8 @@ test("panning keeps other sector labels available for navigation", async ({
   page,
 }) => {
   await page.goto("/");
+  await waitForMapCamera(page);
   await openSectorFromCatalog(page, "A35");
-  await page.waitForTimeout(1700);
   const canvas = page.locator(".ticket-stadium-canvas canvas");
   await canvas.scrollIntoViewIfNeeded();
   const box = (await canvas.boundingBox())!;
@@ -334,7 +397,7 @@ test("panning keeps other sector labels available for navigation", async ({
   await expect(target).toBeVisible();
   await target.click();
   await expect(page.locator(".ticket-map-bar h2")).toHaveText("Palco A · A31");
-  await page.waitForTimeout(1700);
+  await waitForMapCamera(page);
   await page.locator(".sector-tag").filter({ hasText: /^A30$/ }).click();
   await expect(page.locator(".ticket-map-bar h2")).toHaveText("Palco A · A30");
 });
@@ -344,8 +407,8 @@ test("a visible chair outside the open sector navigates and asks before adding",
 }) => {
   test.setTimeout(90_000);
   await page.goto("/");
+  await waitForMapCamera(page);
   await openSectorFromCatalog(page, "A35");
-  await page.waitForTimeout(1700);
   const canvas = page.locator(".ticket-stadium-canvas canvas");
   await canvas.scrollIntoViewIfNeeded();
   const box = (await canvas.boundingBox())!;
@@ -377,6 +440,7 @@ test("a visible chair outside the open sector navigates and asks before adding",
   await expect(page.locator(".ticket-map-bar h2")).toHaveText(
     `Palco A · ${picked![1]}`,
   );
+  await waitForMapCamera(page);
   await expect(dialog).toBeVisible();
   await expect(dialog).toContainText(`${picked![2]} · Butaca ${picked![3]}`);
   await expect(dialog).toContainText(`Palco A · ${picked![1]}`);
@@ -393,10 +457,10 @@ test("a visible chair outside the open sector navigates and asks before adding",
 
 test("colored sector areas preserve sector picking", async ({ page }) => {
   await page.goto("/");
+  await waitForMapCamera(page);
   await expect(
     page.locator("[data-map-category]:visible").first(),
   ).toBeVisible();
-  await page.waitForTimeout(1600);
   const box = (await page
     .locator(".ticket-stadium-canvas canvas")
     .boundingBox())!;
@@ -420,6 +484,7 @@ test("pointer picks a seat in the open sector and mobile stays usable", async ({
   page,
 }) => {
   await page.goto("/");
+  await waitForMapCamera(page);
   await page
     .getByText("Buscar un sector o elegir sin usar el 3D", { exact: true })
     .click();
@@ -427,7 +492,7 @@ test("pointer picks a seat in the open sector and mobile stays usable", async ({
     .locator(".ticket-sector-list button")
     .filter({ has: page.locator("b", { hasText: /^A6$/ }) })
     .click();
-  await page.waitForTimeout(1700);
+  await waitForMapCamera(page);
   await page.locator(".ticket-stadium-canvas canvas").scrollIntoViewIfNeeded();
   const box = (await page
     .locator(".ticket-stadium-canvas canvas")
@@ -508,10 +573,25 @@ test("zone cards distinguish both sides, outline their members, and filter the c
 }) => {
   test.setTimeout(120_000);
   await page.goto("/");
+  await waitForMapCamera(page);
+  await page.evaluate(() => {
+    window.cameraFlightOutlines = [];
+    const canvas = document.querySelector(".ticket-stadium-canvas canvas")!;
+    new MutationObserver(() => {
+      if (canvas.getAttribute("data-camera-state") === "moving")
+        window.cameraFlightOutlines.push(
+          document
+            .querySelector("[data-zone-outline]")
+            ?.getAttribute("data-zone-outline") ?? null,
+        );
+    }).observe(canvas, {
+      attributes: true,
+      attributeFilter: ["data-camera-state"],
+    });
+  });
   await expect(
     page.locator("[data-map-category]:visible").first(),
   ).toBeVisible();
-  await page.waitForTimeout(1700);
   const sides = new Map<string, string[]>();
   const cases = [
     { key: "2287:-1", name: "Palco A", side: "izquierdo", group: 2287 },
@@ -533,14 +613,13 @@ test("zone cards distinguish both sides, outline their members, and filter the c
       await card.focus();
       await page.keyboard.press("Enter");
     } else await card.click();
-    await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
-      "data-zone-outline",
-      "",
-    );
     const title = `${item.name}${item.side ? ` · Lado ${item.side}` : ""}`;
     await expect(page.locator(".ticket-map-bar h2")).toHaveText(title);
     await expect(page.locator(".ticket-step")).toHaveText("02");
-    await page.waitForTimeout(1700);
+    await waitForMapCamera(page);
+    expect(await page.evaluate(() => window.cameraFlightOutlines.at(-1))).toBe(
+      "",
+    );
     const details = page.locator(".ticket-accessible");
     if ((await details.getAttribute("open")) === null)
       await details.locator("summary").click();
@@ -595,7 +674,7 @@ test("zone cards distinguish both sides, outline their members, and filter the c
     await expect(
       page.locator("[data-map-category]:visible").first(),
     ).toBeVisible();
-    await page.waitForTimeout(1700);
+    await waitForMapCamera(page);
   }
   const left = sides.get("izquierdo")!,
     right = sides.get("derecho")!;
@@ -612,12 +691,17 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
 }) => {
   test.setTimeout(90_000);
   await page.goto("/");
+  await waitForMapCamera(page);
+  // Hold the animation clock so this specifically tests cancellation during
+  // the approach, regardless of how long browser input takes on a CI runner.
+  await page.clock.install({ time: new Date("2026-01-01T00:00:00Z") });
+  await page.clock.pauseAt(new Date("2026-01-01T00:01:00Z"));
   await page
     .getByRole("button", {
       name: "Explorar Gradas, lado izquierdo",
       exact: true,
     })
-    .click();
+    .evaluate((button: HTMLButtonElement) => button.click());
   const canvas = page.locator(".ticket-stadium-canvas canvas");
   await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
     "data-zone-outline",
@@ -635,6 +719,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
     { steps: 8 },
   );
   await page.mouse.up({ button: "right" });
+  await page.clock.resume();
   await page.waitForTimeout(1500);
   await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
     "data-zone-outline",
@@ -646,6 +731,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
   await expect(page.locator(".ticket-map-bar h2")).toHaveText(
     "Explora el estadio en 3D",
   );
+  await waitForMapCamera(page);
   await page
     .getByRole("button", {
       name: "Explorar Gradas, lado izquierdo",
@@ -655,7 +741,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
   await expect(page.locator(".ticket-map-bar h2")).toHaveText(
     "Gradas · Lado izquierdo",
   );
-  await page.waitForTimeout(1700);
+  await waitForMapCamera(page);
   await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
     "data-zone-outline",
     "2278:-1",
@@ -702,7 +788,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
   await expect(
     page.getByRole("button", { name: "Volver a la zona", exact: true }),
   ).toBeVisible();
-  await page.waitForTimeout(1700);
+  await waitForMapCamera(page);
   await canvas.scrollIntoViewIfNeeded();
   const bounds = (await canvas.boundingBox())!;
   let picked: RegExpMatchArray | null = null;

@@ -61,6 +61,14 @@ type Props = {
   paused?: boolean;
 };
 type Point = { x: number; y: number; z: number };
+function cameraRequestId({
+  zone,
+  sector,
+  reset,
+  reducedMotion,
+}: Pick<Props, "zone" | "sector" | "reset" | "reducedMotion">) {
+  return `${zone?.key ?? ""}|${sector?.id ?? ""}|${reset}|${reducedMotion ? 1 : 0}`;
+}
 function miterOffsets(loop: OutlinePoint[], half: number) {
   const count = loop.length;
   return loop.map((point, index) => {
@@ -159,6 +167,7 @@ function Content({
   const labels = useRef(new Map<number, HTMLButtonElement>());
   const zoneLabels = useRef(new Map<string, HTMLButtonElement>());
   const flightToken = useRef(0);
+  const requestId = cameraRequestId({ zone, sector, reset, reducedMotion });
   const flightId = `${zone?.key ?? ""}|${sector?.id ?? ""}|${reset}|${size.width}x${size.height}|${reducedMotion ? 1 : 0}`;
   const [settledOutline, setSettledOutline] = useState<{
     id: string;
@@ -204,6 +213,8 @@ function Content({
     fromTarget: Vector3;
     target: Vector3;
     time: number;
+    startedAt: number | null;
+    requestId: string;
     token: number;
     flightId: string;
     outlineKey: string | null;
@@ -458,9 +469,7 @@ function Content({
             ? category
             : "#b6c0c6",
       );
-      const outside = Boolean(
-        zone && !zone.sectorIds.includes(seat.sectorId),
-      );
+      const outside = Boolean(zone && !zone.sectorIds.includes(seat.sectorId));
       // Seats outside the open zone stay quiet. Neighbors in the same zone
       // keep their real availability, even while another sector is selected.
       if (outside && !chosen.has(seat.key))
@@ -522,6 +531,7 @@ function Content({
     const control = controls.current;
     if (!control) return;
     const token = ++flightToken.current;
+    gl.domElement.setAttribute("data-camera-state", "moving");
     const nextOutline = zone && !sector ? zone.key : null;
     if (pendingSeat.current?.sectorId !== sector?.id)
       pendingSeat.current = null;
@@ -569,8 +579,6 @@ function Content({
       const aspect = Math.min(1, size.width / size.height);
       let distance =
         (radius / Math.sin(Math.atan(Math.tan(Math.PI / 8) * aspect))) * 0.58;
-      // A slow frame must not skip the whole approach, or a drag that arrives
-      // a moment later can no longer cancel it.
       const probe = camera.clone() as PerspectiveCamera;
       const point = new Vector3();
       const eyeAt = (span: number) =>
@@ -618,6 +626,8 @@ function Content({
       control.target.copy(target);
       control.update();
       flight.current = null;
+      gl.domElement.setAttribute("data-camera-state", "settled");
+      gl.domElement.setAttribute("data-camera-settled", requestId);
       if (pendingSeat.current) {
         const seat = pendingSeat.current;
         pendingSeat.current = null;
@@ -630,6 +640,8 @@ function Content({
         fromTarget: control.target.clone(),
         target,
         time: 0,
+        startedAt: null,
+        requestId,
         token,
         flightId,
         outlineKey: nextOutline,
@@ -648,18 +660,25 @@ function Content({
     transform,
     invalidate,
     flightId,
+    requestId,
+    gl,
   ]);
-  useFrame((_, delta) => {
+  useFrame(() => {
     const f = flight.current;
     if (f && controls.current) {
-      const step = Math.min(delta, 1 / 30);
-      f.time = Math.min(1, f.time + step / 1.1);
+      // Start on the first rendered frame so an idle clock cannot skip the
+      // approach. Thereafter use real elapsed time, independent of GPU FPS.
+      const now = performance.now();
+      f.startedAt ??= now;
+      f.time = Math.min(1, (now - f.startedAt) / 1100);
       const t = f.time * f.time * (3 - 2 * f.time);
       camera.position.lerpVectors(f.from, f.to, t);
       controls.current.target.lerpVectors(f.fromTarget, f.target, t);
       controls.current.update();
       if (f.time === 1) {
         flight.current = null;
+        gl.domElement.setAttribute("data-camera-state", "settled");
+        gl.domElement.setAttribute("data-camera-settled", f.requestId);
         if (f.token === flightToken.current)
           setSettledOutline({ id: f.flightId, key: f.outlineKey });
         if (pendingSeat.current) {
@@ -1087,6 +1106,7 @@ function Content({
         maxDistance={45}
         maxPolarAngle={Math.PI / 2.05}
         onStart={() => {
+          gl.domElement.setAttribute("data-camera-state", "interacting");
           cursor("grabbing");
           dragging.current = true;
           pendingSeat.current = null;
@@ -1096,6 +1116,8 @@ function Content({
           }
         }}
         onEnd={() => {
+          gl.domElement.setAttribute("data-camera-state", "settled");
+          gl.domElement.setAttribute("data-camera-settled", requestId);
           cursor("grab");
           dragging.current = false;
           invalidate();
@@ -1109,6 +1131,7 @@ export const TicketSelectionScene = memo(function TicketSelectionScene(
 ) {
   return (
     <Canvas
+      data-camera-request={cameraRequestId(props)}
       frameloop={props.paused ? "never" : "demand"}
       dpr={[1, 2]}
       camera={{ position: [0, 28, 16], fov: 45, near: 0.008, far: 150 }}
