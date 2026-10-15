@@ -1,9 +1,9 @@
 {
   "pipeline": 1,
-  "sourceHash": "63a0dbb23ba4914df96729841e3ac4971a56ca1c83f0022e2e5fed09c2f052e6",
+  "sourceHash": "9e312ed140161d1199175da22eea7197955f74d1349cd6195050a4a9c4b5ae05",
   "pipelineHash": "aa15e200dd975987ceb27dde54fb6b33df73cf7096af1a8162fd9067f79313ce",
-  "toolchainHash": "349294be5ac5dcda91d67bdbf2bc04aa0874dffb531fc6bf76287873850e1348",
-  "sourceBytes": 26792580,
+  "toolchainHash": "d505e983646eb151e65d35a036ea0dd25e2a8d4835ad195aa7e5c8fc12bd14f9",
+  "sourceBytes": 26595140,
   "bounds": {
     "min": [
       -130.2540283203125,
@@ -17,17 +17,17 @@
     ]
   },
   "map": {
-    "url": "/models/estadio-map-9a09860793a5.glb",
-    "hash": "9a09860793a54eda96753ea658b6319ef087cc620b24056e5ec6e61073f73a7c",
-    "bytes": 2194244,
-    "triangles": 250648,
-    "drawCalls": 39
+    "url": "/models/estadio-map-424e317de344.glb",
+    "hash": "424e317de34454510f0799a73e076eeb6b9de817836d3d497f6acff026ee342e",
+    "bytes": 2380428,
+    "triangles": 243482,
+    "drawCalls": 41
   },
   "detail": {
-    "url": "/models/estadio-detail-342fda9f9cd6.glb",
-    "hash": "342fda9f9cd66cd12620754d2588abdb70075c1b2045b26a484a84daa42611ba",
-    "bytes": 7729896,
-    "triangles": 1160176,
-    "drawCalls": 38
+    "url": "/models/estadio-detail-ac3a9fc11bb1.glb",
+    "hash": "ac3a9fc11bb1f0fa4efd7cc7e681a265f55ecd0ea94067b9f6b42f461d3cea58",
+    "bytes": 7914876,
+    "triangles": 1153010,
+    "drawCalls": 40
   }
 }

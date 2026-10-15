@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1500" viewBox="0 0 1800 1500">
+  <defs>
+    <linearGradient id="blue" x2="0" y2="1"><stop stop-color="#102e61"/><stop offset="1" stop-color="#081b3b"/></linearGradient>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#32a8df"/><stop offset="1" stop-color="#c9edf3"/></linearGradient>
+    <linearGradient id="uniform" x2="1" y2="0"><stop stop-color="#a39d89"/><stop offset=".5" stop-color="#e4dfcc"/><stop offset="1" stop-color="#8f9289"/></linearGradient>
+    <g id="player">
+      <!-- Original flat advertising illustration; deliberately no 3D crowd mesh. -->
+      <path d="M-58 261 -75 116 -79 53 Q-72 33 -58 51 L-47 113 -21 235Z" fill="url(#uniform)" stroke="#63685d" stroke-width="5"/>
+      <path d="M-70 54 -85 33 -82 4 -73-17 -63-9 -60 23 -53 33 -55 58Z" fill="#b4a387"/>
+      <path d="M17 227 54 203 78 164 90 167 88 191 66 241 39 274Z" fill="url(#uniform)" stroke="#63685d" stroke-width="5"/>
+      <path d="M78 165 75 140 83 124 91 132 94 154 90 174Z" fill="#b4a387"/>
+      <path d="M-59 257 Q-45 220-4 219 Q36 220 51 257 L40 401 -49 401Z" fill="url(#uniform)" stroke="#63685d" stroke-width="5"/>
+      <ellipse cx="-6" cy="180" rx="42" ry="48" fill="#b4a387" stroke="#747b70" stroke-width="4"/>
+      <path d="M-50 164 Q-44 119-4 126 Q31 126 38 156 L56 165 -52 170Z" fill="#17345c"/>
+      <path d="M-33 172 -8 170 -5 188 -29 187Z M3 170 30 169 29 186 7 187Z" fill="#172a3d"/>
+      <path d="M-4 191 3 202 -9 205 M-24 214 Q-4 226 16 211" fill="none" stroke="#645e52" stroke-width="4"/>
+      <path d="M-45 270 Q-7 282 40 268 M-5 234 -4 392" fill="none" stroke="#747e79" stroke-width="4"/>
+      <path d="M-49 393 40 393 48 438 28 548 22 678 -10 678 -15 543 -31 678 -67 678 -62 536Z" fill="url(#uniform)" stroke="#63685d" stroke-width="5"/>
+      <path d="M-48 401 39 401" stroke="#273644" stroke-width="13"/>
+      <path d="M-68 673 -30 673 -25 696 -63 710 -91 709 -87 695Z M-11 673 22 673 31 699 62 710 56 723 13 719 -14 701Z" fill="#172638" stroke="#a9aeab" stroke-width="5"/>
+      <path d="M-46 443 -48 548 M23 447 8 549" fill="none" stroke="#7b8079" stroke-width="4"/>
+    </g>
+  </defs>
+  <rect width="1800" height="1500" fill="url(#blue)"/>
+  <path d="M8 0V1500M1792 0V1500" stroke="#536b8e" stroke-width="12"/>
+  <g transform="translate(-720 0) scale(1.8 1)"><text x="900" y="290" text-anchor="middle" font-family="Arial,sans-serif" font-size="310" font-weight="700" letter-spacing="-17" fill="#e3e5e4">altice</text></g>
+  <use href="#player" transform="translate(160 465) scale(1.08)"/>
+  <use href="#player" transform="translate(1640 465) scale(-1.08 1.08)"/>
+  <g fill="#243b54" font-family="Arial,sans-serif" font-size="30" font-weight="700" text-anchor="middle"><text x="156" y="807">altice</text><text x="1644" y="807">altice</text></g>
+  <!-- Static demonstration of the ABS display visible in the supplied photo. -->
+  <rect x="285" y="355" width="1230" height="790" rx="4" fill="#020b19" stroke="#597393" stroke-width="10"/>
+  <rect x="300" y="370" width="1200" height="610" fill="url(#sky)"/>
+  <path d="M300 560 Q500 515 700 557T1120 549T1500 562V682H300Z" fill="#43845d"/>
+  <path d="M300 624H1500V980H300Z" fill="#a95043"/>
+  <path d="M300 644 900 964 1500 644 M570 980 900 704 1230 980" fill="none" stroke="#fff4e2" stroke-width="14"/>
+  <path d="M862 916H938L952 940 900 972 848 940Z" fill="#fff"/>
+  <rect x="817" y="584" width="166" height="244" rx="3" fill="#ffffff" fill-opacity=".15" stroke="#fff" stroke-width="8"/>
+  <path d="M872 584V828M928 584V828M817 665H983M817 747H983" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <circle cx="924" cy="702" r="17" fill="#e8c32e" stroke="#fff" stroke-width="6"/>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="1300" y="395" width="170" height="150" fill="#fff" fill-opacity=".94"/>
+    <path d="M1340 476Q1347 428 1388 425M1381 475Q1387 445 1415 445" fill="none" stroke="#1686b6" stroke-width="9"/>
+    <text x="1385" y="526" font-size="38" fill="#174a68" font-weight="700">ABS</text>
+    <rect x="1300" y="558" width="170" height="48" fill="#fff" fill-opacity=".94"/>
+    <text x="1385" y="591" font-size="26" fill="#16334c">STRIKE</text>
+  </g>
+  <rect x="300" y="980" width="1200" height="150" fill="#251b32"/>
+  <g fill="#fff" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">
+    <text x="362" y="1030" font-size="27">EQUIPO</text>
+    <text x="375" y="1072" font-size="25">LICEY</text><text x="375" y="1115" font-size="25">ESCOGIDO</text>
+    <g font-size="29"><text x="560" y="1030">1</text><text x="635" y="1030">2</text><text x="710" y="1030">3</text><text x="785" y="1030">4</text><text x="860" y="1030">5</text><text x="935" y="1030">6</text><text x="1010" y="1030">7</text><text x="1085" y="1030">8</text><text x="1160" y="1030">9</text></g>
+    <text x="1360" y="1030" font-size="27">C H E</text>
+    <g font-size="26"><text x="560" y="1072">0</text><text x="635" y="1072">0</text><text x="710" y="1072">0</text><text x="785" y="1072">0</text><text x="860" y="1072">0</text><text x="935" y="1072">0</text><text x="1010" y="1072">0</text><text x="1085" y="1072">0</text><text x="1160" y="1072">0</text></g>
+    <g font-size="26"><text x="560" y="1115">0</text><text x="635" y="1115">0</text><text x="710" y="1115">0</text><text x="785" y="1115">0</text><text x="860" y="1115">0</text><text x="935" y="1115">0</text><text x="1010" y="1115">0</text><text x="1085" y="1115">0</text><text x="1160" y="1115">0</text></g>
+    <text x="1360" y="1072" font-size="27">0 0 0</text><text x="1360" y="1115" font-size="27">0 0 0</text>
+  </g>
+  <path d="M300 1039H1500M464 980V1130M1255 980V1130" stroke="#d5dbe7" stroke-width="3"/>
+  <text x="900" y="1295" text-anchor="middle" fill="#d6ccb3" font-family="Arial,sans-serif" font-style="italic" font-weight="700" font-size="54">La pasión de ser el mejor fanático</text>
+  <path d="M285 1390H1515" stroke="#294775" stroke-width="4"/>
+</svg>

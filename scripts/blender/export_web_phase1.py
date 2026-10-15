@@ -4,6 +4,7 @@ import os
 import shutil
 import json
 import struct
+import subprocess
 
 root = r'C:\Users\chris\Programacion\Estadios_3D'
 assert bpy.data.filepath == os.path.join(root, 'public', 'models', 'estadio-quisqueya-v1.blend')
@@ -35,4 +36,11 @@ with open(target, 'wb') as f:
     f.write(struct.pack('<II', len(chunk), 0x4e4f534a))
     f.write(chunk)
     f.write(tail)
+# The reference-based board is a lightweight web detail authored in SVG.
+# Reapply it after exporting so subsequent Blender edits cannot restore the
+# obsolete board or lose its textures. This leaves the .blend scene intact.
+subprocess.run(
+    ['node', os.path.join(root, 'scripts', 'refine-center-field.mjs')],
+    cwd=root, check=True,
+)
 result = {'status': list(out), 'path': target, 'bytes': os.path.getsize(target), 'backup': backup}
