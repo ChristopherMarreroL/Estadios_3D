@@ -177,7 +177,8 @@
   display: flex;
   gap: 5px;
 }
-.ticket-scene-tools button {
+.ticket-scene-tools button,
+.ticket-zoom-tools button {
   background: #fffefc;
   border: 1px solid #c5d1da;
   border-radius: 6px;
@@ -185,6 +186,40 @@
   color: var(--ink);
   font-size: 11px;
   box-shadow: 0 2px 8px #132e4610;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.ticket-scene-tools .ticket-touch-mode {
+  display: none;
+}
+.ticket-scene-tools button[aria-pressed="true"] {
+  background: #e7f0fa;
+  border-color: #185dac;
+}
+.ticket-zoom-tools {
+  position: absolute;
+  right: 14px;
+  bottom: 64px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ticket-zoom-tools button:focus-visible,
+.ticket-scene-tools button:focus-visible {
+  outline: 2px solid #185dac;
+  outline-offset: 2px;
+}
+@media (pointer: coarse), (max-width: 600px) {
+  .ticket-scene-tools .ticket-touch-mode {
+    display: inline-flex;
+  }
 }
 .ticket-scene-caption {
   position: absolute;
@@ -294,44 +329,12 @@
   text-align: center;
   box-shadow: 0 1px 5px #132e4666;
 }
-.ticket-legend,
-.ticket-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 18px;
-  align-items: center;
-  padding: 13px 18px;
-  background: white;
-  border: 1px solid var(--line);
-  border-top: 0;
-  font-size: 10px;
-}
-.ticket-legend span,
-.ticket-categories span {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-.ticket-legend i,
-.ticket-categories i,
 .ticket-sector-list i {
   width: 9px;
   height: 9px;
   border-radius: 2px;
   display: inline-block;
   flex-shrink: 0;
-}
-.ticket-categories {
-  padding-top: 2px;
-  border-radius: 0 0 12px 12px;
-  color: var(--muted);
-  border-top: 0;
-}
-.ticket-map-footnote {
-  font-size: 10px;
-  color: #647887;
-  line-height: 1.7;
-  margin: 10px 2px 15px;
 }
 .ticket-accessible {
   border: 1px solid var(--line);
@@ -851,15 +854,6 @@
   }
   .ticket-map-bar p {
     font-size: 10px;
-  }
-  .ticket-legend,
-  .ticket-categories {
-    gap: 9px 12px;
-    padding: 12px;
-    font-size: 9px;
-  }
-  .ticket-categories {
-    padding-top: 0;
   }
   .ticket-empty {
     padding: 20px;
