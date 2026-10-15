@@ -880,7 +880,7 @@ for (const cases of zoneBatches) {
   });
 }
 
-test("Gradas zone opens D17 or D18, asks before adding, and returns through the zone", async ({
+test("dragging cancels a Gradas camera flight without showing its outline", async ({
   page,
 }) => {
   test.setTimeout(90_000);
@@ -926,6 +926,18 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
     "Explora el estadio en 3D",
   );
   await waitForMapCamera(page);
+  await expect(
+    page.locator("[data-map-category]:visible").first(),
+  ).toBeVisible();
+});
+
+test("Gradas zone opens D17 or D18, asks before adding, and returns through the zone", async ({
+  page,
+}) => {
+  test.setTimeout(90_000);
+  await page.goto("/");
+  await waitForMapCamera(page);
+  const canvas = page.locator(".ticket-stadium-canvas canvas");
   await page
     .getByRole("button", {
       name: "Explorar Gradas, lado izquierdo",
@@ -949,7 +961,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
   await page.mouse.move(
     zoneCanvas.x + zoneCanvas.width * 0.85 + 35,
     zoneCanvas.y + zoneCanvas.height * 0.8,
-    { steps: 12 },
+    { steps: 3 },
   );
   await page.mouse.up({ button: "right" });
   await page.waitForTimeout(400);
@@ -1029,6 +1041,7 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
     "Gradas · Lado izquierdo",
   );
   await expect(page.locator(".ticket-step")).toHaveText("02");
+  await waitForMapCamera(page);
   await page
     .getByRole("button", { name: "Todo el estadio", exact: true })
     .click();
