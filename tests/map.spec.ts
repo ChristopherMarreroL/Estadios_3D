@@ -1,4 +1,5 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, type Page } from "@playwright/test";
+import { test } from "./fixtures";
 import catalog from "../src/data/seat-catalog.json";
 declare global {
   interface Window {
@@ -42,6 +43,45 @@ async function openSectorFromCatalog(page: Page, name: string) {
   await waitForMapCamera(page);
 }
 
+async function rowSeatProbePoints(page: Page, sector: string) {
+  const center = await page
+    .locator(`.sector-tag[aria-label^="${sector},"]`)
+    .evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+    });
+  const rows = await page.locator(".row-tag").evaluateAll((elements) =>
+    elements.map((element) => {
+      const rect = element.getBoundingClientRect();
+      return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+    }),
+  );
+  if (rows.length < 2) return [];
+  // Row labels mark the first end of real rows. Probe beside them instead of
+  // scanning hundreds of points in the empty space around a narrow section.
+  const dx = rows.at(-1)!.x - rows[0].x;
+  const dy = rows.at(-1)!.y - rows[0].y;
+  const length = Math.hypot(dx, dy) || 1;
+  let ux = -dy / length,
+    uy = dx / length;
+  if (ux * (center.x - rows[0].x) + uy * (center.y - rows[0].y) < 0) {
+    ux = -ux;
+    uy = -uy;
+  }
+  return rows
+    .sort(
+      (a, b) =>
+        Math.hypot(a.x - center.x, a.y - center.y) -
+        Math.hypot(b.x - center.x, b.y - center.y),
+    )
+    .flatMap((row) =>
+      [6, 10, 14, 20, 28, 40, 60].map((distance) => ({
+        x: row.x + ux * distance,
+        y: row.y + uy * distance,
+      })),
+    );
+}
+
 test("labels follow the stadium while dragging and balconies start over their own seats", async ({
   page,
 }) => {
@@ -66,9 +106,10 @@ test("labels follow the stadium while dragging and balconies start over their ow
   expect(
     Math.hypot(licey.x - liceySeats.x, licey.y - liceySeats.y),
   ).toBeLessThan(3);
-  await page
-    .locator(".ticket-stadium-canvas")
-    .screenshot({ path: "artifacts/performance/labels-anchored-overview.png" });
+  if (!process.env.CI)
+    await page.locator(".ticket-stadium-canvas").screenshot({
+      path: "artifacts/performance/labels-anchored-overview.png",
+    });
   const canvas = page.locator(".ticket-stadium-canvas canvas");
   async function dragWithLabel(selector: string, button: "left" | "right") {
     const label = page.locator(selector);
@@ -159,9 +200,10 @@ test("AAA names keep a consistent orientation through different camera angles", 
       expect(Math.min(difference, 180 - difference)).toBeLessThan(15);
     }
   }
-  await page
-    .locator(".ticket-stadium-canvas")
-    .screenshot({ path: "artifacts/performance/aaa-label-orientation.png" });
+  if (!process.env.CI)
+    await page
+      .locator(".ticket-stadium-canvas")
+      .screenshot({ path: "artifacts/performance/aaa-label-orientation.png" });
 });
 
 test("slow rendering does not stretch camera flights over 33 frames", async ({
@@ -260,9 +302,10 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
     expect(Math.min(...channels)).toBeGreaterThan(200);
     expect(Math.max(...channels) - Math.min(...channels)).toBeLessThan(30);
   }).toPass({ timeout: 10_000 });
-  await page.locator(".ticket-stadium-canvas").screenshot({
-    path: "artifacts/performance/map-loading-gray.png",
-  });
+  if (!process.env.CI)
+    await page.locator(".ticket-stadium-canvas").screenshot({
+      path: "artifacts/performance/map-loading-gray.png",
+    });
   releaseMap();
   await waitForMapCamera(page);
   await expect(
@@ -289,7 +332,7 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
   await page.mouse.move(
     mapBounds.x + mapBounds.width * 0.7,
     mapBounds.y + mapBounds.height * 0.65,
-    { steps: 10 },
+    { steps: 3 },
   );
   await page.mouse.up();
   await waitForMapCamera(page);
@@ -322,10 +365,19 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
   await expect
     .poll(() => models.some((url) => url.includes("estadio-detail-")))
     .toBe(true);
+  // Canvas retention and model loading do not require a continuously animated
+  // crowd. Use the real control to stop it before capturing the preview.
+  await page
+    .getByRole("button", { name: "Ocultar público", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "Mostrar público", exact: true }),
+  ).toHaveAttribute("aria-pressed", "false");
   await page.waitForTimeout(1500);
-  await page.screenshot({
-    path: "artifacts/performance/seat-preview-after.png",
-  });
+  if (!process.env.CI)
+    await page.screenshot({
+      path: "artifacts/performance/seat-preview-after.png",
+    });
   await page.getByRole("button", { name: "Cerrar vista 3D" }).click();
   expect(await canvas!.evaluate((element) => element.isConnected)).toBe(true);
   expect(models.filter((url) => url.includes("estadio-map-"))).toHaveLength(1);
@@ -374,14 +426,22 @@ test.describe("map clarity", () => {
     await page.mouse.move(box.x + box.width * 0.45, box.y + box.height * 0.4);
     await page.mouse.down();
     await page.mouse.move(box.x + box.width * 0.7, box.y + box.height * 0.45, {
-      steps: 30,
+      steps: 6,
     });
     await page.mouse.up();
     for (const delta of [-250, -250, 250]) {
       await page.mouse.wheel(0, delta);
       await page.waitForTimeout(150);
     }
-    await page.waitForTimeout(500);
+    await expect
+      .poll(() =>
+        canvas.evaluate(
+          (element) =>
+            (element as HTMLCanvasElement & { resolutionSamples: number[][] })
+              .resolutionSamples.length,
+        ),
+      )
+      .toBeGreaterThan(10);
     const samples = await canvas.evaluate(
       (element) =>
         (element as HTMLCanvasElement & { resolutionSamples: number[][] })
@@ -506,16 +566,16 @@ test("panning keeps other sector labels available for navigation", async ({
   await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.45);
   await page.mouse.down({ button: "right" });
   await page.mouse.move(box.x + box.width * 0.65, box.y + box.height * 0.45, {
-    steps: 15,
+    steps: 3,
   });
   await page.mouse.up({ button: "right" });
   // Wheel events advance OrbitControls in discrete increments. Pull back far
   // enough to bring A31 into view after panning away from the original sector.
-  for (let step = 0; step < 24; step++) {
+  const target = page.locator(".sector-tag").filter({ hasText: /^A31$/ });
+  for (let step = 0; step < 24 && !(await target.isVisible()); step++) {
     await page.mouse.wheel(0, 300);
     await page.waitForTimeout(100);
   }
-  const target = page.locator(".sector-tag").filter({ hasText: /^A31$/ });
   await expect(target).toBeVisible();
   await target.click();
   await expect(page.locator(".ticket-map-bar h2")).toHaveText("Palco A · A31");
@@ -690,123 +750,135 @@ test("pointer picks a seat in the open sector and mobile stays usable", async ({
   ).toBeVisible();
 });
 
-test("zone cards distinguish both sides, outline their members, and filter the catalog", async ({
-  page,
-}) => {
-  test.setTimeout(120_000);
-  await page.goto("/");
-  await waitForMapCamera(page);
-  await page.evaluate(() => {
-    window.cameraFlightOutlines = [];
-    const canvas = document.querySelector(".ticket-stadium-canvas canvas")!;
-    new MutationObserver(() => {
-      if (canvas.getAttribute("data-camera-state") === "moving")
-        window.cameraFlightOutlines.push(
-          document
-            .querySelector("[data-zone-outline]")
-            ?.getAttribute("data-zone-outline") ?? null,
-        );
-    }).observe(canvas, {
-      attributes: true,
-      attributeFilter: ["data-camera-state"],
-    });
-  });
-  await expect(
-    page.locator("[data-map-category]:visible").first(),
-  ).toBeVisible();
-  const sides = new Map<string, string[]>();
-  const cases = [
-    { key: "2287:-1", name: "Palco A", side: "izquierdo", group: 2287 },
-    { key: "2287:1", name: "Palco A", side: "derecho", group: 2287 },
-    { key: "2278:-1", name: "Gradas", side: "izquierdo", group: 2278 },
-    { key: "2275:0", name: "Corporativo", side: "", group: 2275 },
-    { key: "2281:0", name: "VIP Licey", side: "", group: 2281 },
-    { key: "2282:0", name: "Balcón Escogido", side: "", group: 2282 },
-    { key: "2288:1", name: "Palco AA", side: "derecho", group: 2288 },
-  ];
-  for (const [index, item] of cases.entries()) {
-    const card = page.locator(`[data-zone-key="${item.key}"]`);
-    await expect(card).toHaveAccessibleName(
-      `Explorar ${item.name}${item.side ? `, lado ${item.side}` : ""}`,
-    );
-    await expect(card).toHaveCSS("cursor", "pointer");
-    const canvas = page.locator(".ticket-stadium-canvas canvas");
-    if (index === 0) {
-      await card.focus();
-      await page.keyboard.press("Enter");
-    } else await card.click();
-    const title = `${item.name}${item.side ? ` · Lado ${item.side}` : ""}`;
-    await expect(page.locator(".ticket-map-bar h2")).toHaveText(title);
-    await expect(page.locator(".ticket-step")).toHaveText("02");
+const zoneCases = [
+  { key: "2287:-1", name: "Palco A", side: "izquierdo", group: 2287 },
+  { key: "2287:1", name: "Palco A", side: "derecho", group: 2287 },
+  { key: "2278:-1", name: "Gradas", side: "izquierdo", group: 2278 },
+  { key: "2275:0", name: "Corporativo", side: "", group: 2275 },
+  { key: "2281:0", name: "VIP Licey", side: "", group: 2281 },
+  { key: "2282:0", name: "Balcón Escogido", side: "", group: 2282 },
+  { key: "2288:1", name: "Palco AA", side: "derecho", group: 2288 },
+];
+// Keep the two sides together to verify the complete partition. Other zones
+// get independent browser/test budgets instead of accumulating seven flights.
+const zoneBatches = [
+  zoneCases.slice(0, 2),
+  ...zoneCases.slice(2).map((item) => [item]),
+];
+for (const cases of zoneBatches) {
+  test(`zone cards: ${cases.map((item) => `${item.name} ${item.side}`.trim()).join(" / ")}`, async ({
+    page,
+  }) => {
+    test.setTimeout(90_000);
+    await page.goto("/");
     await waitForMapCamera(page);
-    expect(await page.evaluate(() => window.cameraFlightOutlines.at(-1))).toBe(
-      "",
-    );
-    const details = page.locator(".ticket-accessible");
-    if ((await details.getAttribute("open")) === null)
-      await details.locator("summary").click();
-    const names = await page.locator(".ticket-sector-list b").allTextContents();
-    expect(names.length).toBeGreaterThan(0);
-    await expect(page.locator(".ticket-map-bar p")).toContainText(
-      `${names.length} sectores`,
-    );
-    const expected = catalog.groups
-      .find((group) => group.id === item.group)!
-      .sectors.filter((sector) => sector.seatCount > 0)
-      .map((sector) =>
-        sector.name.replace(
-          /PALCO\s*-?\s*|PREFERENCIA\s*-\s*|GRADAS\s*-\s*/g,
-          "",
-        ),
-      );
-    expect(names.every((name) => expected.includes(name))).toBe(true);
-    if (!item.side) expect([...names].sort()).toEqual([...expected].sort());
-    if (item.name === "Palco A") sides.set(item.side, names);
-    await canvas.scrollIntoViewIfNeeded();
-    await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
-      "data-zone-outline",
-      item.key,
-    );
-    const bounds = (await canvas.boundingBox())!;
-    for (const name of names) {
-      const tag = page.locator(`.sector-tag[aria-label^="${name},"]`);
-      await expect(tag).toBeVisible();
-      const anchor = await tag.evaluate((element) => {
-        const rect = element.getBoundingClientRect();
-        return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+    await page.evaluate(() => {
+      window.cameraFlightOutlines = [];
+      const canvas = document.querySelector(".ticket-stadium-canvas canvas")!;
+      new MutationObserver(() => {
+        if (canvas.getAttribute("data-camera-state") === "moving")
+          window.cameraFlightOutlines.push(
+            document
+              .querySelector("[data-zone-outline]")
+              ?.getAttribute("data-zone-outline") ?? null,
+          );
+      }).observe(canvas, {
+        attributes: true,
+        attributeFilter: ["data-camera-state"],
       });
-      expect(
-        anchor.x,
-        `${title}: ${name} horizontally framed`,
-      ).toBeGreaterThanOrEqual(bounds.x);
-      expect(anchor.x).toBeLessThanOrEqual(bounds.x + bounds.width);
-      expect(
-        anchor.y,
-        `${title}: ${name} vertically framed`,
-      ).toBeGreaterThanOrEqual(bounds.y);
-      expect(anchor.y).toBeLessThanOrEqual(bounds.y + bounds.height - 44);
-    }
-    await expect(page.locator("dialog[open]")).toHaveCount(0);
-    await expect(page.locator(".ticket-total small")).toHaveText(
-      "0 entradas · precios demo",
-    );
-    await page
-      .getByRole("button", { name: "Todo el estadio", exact: true })
-      .click();
+    });
     await expect(
       page.locator("[data-map-category]:visible").first(),
     ).toBeVisible();
-    await waitForMapCamera(page);
-  }
-  const left = sides.get("izquierdo")!,
-    right = sides.get("derecho")!;
-  expect(left.some((name) => right.includes(name))).toBe(false);
-  const all = catalog.groups
-    .find((group) => group.id === 2287)!
-    .sectors.filter((sector) => sector.seatCount > 0)
-    .map((sector) => sector.name.replace(/PALCO\s*-?\s*/g, ""));
-  expect([...left, ...right].sort()).toEqual(all.sort());
-});
+    const sides = new Map<string, string[]>();
+    for (const item of cases) {
+      const card = page.locator(`[data-zone-key="${item.key}"]`);
+      await expect(card).toHaveAccessibleName(
+        `Explorar ${item.name}${item.side ? `, lado ${item.side}` : ""}`,
+      );
+      await expect(card).toHaveCSS("cursor", "pointer");
+      const canvas = page.locator(".ticket-stadium-canvas canvas");
+      if (item.key === "2287:-1") {
+        await card.focus();
+        await page.keyboard.press("Enter");
+      } else await card.click();
+      const title = `${item.name}${item.side ? ` · Lado ${item.side}` : ""}`;
+      await expect(page.locator(".ticket-map-bar h2")).toHaveText(title);
+      await expect(page.locator(".ticket-step")).toHaveText("02");
+      await waitForMapCamera(page);
+      expect(
+        await page.evaluate(() => window.cameraFlightOutlines.at(-1)),
+      ).toBe("");
+      const details = page.locator(".ticket-accessible");
+      if ((await details.getAttribute("open")) === null)
+        await details.locator("summary").click();
+      const names = await page
+        .locator(".ticket-sector-list b")
+        .allTextContents();
+      expect(names.length).toBeGreaterThan(0);
+      await expect(page.locator(".ticket-map-bar p")).toContainText(
+        `${names.length} sectores`,
+      );
+      const expected = catalog.groups
+        .find((group) => group.id === item.group)!
+        .sectors.filter((sector) => sector.seatCount > 0)
+        .map((sector) =>
+          sector.name.replace(
+            /PALCO\s*-?\s*|PREFERENCIA\s*-\s*|GRADAS\s*-\s*/g,
+            "",
+          ),
+        );
+      expect(names.every((name) => expected.includes(name))).toBe(true);
+      if (!item.side) expect([...names].sort()).toEqual([...expected].sort());
+      if (item.name === "Palco A") sides.set(item.side, names);
+      await canvas.scrollIntoViewIfNeeded();
+      await expect(page.locator("[data-zone-outline]")).toHaveAttribute(
+        "data-zone-outline",
+        item.key,
+      );
+      const bounds = (await canvas.boundingBox())!;
+      for (const name of names) {
+        const tag = page.locator(`.sector-tag[aria-label^="${name},"]`);
+        await expect(tag).toBeVisible();
+        const anchor = await tag.evaluate((element) => {
+          const rect = element.getBoundingClientRect();
+          return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+        });
+        expect(
+          anchor.x,
+          `${title}: ${name} horizontally framed`,
+        ).toBeGreaterThanOrEqual(bounds.x);
+        expect(anchor.x).toBeLessThanOrEqual(bounds.x + bounds.width);
+        expect(
+          anchor.y,
+          `${title}: ${name} vertically framed`,
+        ).toBeGreaterThanOrEqual(bounds.y);
+        expect(anchor.y).toBeLessThanOrEqual(bounds.y + bounds.height - 44);
+      }
+      await expect(page.locator("dialog[open]")).toHaveCount(0);
+      await expect(page.locator(".ticket-total small")).toHaveText(
+        "0 entradas · precios demo",
+      );
+      await page
+        .getByRole("button", { name: "Todo el estadio", exact: true })
+        .click();
+      await expect(
+        page.locator("[data-map-category]:visible").first(),
+      ).toBeVisible();
+      await waitForMapCamera(page);
+    }
+    if (sides.size) {
+      const left = sides.get("izquierdo")!,
+        right = sides.get("derecho")!;
+      expect(left.some((name) => right.includes(name))).toBe(false);
+      const all = catalog.groups
+        .find((group) => group.id === 2287)!
+        .sectors.filter((sector) => sector.seatCount > 0)
+        .map((sector) => sector.name.replace(/PALCO\s*-?\s*/g, ""));
+      expect([...left, ...right].sort()).toEqual(all.sort());
+    }
+  });
+}
 
 test("Gradas zone opens D17 or D18, asks before adding, and returns through the zone", async ({
   page,
@@ -914,22 +986,25 @@ test("Gradas zone opens D17 or D18, asks before adding, and returns through the 
   await canvas.scrollIntoViewIfNeeded();
   const bounds = (await canvas.boundingBox())!;
   let picked: RegExpMatchArray | null = null;
-  for (let y = 0.2; y <= 0.82 && !picked; y += 0.025)
-    for (let x = 0.15; x <= 0.85 && !picked; x += 0.025) {
-      const position = {
+  const positions = await rowSeatProbePoints(page, sector);
+  for (let y = 0.2; y <= 0.82; y += 0.025)
+    for (let x = 0.15; x <= 0.85; x += 0.025)
+      positions.push({
         x: bounds.x + bounds.width * x,
         y: bounds.y + bounds.height * y,
-      };
-      await page.mouse.move(position.x, position.y);
-      const caption = await page.locator(".ticket-scene-caption").innerText();
-      const match = caption.match(
-        new RegExp(`^${sector} · (Fila .+) · Butaca (.+) · Disponible$`),
-      );
-      if (!match) continue;
-      await expect(canvas).toHaveCSS("cursor", "pointer");
-      await page.mouse.click(position.x, position.y);
-      picked = match;
-    }
+      });
+  for (const position of positions) {
+    await page.mouse.move(position.x, position.y);
+    const caption = await page.locator(".ticket-scene-caption").innerText();
+    const match = caption.match(
+      new RegExp(`^${sector} · (Fila .+) · Butaca (.+) · Disponible$`),
+    );
+    if (!match) continue;
+    await expect(canvas).toHaveCSS("cursor", "pointer");
+    await page.mouse.click(position.x, position.y);
+    picked = match;
+    break;
+  }
   expect(
     picked,
     `An available ${sector} chair should respond to the pointer`,

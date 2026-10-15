@@ -9,7 +9,14 @@ export default defineConfig({
     baseURL: "http://localhost:3001",
     channel: process.env.CI ? undefined : "msedge",
     viewport: { width: 1440, height: 1000 },
-    trace: "retain-on-failure",
+    // Continuous screencast readbacks compete with WebGL on software GPUs.
+    // Keep actions, DOM snapshots and sources for diagnosing failed tests.
+    trace: {
+      mode: "retain-on-failure",
+      screenshots: false,
+      snapshots: true,
+      sources: true,
+    },
     launchOptions: process.env.CI
       ? { args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"] }
       : {},
