@@ -1,0 +1,28 @@
+{
+  "revision": "20261013-bullpens",
+  "added": [
+    "bullpen_licey_floor",
+    "bullpen_licey_lanes",
+    "bullpen_licey_rubbers_plates",
+    "bullpen_licey_enclosure",
+    "outfield_wall_03_ends",
+    "bullpen_licey_glass_front",
+    "bullpen_licey_front_frame",
+    "bullpen_licey_field_door",
+    "bullpen_escogido_floor",
+    "bullpen_escogido_lanes",
+    "bullpen_escogido_rubbers_plates",
+    "bullpen_escogido_kickboard",
+    "bullpen_escogido_rail"
+  ],
+  "retired": [
+    "bullpen_licey",
+    "bullpen_escogido",
+    "bullpen_licey_grass_lane",
+    "bullpen_licey_mound",
+    "bullpen_escogido_grass_lane",
+    "bullpen_escogido_mound",
+    "outfield_wall_03"
+  ],
+  "clashes": []
+}

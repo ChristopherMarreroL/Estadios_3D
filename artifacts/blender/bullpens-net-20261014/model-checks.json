@@ -1,0 +1,26 @@
+{
+  "revision": "20261014-bullpens-net",
+  "added": [
+    "bullpen_escogido_floor",
+    "bullpen_escogido_lanes",
+    "bullpen_escogido_rubbers_plates",
+    "bullpen_escogido_kickboard",
+    "bullpen_escogido_rail",
+    "palco_a_safety_net",
+    "palco_a_net_supports"
+  ],
+  "retired": [
+    "catalog_seats_2812",
+    "special_bullpen_platforms",
+    "special_bullpen_tables",
+    "special_bullpen_front_rail",
+    "advertising_left_field_panel_01",
+    "advertising_left_field_panel_02",
+    "A6_safety_net",
+    "A6_net_supports"
+  ],
+  "corporateNetS": 18.300001494535536,
+  "netLength": 182.80322185779195,
+  "netPosts": 28,
+  "clashes": []
+}

@@ -21,7 +21,8 @@ export type SimulatedSeat = {
   kind?: "chair" | "table";
 };
 export const TERRACE_GROUP_IDS = [2287, 2288, 2289, 2275, 2276, 2278];
-export const SPECIAL_GROUP_IDS = [2279, 2281, 2282, 2283, 2812];
+// UEPA still lists 2812 "Bullpen Licey", but that area is not built in the stadium.
+export const SPECIAL_GROUP_IDS = [2279, 2281, 2282, 2283];
 export const SIMULATION_GROUP_IDS = [
   ...TERRACE_GROUP_IDS,
   ...SPECIAL_GROUP_IDS,

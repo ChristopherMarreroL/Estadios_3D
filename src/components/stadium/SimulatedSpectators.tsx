@@ -31,7 +31,7 @@ export function SimulatedSpectators({
 }) {
   const { scene } = useGLTF(STADIUM_MODEL_URL);
   const transform = useMemo(() => modelTransform(scene), [scene]);
-  const { camera } = useThree();
+  const { camera, invalidate } = useThree();
   const placements = useMemo(() => {
     return seats.map((seat) => {
       const position = new Vector3(...transform.fromBlender(seat.position));
@@ -195,6 +195,7 @@ export function SimulatedSpectators({
         pose(i, rest, rest * 0.86, 0, true);
       }
       initAt.current = end;
+      invalidate();
       bodies.current.instanceMatrix.needsUpdate = true;
       heads.current.instanceMatrix.needsUpdate = true;
       if (bodies.current.instanceColor)

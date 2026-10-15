@@ -1,0 +1,136 @@
+{
+  "url": "http://localhost:3001",
+  "label": "quality-spatialbatched",
+  "environment": "Headless Edge, 1440x1000; local production; 10 Mbps / 40 ms latency",
+  "samples": [
+    {
+      "cache": "cold",
+      "readyMs": 1720.0999999940395,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 905,
+          "transferBytes": 476906,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        201
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 121,
+        "medianMs": 16.899999991059303,
+        "p95Ms": 19.5,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 5.799999997019768,
+        "inputToDrawP95Ms": 14.899999991059303,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "zoom": {
+        "frames": 22,
+        "medianMs": 82.5,
+        "p95Ms": 84.8999999910593,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 2.4000000059604645,
+        "inputToDrawP95Ms": 4.200000002980232,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 96,
+        "medianMs": 16.69999998807907,
+        "p95Ms": 18.600000008940697,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 2.7000000029802322,
+        "inputToDrawP95Ms": 4.200000002980232,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 106,
+        "medianMs": 16.700000002980232,
+        "p95Ms": 18.5,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 2.9000000059604645,
+        "inputToDrawP95Ms": 4,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    },
+    {
+      "cache": "warm",
+      "readyMs": 789,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 49.8999999910593,
+          "transferBytes": 0,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        75
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 108,
+        "medianMs": 16.600000008940697,
+        "p95Ms": 17.799999997019768,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 4.699999988079071,
+        "inputToDrawP95Ms": 5.5,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "zoom": {
+        "frames": 23,
+        "medianMs": 51.79999999701977,
+        "p95Ms": 83.5,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 2.699999988079071,
+        "inputToDrawP95Ms": 4.4000000059604645,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 86,
+        "medianMs": 16.69999998807907,
+        "p95Ms": 18,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 2.5,
+        "inputToDrawP95Ms": 3.7999999970197678,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 109,
+        "medianMs": 16.600000008940697,
+        "p95Ms": 18.400000005960464,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 2.5,
+        "inputToDrawP95Ms": 4,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    }
+  ],
+  "errors": []
+}

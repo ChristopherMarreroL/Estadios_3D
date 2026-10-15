@@ -1,0 +1,147 @@
+{
+  "url": "http://localhost:3001",
+  "label": "readable-labels",
+  "environment": "Headless Edge, 1440x1000; local production; 10 Mbps / 40 ms latency",
+  "samples": [
+    {
+      "cache": "cold",
+      "readyMs": 3855.8999999910593,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 899.4000000059605,
+          "transferBytes": 476906,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        52,
+        107,
+        133,
+        164,
+        76,
+        60,
+        92,
+        103,
+        608,
+        51
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 159,
+        "medianMs": 25.19999998807907,
+        "p95Ms": 31.600000008940697,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 7.200000002980232,
+        "inputToDrawP95Ms": 9.399999991059303,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "zoom": {
+        "frames": 21,
+        "medianMs": 82.6000000089407,
+        "p95Ms": 87.70000000298023,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.200000002980232,
+        "inputToDrawP95Ms": 8.700000002980232,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 105,
+        "medianMs": 16.799999997019768,
+        "p95Ms": 19.899999991059303,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.399999991059303,
+        "inputToDrawP95Ms": 8.200000002980232,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 166,
+        "medianMs": 16.599999994039536,
+        "p95Ms": 19.69999998807907,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 4.200000002980232,
+        "inputToDrawP95Ms": 6.200000002980232,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    },
+    {
+      "cache": "warm",
+      "readyMs": 969.8999999910593,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 61.5,
+          "transferBytes": 0,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        51,
+        75,
+        134
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 138,
+        "medianMs": 16.600000008940697,
+        "p95Ms": 19.400000005960464,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 3.5999999940395355,
+        "inputToDrawP95Ms": 4.899999991059303,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "zoom": {
+        "frames": 22,
+        "medianMs": 50,
+        "p95Ms": 84,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.0999999940395355,
+        "inputToDrawP95Ms": 5.699999988079071,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 105,
+        "medianMs": 16.799999997019768,
+        "p95Ms": 18.900000005960464,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.100000008940697,
+        "inputToDrawP95Ms": 6,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 135,
+        "medianMs": 16.69999998807907,
+        "p95Ms": 18.799999997019768,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 3.6000000089406967,
+        "inputToDrawP95Ms": 5.100000008940697,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    }
+  ],
+  "errors": []
+}

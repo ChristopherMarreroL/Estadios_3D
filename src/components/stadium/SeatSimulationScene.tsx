@@ -41,6 +41,7 @@ function SeatCamera({
     camera.position.lerpVectors(f.start, f.end, eased);
     camera.quaternion.slerpQuaternions(f.from, f.to, eased);
     if (t === 1) flight.current = null;
+    else invalidate();
   });
   useEffect(() => {
     flight.current = null;
@@ -99,6 +100,7 @@ function SeatCamera({
       };
       camera.position.copy(start);
       camera.quaternion.copy(from);
+      invalidate();
     }
     const canvas = gl.domElement;
     const down = (e: PointerEvent) => {
@@ -228,7 +230,7 @@ export function SeatSimulationScene({
   return (
     <Canvas
       dpr={[1, 1.25]}
-      frameloop="always"
+      frameloop={animateSpectators && spectators.length ? "always" : "demand"}
       performance={{ min: 0.6, debounce: 200 }}
       camera={{ position: [0, 12, -15], fov: 60, near: 0.008, far: 150 }}
       gl={{

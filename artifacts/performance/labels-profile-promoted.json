@@ -1,0 +1,280 @@
+[
+  {
+    "labels": "promoted",
+    "durationMs": 2481.3929,
+    "timeline": [
+      {
+        "name": "RunTask",
+        "count": 6729,
+        "inclusiveMs": 5978.559000000088
+      },
+      {
+        "name": "FunctionCall",
+        "count": 615,
+        "inclusiveMs": 917.5229999999993
+      },
+      {
+        "name": "FireAnimationFrame",
+        "count": 149,
+        "inclusiveMs": 886.9640000000003
+      },
+      {
+        "name": "UpdateLayoutTree",
+        "count": 151,
+        "inclusiveMs": 537.4429999999999
+      },
+      {
+        "name": "Commit",
+        "count": 151,
+        "inclusiveMs": 179.98600000000005
+      },
+      {
+        "name": "GPUTask",
+        "count": 357,
+        "inclusiveMs": 155.35400000000013
+      },
+      {
+        "name": "Layerize",
+        "count": 150,
+        "inclusiveMs": 121.98100000000002
+      },
+      {
+        "name": "PrePaint",
+        "count": 218,
+        "inclusiveMs": 89.97399999999999
+      },
+      {
+        "name": "EventDispatch",
+        "count": 101,
+        "inclusiveMs": 45.732
+      },
+      {
+        "name": "HitTest",
+        "count": 69,
+        "inclusiveMs": 38.158
+      },
+      {
+        "name": "V8.GC_MC_BACKGROUND_MARKING",
+        "count": 3,
+        "inclusiveMs": 32.851
+      },
+      {
+        "name": "UpdateLayer",
+        "count": 18605,
+        "inclusiveMs": 25.194000000005317
+      },
+      {
+        "name": "MinorGC",
+        "count": 29,
+        "inclusiveMs": 21.155
+      },
+      {
+        "name": "V8.StackGuard",
+        "count": 71,
+        "inclusiveMs": 18.456999999999994
+      },
+      {
+        "name": "V8.GC_SCAVENGER",
+        "count": 29,
+        "inclusiveMs": 18.298000000000002
+      },
+      {
+        "name": "V8.HandleInterrupts",
+        "count": 71,
+        "inclusiveMs": 18.042
+      },
+      {
+        "name": "V8.GC_SCAVENGER_SCAVENGE",
+        "count": 29,
+        "inclusiveMs": 17.63500000000001
+      },
+      {
+        "name": "V8.GC_MC_INCREMENTAL",
+        "count": 62,
+        "inclusiveMs": 8.000999999999998
+      },
+      {
+        "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+        "count": 29,
+        "inclusiveMs": 7.519
+      },
+      {
+        "name": "RunMicrotasks",
+        "count": 120,
+        "inclusiveMs": 7.397999999999998
+      },
+      {
+        "name": "V8.GC_MC_BACKGROUND_SWEEPING",
+        "count": 9,
+        "inclusiveMs": 7.004999999999999
+      },
+      {
+        "name": "V8.GC_MC_INCREMENTAL_EMBEDDER_TRACING",
+        "count": 62,
+        "inclusiveMs": 5.981999999999997
+      },
+      {
+        "name": "TimerFire",
+        "count": 40,
+        "inclusiveMs": 5.408000000000001
+      },
+      {
+        "name": "MajorGC",
+        "count": 1,
+        "inclusiveMs": 4.466
+      },
+      {
+        "name": "V8.GC_MARK_COMPACTOR",
+        "count": 1,
+        "inclusiveMs": 4.399
+      },
+      {
+        "name": "IntersectionObserverController::computeIntersections",
+        "count": 300,
+        "inclusiveMs": 4.148999999999994
+      },
+      {
+        "name": "V8.GC_SCAVENGER_BACKGROUND_SCAVENGE_PARALLEL",
+        "count": 27,
+        "inclusiveMs": 3.9630000000000005
+      },
+      {
+        "name": "Paint",
+        "count": 23,
+        "inclusiveMs": 3.839999999999999
+      },
+      {
+        "name": "RasterTask",
+        "count": 14,
+        "inclusiveMs": 2.6380000000000003
+      },
+      {
+        "name": "V8.GC_MC_EVACUATE",
+        "count": 2,
+        "inclusiveMs": 2.0829999999999997
+      }
+    ],
+    "jsSelfSamples": [
+      {
+        "functionName": "(program)",
+        "url": "",
+        "line": 0,
+        "hitCount": 692
+      },
+      {
+        "functionName": "",
+        "url": "http://localhost:3001/_next/static/chunks/3raq_zw2nbuvj.js",
+        "line": 1,
+        "hitCount": 397
+      },
+      {
+        "functionName": "(idle)",
+        "url": "",
+        "line": 0,
+        "hitCount": 296
+      },
+      {
+        "functionName": "(garbage collector)",
+        "url": "",
+        "line": 0,
+        "hitCount": 20
+      },
+      {
+        "functionName": "getParameters",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 358,
+        "hitCount": 12
+      },
+      {
+        "functionName": "hK",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 393,
+        "hitCount": 11
+      },
+      {
+        "functionName": "copy",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 1,
+        "hitCount": 7
+      },
+      {
+        "functionName": "applyMatrix4",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 1,
+        "hitCount": 6
+      },
+      {
+        "functionName": "",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 382,
+        "hitCount": 4
+      },
+      {
+        "functionName": "e1",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 382,
+        "hitCount": 4
+      },
+      {
+        "functionName": "updateMatrixWorld",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 1,
+        "hitCount": 4
+      },
+      {
+        "functionName": "hQ",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 393,
+        "hitCount": 3
+      },
+      {
+        "functionName": "uniform3f",
+        "url": "",
+        "line": 0,
+        "hitCount": 3
+      },
+      {
+        "functionName": "uniform1f",
+        "url": "",
+        "line": 0,
+        "hitCount": 3
+      },
+      {
+        "functionName": "i",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 382,
+        "hitCount": 3
+      },
+      {
+        "functionName": "nM",
+        "url": "http://localhost:3001/_next/static/chunks/3jh1u-s3k0bkk.js",
+        "line": 1,
+        "hitCount": 2
+      },
+      {
+        "functionName": "project",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 1,
+        "hitCount": 2
+      },
+      {
+        "functionName": "applyMatrix4",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 1,
+        "hitCount": 2
+      },
+      {
+        "functionName": "renderBufferDirect",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 382,
+        "hitCount": 2
+      },
+      {
+        "functionName": "l6",
+        "url": "http://localhost:3001/_next/static/chunks/2r6035rrzc55u.js",
+        "line": 336,
+        "hitCount": 2
+      }
+    ]
+  }
+]

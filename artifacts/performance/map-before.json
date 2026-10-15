@@ -1,0 +1,53 @@
+{
+  "url": "http://localhost:3002",
+  "label": "before",
+  "environment": "Headless Edge, 1440x1000; local production; 10 Mbps / 40 ms latency",
+  "samples": [
+    {
+      "cache": "cold",
+      "readyMs": 8586.70000000298,
+      "models": [
+        {
+          "name": "/models/estadio-quisqueya.glb",
+          "durationMs": 7316,
+          "transferBytes": 8788544,
+          "decodedBytes": 26660044
+        }
+      ],
+      "longTasks": [
+        227
+      ],
+      "idleFrames": 60,
+      "drag": {
+        "frames": 123,
+        "medianMs": 16.5,
+        "p95Ms": 21.19999998807907,
+        "maxDrawCalls": 570
+      }
+    },
+    {
+      "cache": "warm",
+      "readyMs": 7959.100000008941,
+      "models": [
+        {
+          "name": "/models/estadio-quisqueya.glb",
+          "durationMs": 7339.4000000059605,
+          "transferBytes": 8788544,
+          "decodedBytes": 26660044
+        }
+      ],
+      "longTasks": [
+        54,
+        107
+      ],
+      "idleFrames": 61,
+      "drag": {
+        "frames": 156,
+        "medianMs": 16.600000008940697,
+        "p95Ms": 22.5,
+        "maxDrawCalls": 570
+      }
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,288 @@
+{
+  "url": "http://localhost:3001",
+  "label": "labels-in-sector",
+  "environment": "Headless Edge, 1440x1000; local production; 10 Mbps / 40 ms latency",
+  "samples": [
+    {
+      "cache": "cold",
+      "readyMs": 2041.7000000029802,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 875.9000000059605,
+          "transferBytes": 476906,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        63,
+        92,
+        128,
+        342,
+        60
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 124,
+        "medianMs": 56.20000000298023,
+        "p95Ms": 137,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 4.5,
+        "inputToDrawP95Ms": 71.40000000596046,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": [
+          56,
+          82,
+          59,
+          76,
+          116,
+          59,
+          93,
+          80,
+          119,
+          91,
+          114,
+          75,
+          148,
+          61,
+          130,
+          59,
+          115,
+          54,
+          125,
+          118,
+          55,
+          127,
+          83,
+          120,
+          57,
+          96,
+          50,
+          86,
+          108,
+          65,
+          109,
+          85,
+          114,
+          138,
+          156,
+          119,
+          54,
+          119,
+          59,
+          113,
+          101,
+          53,
+          150,
+          52,
+          101,
+          154,
+          58,
+          121,
+          68,
+          122,
+          50,
+          94,
+          51,
+          119,
+          85,
+          60,
+          94,
+          54,
+          103,
+          55,
+          91,
+          91,
+          112,
+          95,
+          53,
+          102,
+          94,
+          50,
+          87,
+          93,
+          96,
+          50
+        ]
+      },
+      "zoom": {
+        "frames": 21,
+        "medianMs": 82.70000000298023,
+        "p95Ms": 84.59999999403954,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.5999999940395355,
+        "inputToDrawP95Ms": 7.0999999940395355,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 88,
+        "medianMs": 16.700000002980232,
+        "p95Ms": 20.700000002980232,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 5.799999997019768,
+        "inputToDrawP95Ms": 8.5,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 136,
+        "medianMs": 16.69999998807907,
+        "p95Ms": 19.200000002980232,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 4.299999997019768,
+        "inputToDrawP95Ms": 7.199999988079071,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    },
+    {
+      "cache": "warm",
+      "readyMs": 848.4000000059605,
+      "models": [
+        {
+          "name": "/models/estadio-map-26b7b3c1f19f.glb",
+          "durationMs": 109,
+          "transferBytes": 0,
+          "decodedBytes": 2144672
+        }
+      ],
+      "longTasks": [
+        53,
+        108
+      ],
+      "idleFrames": 0,
+      "drag": {
+        "frames": 124,
+        "medianMs": 59.30000001192093,
+        "p95Ms": 137.70000000298023,
+        "maxDrawCalls": 33,
+        "inputToDrawMedianMs": 4.299999997019768,
+        "inputToDrawP95Ms": 64.5,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": [
+          63,
+          59,
+          60,
+          73,
+          120,
+          67,
+          73,
+          70,
+          102,
+          59,
+          224,
+          72,
+          182,
+          61,
+          118,
+          50,
+          127,
+          52,
+          125,
+          77,
+          152,
+          58,
+          138,
+          51,
+          123,
+          55,
+          115,
+          53,
+          151,
+          55,
+          115,
+          64,
+          102,
+          58,
+          100,
+          81,
+          77,
+          117,
+          71,
+          121,
+          55,
+          109,
+          105,
+          84,
+          129,
+          91,
+          64,
+          119,
+          58,
+          109,
+          52,
+          88,
+          75,
+          98,
+          77,
+          88,
+          102,
+          60,
+          90,
+          116,
+          57,
+          116,
+          106,
+          53,
+          115,
+          98,
+          68,
+          101,
+          64,
+          144,
+          101,
+          180,
+          93
+        ]
+      },
+      "zoom": {
+        "frames": 21,
+        "medianMs": 80.09999999403954,
+        "p95Ms": 86.90000000596046,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 5.0999999940395355,
+        "inputToDrawP95Ms": 8.400000005960464,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "pan": {
+        "frames": 84,
+        "medianMs": 16.5,
+        "p95Ms": 19.200000002980232,
+        "maxDrawCalls": 26,
+        "inputToDrawMedianMs": 4.4000000059604645,
+        "inputToDrawP95Ms": 8,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      },
+      "sectorOrbit": {
+        "frames": 141,
+        "medianMs": 16.700000002980232,
+        "p95Ms": 20.900000005960464,
+        "maxDrawCalls": 28,
+        "inputToDrawMedianMs": 5.0999999940395355,
+        "inputToDrawP95Ms": 7.299999997019768,
+        "canvasResolutions": [
+          "1007x579"
+        ],
+        "longTasks": []
+      }
+    }
+  ],
+  "errors": []
+}

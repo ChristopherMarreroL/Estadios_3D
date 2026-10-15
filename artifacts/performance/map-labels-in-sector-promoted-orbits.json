@@ -1,0 +1,23 @@
+{
+  "environment": "Headless Edge 1440x1000, same production candidate, sequential follow-up after browser tests; one orbit per view",
+  "results": [
+    {
+      "view": "overview",
+      "frames": 78,
+      "medianMs": 33.29999999701977,
+      "p95Ms": 36.5,
+      "resolutions": [
+        "1007x579"
+      ]
+    },
+    {
+      "view": "A39",
+      "frames": 80,
+      "medianMs": 33.400000005960464,
+      "p95Ms": 36,
+      "resolutions": [
+        "1007x579"
+      ]
+    }
+  ]
+}
