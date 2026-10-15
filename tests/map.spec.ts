@@ -247,8 +247,9 @@ test("light map loads alone, stays idle, and retains its canvas across seat prev
   // This integration test loads both GLBs and captures their rendered output.
   test.setTimeout(120_000);
   const errors: string[] = [];
-  // Vercel injects this endpoint only on hosted deployments.
-  await page.route("**/_vercel/speed-insights/script.js", (route) =>
+  // Vercel serves these scripts on hosted deployments. The local test server
+  // needs explicit mocks for both services while other console errors fail.
+  await page.route("**/_vercel/{insights,speed-insights}/script.js", (route) =>
     route.fulfill({ contentType: "application/javascript", body: "" }),
   );
   const models: string[] = [];
